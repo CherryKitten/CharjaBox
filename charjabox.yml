@@ -5,9 +5,21 @@
   gather_facts: "True"
   vars_files:
     - "settings/charjabox_general.yml"
+    - "settings/smb.yml"
   tags: general
   roles:
     - charjabox_general
+
+- name: smb
+  hosts: all
+  become: true
+  gather_facts: "True"
+  vars_files:
+    - "settings/charjabox_general.yml"
+    - "settings/smb.yml"
+  roles:
+    - role: bertvv.samba
+      when: smb_enabled
 
 - name: portainer
   hosts: all

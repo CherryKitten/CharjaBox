@@ -1,7 +1,7 @@
 ---
 - name: install dependencies
   apt:
-    name: "{{charjabox_packages}}"    
+    name: "{{charjabox_packages}}"
   tags:
     - dependencies
 
@@ -12,3 +12,27 @@
 - name: configure timezone
   timezone:
     name: "{{ charjabox_timezone }}"
+
+- name: create charjabox group
+  group:
+    name: charjabox
+    state: present
+
+- name: create charjabox user
+  user:
+    name: charjabox
+    state: present
+    system: yes
+    update_password: on_create
+    create_home: no
+    group: charjabox
+    shell: /usr/sbin/nologin
+
+- name: set permissions for shares
+  file:
+    path: "{{ item.path }}"
+    owner: charjabox
+    group: charjabox
+    mode: "u=rwX,g=rwX,o=rX"
+    recurse: false
+  loop: "{{ samba_shares }}"

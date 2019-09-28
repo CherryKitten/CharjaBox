@@ -1,0 +1,39 @@
+# Enable/Disable SMB
+smb_enabled: true
+
+# Comment string for the server
+samba_server_string: Ansible NAS
+
+# Configure Shares by using the following layout:
+# More arguments can be found at https://github.com/bertvv/ansible-role-samba
+#  samba_shares:
+#    - name: Name of Share
+#      comment: 'Comment to describe the share'
+#      guest_ok: yes
+#      public: yes
+#      writable: yes
+#      browsable: yes
+#      path: "/path/to/share/"
+
+# Example:
+samba_shares:
+  - name: Media
+    comment: 'Media Share'
+    guest_ok: yes
+    public: yes
+    writable: yes
+    browsable: yes
+    path: "/mnt/Media"
+
+# The NetBIOS name of this server
+samba_netbios_name: "{{ charjabox_hostname }}"
+
+# Account used for file access via guest accounts
+samba_guest_account: charjabox
+
+# Behaviour when unregistered users access the shares.
+samba_map_to_guest: Bad Password
+
+# CVE-2017-7494 mitigation breaks some clients, such as macOS Mojave.
+# If you can't connect, set this to false
+samba_mitigate_cve_2017_7494: true

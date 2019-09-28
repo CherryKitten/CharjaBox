@@ -6,5 +6,15 @@
 
 # Your homeserver's hostname
 charjabox_hostname: "CharjaBox"
+
 # Your homeserver's timezone
 charjabox_timezone: "Europe/Berlin"
+
+# Your email adress. Used for Let's Encrypt and settings of some applications
+charjabox_email: "your.mail@example.com"
+
+# Your homeserver's domain
+charjabox_domain: "example.com"
+
+# Default directory for Docker volumes
+docker_home: /opt/docker/

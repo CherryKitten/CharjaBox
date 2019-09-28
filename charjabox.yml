@@ -1,0 +1,10 @@
+---
+- name: general setup
+  hosts: all
+  become: true
+  gather_facts: "True"
+  tags: general
+  vars_files:
+    - "settings/charjabox_general.yml"
+  roles:
+    - charjabox_general

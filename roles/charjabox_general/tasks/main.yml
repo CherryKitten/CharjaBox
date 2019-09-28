@@ -1,0 +1,21 @@
+---
+- name: install dependencies
+  apt:
+    name:
+      - git
+      - htop
+      - docker
+      - docker-compose
+      - tmux
+      - unattended-upgrades
+      - vim
+  tags:
+    - dependencies
+
+- name: set hostname
+  hostname:
+    name: "{{charjabox_hostname}}"
+
+- name: configure timezone
+  timezone:
+    name: "{{ charjabox_timezone }}"

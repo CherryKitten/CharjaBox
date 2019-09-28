@@ -27,4 +27,7 @@ charjabox_packages:
   - vim
 
 # Default directory for Docker volumes
-docker_home: /opt/docker/
+docker_home: /opt/docker
+
+# Folder for docker-compose files
+docker_compose_dir: /opt/docker-compose

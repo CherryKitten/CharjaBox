@@ -1,0 +1,15 @@
+[Unit]
+Description= Portainer Docker Service
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutSec=infinity
+Restart=always
+RestartSec=5
+
+ExecStart=/usr/bin/docker-compose -f {{ docker_compose_dir }}/portainer/docker-compose.portainer.yml -p "Portainer" up
+ExecStop=/usr/bin/docker-compose -f {{ docker_compose_dir }}/portainer/docker-compose.portainer.yml -p "Portainer" stop
+
+[Install]
+WantedBy=multi-user.target

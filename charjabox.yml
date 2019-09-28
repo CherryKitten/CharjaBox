@@ -3,8 +3,20 @@
   hosts: all
   become: true
   gather_facts: "True"
-  tags: general
   vars_files:
     - "settings/charjabox_general.yml"
+  tags: general
   roles:
     - charjabox_general
+
+- name: portainer
+  hosts: all
+  become: true
+  gather_facts: "True"
+  vars_files:
+    - "settings/charjabox_general.yml"
+    - "settings/portainer.yml"
+  tags: portainer
+  roles:
+    - role: portainer
+      when: portainer_enabled

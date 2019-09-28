@@ -16,5 +16,15 @@ charjabox_email: "your.mail@example.com"
 # Your homeserver's domain
 charjabox_domain: "example.com"
 
+# What packages to install
+charjabox_packages:
+  - git
+  - htop
+  - docker
+  - docker-compose
+  - tmux
+  - unattended-upgrades
+  - vim
+
 # Default directory for Docker volumes
 docker_home: /opt/docker/

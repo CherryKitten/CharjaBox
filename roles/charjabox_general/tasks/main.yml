@@ -1,14 +1,7 @@
 ---
 - name: install dependencies
   apt:
-    name:
-      - git
-      - htop
-      - docker
-      - docker-compose
-      - tmux
-      - unattended-upgrades
-      - vim
+    name: "{{charjabox_packages}}"    
   tags:
     - dependencies
 

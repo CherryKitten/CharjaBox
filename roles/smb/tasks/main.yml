@@ -1,0 +1,9 @@
+- name: set permissions for shares
+  ignore_errors: yes
+  file:
+    path: "{{ item.path }}"
+    owner: charjabox
+    group: charjabox
+    mode: "u=rwX,g=rwX,o=rX"
+    recurse: false
+  loop: "{{ samba_shares }}"

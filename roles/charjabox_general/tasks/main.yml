@@ -1,13 +1,13 @@
 ---
 - name: install dependencies
   apt:
-    name: "{{charjabox_packages}}"
+    name: "{{ charjabox_packages }}"
   tags:
     - dependencies
 
 - name: set hostname
   hostname:
-    name: "{{charjabox_hostname}}"
+    name: "{{ charjabox_hostname }}"
 
 - name: configure timezone
   timezone:

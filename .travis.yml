@@ -1,3 +1,6 @@
+---
+language: generic
+
 deploy:
   provider: pages
   local_dir: docs/

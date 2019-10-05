@@ -1,0 +1,27 @@
+---
+- name: create plex directory
+  file:
+    path: "{{ plex_config_directory }}"
+    state: directory
+
+- name: create plex docker-compose directory
+  file:
+    path: "{{ docker_compose_dir }}/plex"
+    state: directory
+
+- name: copy docker-compose.yml for plex
+  template:
+    src: docker-compose.plex.yml.j2
+    dest: "{{ docker_compose_dir }}/plex/docker-compose.plex.yml"
+
+- name: configure plex systemd service
+  template:
+    src: plex.service.j2
+    dest: /etc/systemd/system/plex.service
+
+- name: start plex
+  systemd:
+    name: plex
+    enabled: "yes"
+    daemon-reload: "yes"
+    state: started

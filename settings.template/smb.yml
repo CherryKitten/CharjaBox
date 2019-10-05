@@ -2,7 +2,7 @@
 smb_enabled: true
 
 # Comment string for the server
-samba_server_string: Ansible NAS
+samba_server_string: CharjaBox
 
 # Configure Shares by using the following layout:
 # More arguments can be found at https://github.com/bertvv/ansible-role-samba

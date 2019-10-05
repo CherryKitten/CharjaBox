@@ -1,0 +1,19 @@
+---
+version: '3'
+
+services:
+  plex:
+    image: plexinc/pms-docker
+    restart: unless-stopped
+    ports:
+      - 9000:9000
+    volumes:
+      - {{ plex_config_directory }}:/config
+      - {{ plex_music_directory }}:/data/music
+      - {{ plex_tv_directory }}:/data/tv
+      - {{ plex_movies_directory }}:/data/movies
+    network_mode: "host"
+    environment:
+      - TZ={{ charjabox_timezone }}
+      - PLEX_CLAIM={{ plex_token }}
+

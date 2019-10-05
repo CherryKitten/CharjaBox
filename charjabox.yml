@@ -33,3 +33,15 @@
   roles:
     - role: portainer
       when: portainer_enabled
+
+- name: plex
+  hosts: all
+  become: true
+  gather_facts: "True"
+  vars_files:
+    - "settings/charjabox_general.yml"
+    - "settings/plex.yml"
+  tags: plex
+  roles:
+    - role: plex
+      when: plex_enabled

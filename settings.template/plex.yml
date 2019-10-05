@@ -1,0 +1,8 @@
+plex_enabled: true
+
+plex_config_directory: "{{ docker_home }}/plex/config"
+plex_music_directory: "/path/to/music"
+plex_tv_directory: "/path/to/tv"
+plex_movies_directory: "/path/to/movies"
+
+plex_token: ""

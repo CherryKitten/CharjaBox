@@ -30,6 +30,9 @@ Temporary Items
 # Vagrant
 .vagrant/
 
+# IDEs
+.idea/
+
 # CharjaBox
 inventory
 settings/

@@ -1,5 +1,7 @@
 # CharjaBox
 
+<img src='docs/img/mascot.png' alt='CharjaBox mascot' style="height: 75px"/>
+
 Work in progress Ansible based Homeserver setup using Docker.
 
 Inspired by [Ansible NAS](https://github.com/davestephens/ansible-nas) and [HomelabOS](https://gitlab.com/NickBusey/HomelabOS)

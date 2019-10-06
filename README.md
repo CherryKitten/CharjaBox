@@ -1,6 +1,6 @@
 # CharjaBox
 
-<img src='docs/img/mascot.png' alt='CharjaBox mascot' style="height: 75px"/>
+<img src='docs/img/mascot.png' alt='CharjaBox mascot' width="100"/>
 
 Work in progress Ansible based Homeserver setup using Docker.
 

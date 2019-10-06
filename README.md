@@ -31,3 +31,8 @@ WORK IN PROGRESS
 3. Change all the settings you want to change
 4. ansible-galaxy install -r requirements.yml
 5. run playbook
+
+## Special Thanks
+
+* Thanks to [DysphoricUnicorn](https://github.com/DysphoricUnicorn) for designing our beautiful mascot.
+

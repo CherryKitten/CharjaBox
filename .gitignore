@@ -33,6 +33,9 @@ Temporary Items
 # IDEs
 .idea/
 
+# mkdocs
+site/
+
 # CharjaBox
 inventory
 settings/

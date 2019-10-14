@@ -11,7 +11,7 @@
     
     <link rel="shortcut icon" href="../img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Installation - CharjaBox</title>
+    <title>Configuration - CharjaBox</title>
     <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
@@ -32,7 +32,9 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Installation", url: "#_top", children: [
+          {title: "Configuration", url: "#_top", children: [
+              {title: "General", url: "#general" },
+              {title: "Application Settings", url: "#application-settings" },
           ]},
         ];
 
@@ -60,20 +62,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../requirements/" class="btn btn-xs btn-default pull-right">
+      <a href="../installation/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../requirements/" class="btn btn-xs btn-link">
-        Requirements
+      <a href="../installation/" class="btn btn-xs btn-link">
+        Installation
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../configuration/" class="btn btn-xs btn-default pull-left">
+      <a href=".." class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../configuration/" class="btn btn-xs btn-link">
-        Configuration
+        Previous</a><a href=".." class="btn btn-xs btn-link">
+        CharjaBox
       </a>
     </div>
     
@@ -81,15 +83,12 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="installation">Installation</h1>
-<ol>
-<li>Make sure all <a href="../requirements/">Requirements</a> are met</li>
-<li>Clone the repository and <code>cd</code> into the directory</li>
-<li>Copy <code>settings.template</code> to <code>settings</code> and <a href="../configuration/">configure</a> everything</li>
-<li>Create an <code>inventory</code> file and add your server's IP/Hostname/Domain</li>
-<li>Install needed roles: <code>ansible-galaxy install -r requirements.yml</code></li>
-<li>Run the playbook: <code>ansible-playbook -i inventory -u $USER charjabox.yml</code></li>
-</ol>
+    <h1 id="configuration">Configuration</h1>
+<p>Configuration is done in multiple files in the <code>settings</code> folder. You should never touch the <code>settings.template</code> folder in normal use.</p>
+<h2 id="general">General</h2>
+<p><code>charjabox_general.yml</code> includes all general configuration about your server, like Hostnames, Timezones, etc.</p>
+<h2 id="application-settings">Application Settings</h2>
+<p>Every application has it's own settings file, where you can enable the Application and apply App-specific configuration.</p>
 
   <br>
     
@@ -102,20 +101,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../requirements/" class="btn btn-xs btn-default pull-right">
+      <a href="../installation/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../requirements/" class="btn btn-xs btn-link">
-        Requirements
+      <a href="../installation/" class="btn btn-xs btn-link">
+        Installation
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../configuration/" class="btn btn-xs btn-default pull-left">
+      <a href=".." class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../configuration/" class="btn btn-xs btn-link">
-        Configuration
+        Previous</a><a href=".." class="btn btn-xs btn-link">
+        CharjaBox
       </a>
     </div>
     
@@ -126,7 +125,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
 <footer class="col-md-12 wm-page-content">
       <p>
-        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/installation.md"><i class="fa fa-github"></i>
+        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/configuration.md"><i class="fa fa-github"></i>
 Edit on GitHub</a>
       </p>
   <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/CherryKitten/CharjaBox/">Windmill Dark</a> theme by CherryKitten (noraj).</p>

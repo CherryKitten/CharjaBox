@@ -1,10 +1,18 @@
 ---
-language: generic
+language: python
+
+install:
+  - pip install mkdocs
+  - pip install mkdocs-windmill-dark
+
+script:
+  - mkdocs build
 
 deploy:
   provider: pages
   local_dir: docs/
   skip_cleanup: true
+  local-dir: site/
   github_token: $GITHUB_TOKEN
   keep_history: true
   on:

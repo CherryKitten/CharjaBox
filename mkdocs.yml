@@ -1,0 +1,6 @@
+site_name: 'CharjaBox'
+site_description: 'Work in progress Ansible based Homeserver setup using Docker.'
+site_author: 'CherryKitten'
+repo_url: 'https://github.com/CherryKitten/CharjaBox'
+
+theme: 'windmill-dark'

@@ -1,5 +1,7 @@
 # CharjaBox
 
+<img src='img/mascot.png' alt='CharjaBox mascot' width="100"/>
+
 Work in progress Ansible based Homeserver setup using Docker.
 
 Inspired by [Ansible NAS](https://github.com/davestephens/ansible-nas) and [HomelabOS](https://gitlab.com/NickBusey/HomelabOS)
@@ -14,3 +16,4 @@ I will add more information, documentation and features soon
 
 * Samba Sharing
 * Manual container management using Portainer
+* Home Media Streaming with Plex

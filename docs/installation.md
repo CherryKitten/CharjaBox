@@ -1,9 +1,8 @@
-## Installation
+# Installation
 
-WORK IN PROGRESS
-
-1. Set up Ansible
-2. Copy/Merge settings.template/ to settings/
-3. Change all the settings you want to change
-4. ansible-galaxy install -r requirements.yml
-5. run playbook
+1. Make sure all [Requirements](requirements.md) are met
+2. Clone the repository and `cd` into the directory
+3. Copy `settings.template` to `settings` and [configure](configuration.md) everything
+4. Create an `inventory` file and add your server's IP/Hostname/Domain
+4. Install needed roles: `ansible-galaxy install -r requirements.yml`
+5. Run the playbook: `ansible-playbook -i inventory -u $USER charjabox.yml`

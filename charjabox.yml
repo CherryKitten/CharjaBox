@@ -22,6 +22,16 @@
     - role: smb
       when: smb_enabled
 
+- name: docker
+  hosts: all
+  become: true
+  gather_facts: "True"
+  vars:
+    - docker_install_compose: true
+    - docker_compose_path: /usr/bin/docker-compose
+  roles:
+    - role: geerlingguy.docker
+
 - name: portainer
   hosts: all
   become: true

@@ -1,3 +1,6 @@
 ---
   - name: bertvv.samba
     version: v2.7.0
+
+  - name: geerlingguy.docker
+    version: 2.5.2

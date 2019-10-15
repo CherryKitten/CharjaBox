@@ -20,8 +20,6 @@ charjabox_domain: "example.com"
 charjabox_packages:
   - git
   - htop
-  - docker
-  - docker-compose
   - tmux
   - unattended-upgrades
   - vim

@@ -1,0 +1,42 @@
+---
+version: '3'
+
+networks:
+  firefly_iii_net:
+    driver: bridge
+
+services:
+  firefly_iii_app:
+    image: jc5x/firefly-iii
+    restart: unless-stopped
+    ports:
+      - {{ firefly_port }}:80
+    depends_on:
+      - firefly_iii_db
+    networks:
+      - firefly_iii_net
+    volumes:
+      - {{ firefly_config_directory }}/export:/var/www/firefly-iii/storage/export
+      - {{ firefly_config_directory }}/upload:/var/www/firefly-iii/storage/upload
+    environment:
+      - DB_CONNECTION=pgsql
+      - DB_HOST=firefly_iii_db
+      - DB_PORT=5432
+      - DB_DATABASE=firefly
+      - DB_USERNAME=firefly
+      - DB_PASSWORD="{{ firefly_db_password }}"
+      - APP_ENV=local
+      - APP_KEY={{ firefly_app_key }}
+      - APP_URL=https://firefly.{{ charjabox_domain }}
+      - ServerName=firefly.{{ charjabox_domain }}
+
+  firefly_iii_db:
+    image: "postgres:10"
+    environment:
+      - POSTGRES_USER=firefly
+      - POSTGRES_DB=firefly
+      - POSTGRES_PASSWORD={{ firefly_db_password }}
+    networks:
+      - firefly_iii_net
+    volumes:
+      - {{ firefly_config_directory }}/db:/var/lib/postgresql/data

@@ -1,0 +1,8 @@
+firefly_enabled: false
+
+firefly_config_directory: "{{ docker_home }}/firefly/config"
+firefly_port: 4005
+
+firefly_db_password: "Insert Secure Password Here Please"
+
+firefly_app_key: "SomeRandomStringOf32CharsExactly"

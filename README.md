@@ -1,4 +1,6 @@
 # CharjaBox
+![GitHub](https://img.shields.io/github/license/CherryKitten/CharjaBox)
+[![Build Status](https://travis-ci.com/CherryKitten/CharjaBox.svg?branch=master)](https://travis-ci.com/CherryKitten/CharjaBox)
 
 <img src='docs/img/mascot.png' alt='CharjaBox mascot' width="100"/>
 

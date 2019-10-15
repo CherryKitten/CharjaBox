@@ -1,0 +1,27 @@
+---
+- name: create heimdall directory
+  file:
+    path: "{{ heimdall_config_directory }}"
+    state: directory
+
+- name: create heimdall docker-compose directory
+  file:
+    path: "{{ docker_compose_dir }}/heimdall"
+    state: directory
+
+- name: copy docker-compose.yml for heimdall
+  template:
+    src: docker-compose.heimdall.yml.j2
+    dest: "{{ docker_compose_dir }}/heimdall/docker-compose.heimdall.yml"
+
+- name: configure heimdall systemd service
+  template:
+    src: heimdall.service.j2
+    dest: /etc/systemd/system/heimdall.service
+
+- name: start heimdall
+  systemd:
+    name: heimdall
+    enabled: "yes"
+    daemon-reload: "yes"
+    state: started

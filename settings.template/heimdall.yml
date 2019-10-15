@@ -1,0 +1,4 @@
+heimdall_enabled: true
+heimdall_config_directory: "{{ docker_home }}/heimdall/config"
+heimdall_http_port: 4000
+heimdall_https_port: 4001

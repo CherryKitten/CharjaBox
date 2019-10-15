@@ -55,3 +55,15 @@
   roles:
     - role: plex
       when: plex_enabled
+
+- name: heimdall
+  hosts: all
+  become: true
+  gather_facts: "True"
+  vars_files:
+    - "settings/charjabox_general.yml"
+    - "settings/heimdall.yml"
+  tags: heimdall
+  roles:
+    - role: heimdall
+      when: heimdall_enabled

@@ -17,3 +17,4 @@ I will add more information, documentation and features soon
 * Samba Sharing
 * Manual container management using Portainer
 * Home Media Streaming with Plex
+* Personal Finance management with Firefly III

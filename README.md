@@ -19,9 +19,11 @@ I will add more information, documentation and features soon
 * Samba Sharing
 * Manual container management using Portainer
 * Home Media Streaming with Plex
+* Personal Finance management with Firefly III
 
 ### Applications
 
+* [Firefly III](https://firefly-iii.org/) - Free and open source personal finance manager
 * [Heimdall](https://heimdall.site/) - Application Dashboard for easy access to all your services
 * [Plex](https://www.plex.tv/) - Your very own personal streaming service
 * [Portainer](https://portainer.io/) - Web Interface for managing Docker containers

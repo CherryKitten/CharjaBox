@@ -11,7 +11,7 @@
 
 - name: configure timezone
   timezone:
-    name: "{{ charjabox_timezone }}"
+    name: "{{ charjabox_timezone }}"
 
 - name: create charjabox group
   group:

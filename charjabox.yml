@@ -68,6 +68,18 @@
     - role: heimdall
       when: heimdall_enabled
 
+- name: bind
+  hosts: all
+  become: true
+  gather_facts: "True"
+  vars_files:
+    - "settings/charjabox_general.yml"
+    - "settings/bind.yml"
+  tags: bind
+  roles:
+    - role: bind
+      when: bind_enabled
+
 - name: firefly
   hosts: all
   become: true

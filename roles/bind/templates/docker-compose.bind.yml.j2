@@ -1,0 +1,16 @@
+---
+version: '3'
+
+services:
+  bind:
+    image: sameersbn/bind:9.11.3-20190706
+    restart: unless-stopped
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+      - "{{ bind_webmin_port }}:10000/tcp"
+    volumes:
+      - {{ bind_data_directory }}:/data
+    environment:
+      - WEBMIN_ENABLED={{ bind_webmin_enabled }}
+      - ROOT_PASSWORD={{ bind_webmin_password }}

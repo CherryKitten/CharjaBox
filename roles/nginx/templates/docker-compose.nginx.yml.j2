@@ -1,0 +1,13 @@
+---
+version: '3'
+
+services:
+  nginx:
+    image: nginx
+    restart: unless-stopped
+    ports:
+      - {{ nginx_http_port }}:80
+      - {{ nginx_https_port }}:443
+    volumes:
+      - {{ nginx_config_directory }}:/etc/nginx/
+      - {{ nginx_data_directory }}:/var/www

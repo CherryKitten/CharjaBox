@@ -1,0 +1,35 @@
+---
+- name: create nginx directory
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+      - "{{ nginx_config_directory }}"
+      - "{{ nginx_data_directory }}"
+
+- name: upload default nginx config to server
+  copy:
+    src: nginx-config/
+    dest: "{{ nginx_config_directory }}"
+
+- name: create nginx docker-compose directory
+  file:
+    path: "{{ docker_compose_dir }}/nginx"
+    state: directory
+
+- name: copy docker-compose.yml for nginx
+  template:
+    src: docker-compose.nginx.yml.j2
+    dest: "{{ docker_compose_dir }}/nginx/docker-compose.nginx.yml"
+
+- name: configure nginx systemd service
+  template:
+    src: nginx.service.j2
+    dest: /etc/systemd/system/nginx.service
+
+- name: start nginx
+  systemd:
+    name: nginx
+    enabled: "yes"
+    daemon-reload: "yes"
+    state: started

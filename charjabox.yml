@@ -32,6 +32,17 @@
   roles:
     - role: geerlingguy.docker
 
+- name: nginx
+  hosts: all
+  become: true
+  gather_facts: "True"
+  vars_files:
+    - "settings/charjabox_general.yml"
+    - "settings/nginx.yml"
+  roles:
+    - role: nginx
+      when: nginx_enabled
+
 - name: portainer
   hosts: all
   become: true

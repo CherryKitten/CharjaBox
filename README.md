@@ -20,9 +20,11 @@ I will add more information, documentation and features soon
 * Manual container management using Portainer
 * Home Media Streaming with Plex
 * Personal Finance management with Firefly III
+* Local DNS management with BIND
 
 ### Applications
 
+* [BIND](https://www.isc.org/bind/) - Domain Name Server for your home network
 * [Firefly III](https://firefly-iii.org/) - Free and open source personal finance manager
 * [Heimdall](https://heimdall.site/) - Application Dashboard for easy access to all your services
 * [Plex](https://www.plex.tv/) - Your very own personal streaming service

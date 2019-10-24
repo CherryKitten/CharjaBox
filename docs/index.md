@@ -18,3 +18,4 @@ I will add more information, documentation and features soon
 * Manual container management using Portainer
 * Home Media Streaming with Plex
 * Personal Finance management with Firefly III
+* Local DNS management with BIND

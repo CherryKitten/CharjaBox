@@ -27,6 +27,7 @@ I will add more information, documentation and features soon
 * [BIND](https://www.isc.org/bind/) - Domain Name Server for your home network
 * [Firefly III](https://firefly-iii.org/) - Free and open source personal finance manager
 * [Heimdall](https://heimdall.site/) - Application Dashboard for easy access to all your services
+* [Nginx](https://www.nginx.com/) - Open source web server and a reverse proxy server
 * [Plex](https://www.plex.tv/) - Your very own personal streaming service
 * [Portainer](https://portainer.io/) - Web Interface for managing Docker containers
 

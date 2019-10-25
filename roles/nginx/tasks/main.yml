@@ -11,6 +11,7 @@
   copy:
     src: nginx-config/
     dest: "{{ nginx_config_directory }}"
+    force: no
 
 - name: create nginx docker-compose directory
   file:

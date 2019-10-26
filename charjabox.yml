@@ -102,3 +102,14 @@
   roles:
     - role: firefly
       when: firefly_enabled
+
+- name: lancache
+  hosts: all
+  become: true
+  gather_facts: "True"
+  vars_files:
+    - "settings/charjabox_general.yml"
+    - "settings/lancache.yml"
+  roles:
+    - role: lancache
+      when: lancache_enabled

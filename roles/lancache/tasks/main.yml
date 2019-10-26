@@ -1,0 +1,30 @@
+---
+- name: create lancache directories
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "{{ lancache_data_directory }}"
+    - "{{ lancache_config_directory }}"
+
+- name: create lancache docker-compose directory
+  file:
+    path: "{{ docker_compose_dir }}/lancache"
+    state: directory
+
+- name: copy docker-compose.yml for lancache
+  template:
+    src: docker-compose.lancache.yml.j2
+    dest: "{{ docker_compose_dir }}/lancache/docker-compose.lancache.yml"
+
+- name: configure lancache systemd service
+  template:
+    src: lancache.service.j2
+    dest: /etc/systemd/system/lancache.service
+
+- name: start lancache
+  systemd:
+    name: lancache
+    enabled: "yes"
+    daemon-reload: "yes"
+    state: started

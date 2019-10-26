@@ -1,0 +1,22 @@
+---
+version: '3'
+
+services:
+  lancache:
+    image: lancachenet/monolithic:latest
+    restart: unless-stopped
+    ports:
+      - {{ lancache_port }}:80
+    volumes:
+      - {{ lancache_config_directory }}:/data/logs
+      - {{ lancache_data_directory }}:/data/cache
+{% if lancache_dns_enabled %}
+  dns:
+    image: lancachenet-dns
+    restart: unless-stopped
+    ports:
+      53:53/udp
+    environment:
+      USE_GENERIC_CACHE=true
+      LANCACHE_IP=lancache
+{% endif %}

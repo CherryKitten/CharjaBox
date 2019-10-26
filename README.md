@@ -12,7 +12,9 @@ Inspired by [Ansible NAS](https://github.com/davestephens/ansible-nas) and [Home
 
 In the future this maybe could be a simple solution to quickly deploy a homeserver using Ansible and Docker.
 At the moment it can share files via SMB and create a Portainer container for managing Docker containers. But this is only the beginning.
-I will add more information, documentation and features soon
+I will add more information, ~~documentation~~ and features soon
+
+Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 
 ## Features
 

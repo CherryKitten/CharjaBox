@@ -23,12 +23,14 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 * Home Media Streaming with Plex
 * Personal Finance management with Firefly III
 * Local DNS management with BIND
+* Download caching for many CDNs
 
 ### Applications
 
 * [BIND](https://www.isc.org/bind/) - Domain Name Server for your home network
 * [Firefly III](https://firefly-iii.org/) - Free and open source personal finance manager
 * [Heimdall](https://heimdall.site/) - Application Dashboard for easy access to all your services
+* [Lancache](https://github.com/lancachenet/monolithic) - Cache your video game downloads and operating system updates so you only have to download them once
 * [Nginx](https://www.nginx.com/) - Open source web server and a reverse proxy server
 * [Plex](https://www.plex.tv/) - Your very own personal streaming service
 * [Portainer](https://portainer.io/) - Web Interface for managing Docker containers

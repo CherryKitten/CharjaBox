@@ -3,6 +3,8 @@
 
 If you do not run your own DNS server, you can set `lancache_dns_enabled` to `true` and use the integrated DNS server.
 
+You can also use the variables `lancache_limits_memory`, `lancache_limits_size`, `lancache_limits_age` to set the caches memory use, maximum disk space use and maximum age for cached files respectively.
+
 If you run your own DNS server, you can get all the domains for the supported CDNs from [here](https://github.com/uklans/cache-domains). Redirect those to your CharjaBox IP (and set up a reverse proxy for those domains if not using port 80).
 
 A simple example setup using BIND and Nginx with the Cache running on `192.168.1.22` on port `6666` could look like this:

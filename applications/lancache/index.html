@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="CherryKitten">
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Lancache - CharjaBox</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Lancache", url: "#_top", children: [
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script>
+      <script src="../../search/main.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../nginx/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../nginx/" class="btn btn-xs btn-link">
+        Nginx
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../bind/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../bind/" class="btn btn-xs btn-link">
+        BIND
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="lancache">Lancache</h1>
+<p><a href="https://github.com/lancachenet/monolithic">Lancache</a> - Cache your video game downloads and operating system updates so you only have to download them once</p>
+<p>If you do not run your own DNS server, you can set <code>lancache_dns_enabled</code> to <code>true</code> and use the integrated DNS server.</p>
+<p>You can also use the variables <code>lancache_limits_memory</code>, <code>lancache_limits_size</code>, <code>lancache_limits_age</code> to set the caches memory use, maximum disk space use and maximum age for cached files respectively.</p>
+<p>If you run your own DNS server, you can get all the domains for the supported CDNs from <a href="https://github.com/uklans/cache-domains">here</a>. Redirect those to your CharjaBox IP (and set up a reverse proxy for those domains if not using port 80).</p>
+<p>A simple example setup using BIND and Nginx with the Cache running on <code>192.168.1.22</code> on port <code>6666</code> could look like this:</p>
+<p>BIND db.rpz:</p>
+<pre><code>TTL 60
+@            IN    SOA  localhost. root.localhost.  (
+                          2015112501   ; serial
+                          1h           ; refresh
+                          30m          ; retry
+                          1w           ; expiry
+                          30m)         ; minimum
+                   IN     NS    localhost.
+
+localhost       A   127.0.0.1
+
+*.content.steampowered.com    A        192.168.1.22
+content1.steampowered.com    A        192.168.1.22
+content2.steampowered.com    A        192.168.1.22
+content3.steampowered.com    A        192.168.1.22
+content4.steampowered.com    A        192.168.1.22
+content5.steampowered.com    A        192.168.1.22
+content6.steampowered.com    A        192.168.1.22
+content7.steampowered.com    A        192.168.1.22
+content8.steampowered.com    A        192.168.1.22
+cs.steampowered.com    A        192.168.1.22
+steamcontent.com    A        192.168.1.22
+client-download.steampowered.com    A        192.168.1.22
+*.hsar.steampowered.com.edgesuite.net    A        192.168.1.22
+*.akamai.steamstatic.com    A        192.168.1.22
+content-origin.steampowered.com    A        192.168.1.22
+clientconfig.akamai.steamtransparent.com    A        192.168.1.22
+steampipe.akamaized.net    A        192.168.1.22
+edgecast.steamstatic.com    A        192.168.1.22
+steam.apac.qtlglb.com.mwcloudcdn.com    A        192.168.1.22
+*.cs.steampowered.com    A        192.168.1.22
+*.cm.steampowered.com    A        192.168.1.22
+*.edgecast.steamstatic.com    A        192.168.1.22
+*.steamcontent.com    A        192.168.1.22
+cdn1-sea1.valve.net    A        192.168.1.22
+cdn2-sea1.valve.net    A        192.168.1.22
+*.steam-content-dnld-1.apac-1-cdn.cqloud.com    A        192.168.1.22
+*.steam-content-dnld-1.eu-c1-cdn.cqloud.com    A        192.168.1.22
+steam.apac.qtlglb.com    A        192.168.1.22
+edge.steam-dns.top.comcast.net    A        192.168.1.22
+edge.steam-dns-2.top.comcast.net    A        192.168.1.22
+steam.naeu.qtlglb.com    A        192.168.1.22
+steampipe-kr.akamaized.net    A        192.168.1.22
+steam.ix.asn.au    A        192.168.1.22
+steam.eca.qtlglb.com     A        192.168.1.22
+steam.cdn.on.net    A        192.168.1.22
+update5.dota2.wmsj.cn    A        192.168.1.22
+update2.dota2.wmsj.cn    A        192.168.1.22
+update6.dota2.wmsj.cn    A        192.168.1.22
+update3.dota2.wmsj.cn    A        192.168.1.22
+update1.dota2.wmsj.cn    A        192.168.1.22
+update4.dota2.wmsj.cn    A        192.168.1.22
+update5.csgo.wmsj.cn    A        192.168.1.22
+update2.csgo.wmsj.cn    A        192.168.1.22
+update4.csgo.wmsj.cn    A        192.168.1.22
+update3.csgo.wmsj.cn    A        192.168.1.22
+update6.csgo.wmsj.cn    A        192.168.1.22
+update1.csgo.wmsj.cn    A        192.168.1.22
+st.dl.bscstorage.net    A        192.168.1.22
+cdn.mileweb.cs.steampowered.com.8686c.com    A        192.168.1.22
+</code></pre>
+
+<p>Nginx site config:</p>
+<pre><code>server {
+        listen 80;
+        listen 443;
+
+        server_name *.content.steampowered.com content1.steampowered.com content2.steampowered.com content3.steampowered.com content4.steampowered.com content5.steampowered.com content6.steampowered.com content7.steampowered.com content8.steampowered.com cs.steampowered.com steamcontent.com client-download.steampowered.com *.hsar.steampowered.com.edgesuite.net *.akamai.steamstatic.com content-origin.steampowered.com clientconfig.akamai.steamtransparent.com steampipe.akamaized.net edgecast.steamstatic.com steam.apac.qtlglb.com.mwcloudcdn.com *.cs.steampowered.com *.cm.steampowered.com *.edgecast.steamstatic.com *.steamcontent.com cdn1-sea1.valve.net cdn2-sea1.valve.net *.steam-content-dnld-1.apac-1-cdn.cqloud.com *.steam-content-dnld-1.eu-c1-cdn.cqloud.com steam.apac.qtlglb.com edge.steam-dns.top.comcast.net edge.steam-dns-2.top.comcast.net steam.naeu.qtlglb.com steampipe-kr.akamaized.net steam.ix.asn.au steam.eca.qtlglb.com  steam.cdn.on.net update5.dota2.wmsj.cn update2.dota2.wmsj.cn update6.dota2.wmsj.cn update3.dota2.wmsj.cn update1.dota2.wmsj.cn update4.dota2.wmsj.cn update5.csgo.wmsj.cn update2.csgo.wmsj.cn update4.csgo.wmsj.cn update3.csgo.wmsj.cn update6.csgo.wmsj.cn update1.csgo.wmsj.cn st.dl.bscstorage.net cdn.mileweb.cs.steampowered.com.8686c.com;
+
+        location / {
+                include proxy_params;
+                proxy_pass http://192.168.1.22:6666;
+        }
+}
+</code></pre>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../nginx/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../nginx/" class="btn btn-xs btn-link">
+        Nginx
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../bind/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../bind/" class="btn btn-xs btn-link">
+        BIND
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+      <p>
+        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/applications/lancache.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/CherryKitten/CharjaBox/">Windmill Dark</a> theme by CherryKitten (noraj).</p>
+</footer>
+
+</body>
+</html>

@@ -10,6 +10,10 @@ services:
     volumes:
       - {{ lancache_config_directory }}:/data/logs
       - {{ lancache_data_directory }}:/data/cache
+    environment:
+      - CACHE_MEM_SIZE={{ lancache_limits_memory }}
+      - CACHE_DISK_SIZE={{ lancache_limits_size }}
+      - CACHE_MAX_AGE={{ lancache_limits_age }}
 {% if lancache_dns_enabled %}
   dns:
     image: lancachenet-dns

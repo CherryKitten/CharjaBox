@@ -5,3 +5,7 @@ lancache_config_directory: "{{ docker_home }}/lancache/config"
 lancache_data_directory: "{{ docker_home }}/lancache/data" #This is were the cached downloads are saved, so make sure to have enough space in that directory.
 
 lancache_port: 6666
+
+lancache_limits_memory: 500m
+lancache_limits_size: 1000000m
+lancache_limits_age: 3560d

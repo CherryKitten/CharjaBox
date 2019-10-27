@@ -6,6 +6,6 @@ lancache_data_directory: "{{ docker_home }}/lancache/data" #This is were the cac
 
 lancache_port: 6666
 
-lancache_limits_memory: 500m
-lancache_limits_size: 1000000m
-lancache_limits_age: 3560d
+lancache_limits_memory: "500m"
+lancache_limits_size: "1000000m"
+lancache_limits_age: "3560d"

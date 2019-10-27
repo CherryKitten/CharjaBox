@@ -110,6 +110,7 @@
   vars_files:
     - "settings/charjabox_general.yml"
     - "settings/lancache.yml"
+  tags: lancache
   roles:
     - role: lancache
       when: lancache_enabled

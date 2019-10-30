@@ -6,13 +6,20 @@ services:
     image: plexinc/pms-docker
     restart: unless-stopped
     ports:
-      - 9000:9000
+      - "32400:32400"
+      - "3005:3005"
+      - "8324:8324"
+      - "32469:32649"
+      - "1900:1900/udp"
+      - "32410:32410/udp"
+      - "32412:32412/udp"
+      - "32413:32413/udp"
+      - "32414:32414/udp"
     volumes:
       - {{ plex_config_directory }}:/config
       - {{ plex_music_directory }}:/data/music
       - {{ plex_tv_directory }}:/data/tv
       - {{ plex_movies_directory }}:/data/movies
-    network_mode: "host"
     environment:
       - TZ={{ charjabox_timezone }}
       - PLEX_CLAIM={{ plex_token }}

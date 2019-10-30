@@ -1,0 +1,14 @@
+---
+version: "3"
+services:
+  jellyfin:
+    image: jellyfin/jellyfin
+    restart: unless-stopped
+    ports:
+      - {{ jellyfin_http_port }}:8096 # HTTP port
+      - {{ jellyfin_https_port }}:8920 # HTTPS port
+    volumes:
+      - {{ jellyfin_config_directory }}:/config
+      - {{ jellyfin_music_directory }}:/media/music
+      - {{ jellyfin_tv_directory }}:/media/tv
+      - {{ jellyfin_movies_directory }}:/media/movies

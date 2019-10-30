@@ -20,7 +20,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 
 * Samba Sharing
 * Manual container management using Portainer
-* Home Media Streaming with Plex
+* Home Media Streaming with Plex or Jellyfin
 * Personal Finance management with Firefly III
 * Local DNS management with BIND
 * Download caching for many CDNs
@@ -30,6 +30,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 * [BIND](https://www.isc.org/bind/) - Domain Name Server for your home network
 * [Firefly III](https://firefly-iii.org/) - Free and open source personal finance manager
 * [Heimdall](https://heimdall.site/) - Application Dashboard for easy access to all your services
+* [Jellyfin](http://jellyfin.org/) - The Free Software Media System
 * [Lancache](https://github.com/lancachenet/monolithic) - Cache your video game downloads and operating system updates so you only have to download them once
 * [Nginx](https://www.nginx.com/) - Open source web server and a reverse proxy server
 * [Plex](https://www.plex.tv/) - Your very own personal streaming service

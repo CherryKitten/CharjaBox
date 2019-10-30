@@ -67,6 +67,18 @@
     - role: plex
       when: plex_enabled
 
+- name: jellyfin
+  hosts: all
+  become: true
+  gather_facts: "True"
+  vars_files:
+    - "{{ charjabox_settings_path }}/charjabox_general.yml"
+    - "{{ charjabox_settings_path }}/jellyfin.yml"
+  tags: jellyfin
+  roles:
+    - role: jellyfin
+      when: jellyfin_enabled
+
 - name: heimdall
   hosts: all
   become: true

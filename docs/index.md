@@ -16,7 +16,7 @@ I will add more information, documentation and features soon
 
 * Samba Sharing
 * Manual container management using Portainer
-* Home Media Streaming with Plex
+* Home Media Streaming with Plex or Jellyfin
 * Personal Finance management with Firefly III
 * Local DNS management with BIND
 * Download caching for many CDNs

@@ -5,5 +5,5 @@
     owner: charjabox
     group: charjabox
     mode: "u=rwX,g=rwX,o=rX"
-    recurse: true 
+    recurse: true
   loop: "{{ samba_shares }}"

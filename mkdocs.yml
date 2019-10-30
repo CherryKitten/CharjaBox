@@ -4,3 +4,15 @@ site_author: 'CherryKitten'
 repo_url: 'https://github.com/CherryKitten/CharjaBox'
 
 theme: 'windmill-dark'
+
+nav:
+  - Home: 'index.md'
+  - 'requirements.md'
+  - 'configuration.md'
+  - 'installation.md'
+  - Applications:
+      - 'applications/nginx.md'
+      - 'applications/portainer.md'
+      - 'applications/plex.md'
+      - 'applications/bind.md'
+      - 'applications/lancache.md'

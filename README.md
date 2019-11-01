@@ -21,6 +21,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 * Samba Sharing
 * Manual container management using Portainer
 * Home Media Streaming with Plex or Jellyfin
+* Your own wiki using Dokuwiki
 * Personal Finance management with Firefly III
 * Local DNS management with BIND
 * Download caching for many CDNs
@@ -28,6 +29,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 ### Applications
 
 * [BIND](https://www.isc.org/bind/) - Domain Name Server for your home network
+* [Dokuwiki](https://www.dokuwiki.org/dokuwiki) - Simple to use and highly versatile Open Source wiki software that doesn't require a database
 * [Firefly III](https://firefly-iii.org/) - Free and open source personal finance manager
 * [Heimdall](https://heimdall.site/) - Application Dashboard for easy access to all your services
 * [Jellyfin](http://jellyfin.org/) - The Free Software Media System

@@ -1,0 +1,27 @@
+---
+- name: create dokuwiki directory
+  file:
+    path: "{{ dokuwiki_config_directory }}"
+    state: directory
+
+- name: create dokuwiki docker-compose directory
+  file:
+    path: "{{ docker_compose_dir }}/dokuwiki"
+    state: directory
+
+- name: copy docker-compose.yml for dokuwiki
+  template:
+    src: docker-compose.dokuwiki.yml.j2
+    dest: "{{ docker_compose_dir }}/dokuwiki/docker-compose.dokuwiki.yml"
+
+- name: configure dokuwiki systemd service
+  template:
+    src: dokuwiki.service.j2
+    dest: /etc/systemd/system/dokuwiki.service
+
+- name: start dokuwiki
+  systemd:
+    name: dokuwiki
+    enabled: "yes"
+    daemon-reload: "yes"
+    state: started

@@ -126,3 +126,15 @@
   roles:
     - role: lancache
       when: lancache_enabled
+
+- name: dokuwiki
+  hosts: all
+  become: true
+  gather_facts: "True"
+  vars_files:
+    - "{{ charjabox_settings_path }}/charjabox_general.yml"
+    - "{{ charjabox_settings_path }}/dokuwiki.yml"
+  tags: dokuwiki
+  roles:
+    - role: dokuwiki
+      when: dokuwiki_enabled

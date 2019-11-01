@@ -1,0 +1,12 @@
+---
+version: '3'
+
+services:
+  dokuwiki:
+    image: linuxserver/dokuwiki:latest
+    restart: unless-stopped
+    ports:
+      - {{ dokuwiki_http_port }}:80
+      - {{ dokuwiki_https_port }}:443
+    volumes:
+      - {{ dokuwiki_config_directory }}:/config

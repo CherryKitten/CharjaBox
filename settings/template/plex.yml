@@ -1,4 +1,4 @@
-plex_enabled: true
+plex_enabled: false
 
 plex_config_directory: "{{ docker_home }}/plex/config"
 plex_music_directory: "/path/to/music"

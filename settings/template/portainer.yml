@@ -1,2 +1,2 @@
-portainer_enabled: true
+portainer_enabled: false
 portainer_data_directory: "{{ docker_home }}/portainer/config"

@@ -1,2 +1,2 @@
-heimdall_enabled: true
+heimdall_enabled: false
 heimdall_config_directory: "{{ docker_home }}/heimdall/config"

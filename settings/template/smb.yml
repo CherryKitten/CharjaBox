@@ -1,5 +1,5 @@
 # Enable/Disable SMB
-smb_enabled: true
+smb_enabled: false
 
 # Comment string for the server
 samba_server_string: CharjaBox

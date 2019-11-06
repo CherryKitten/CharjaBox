@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", ip: "192.168.69.42"
   config.vm.provision "ansible" do |ansible|
     ansible.host_vars = {
-      "default" => {"charjabox_settings_path" => "vagrant.settings"}
+      "default" => {"charjabox_settings_path" => "vagrant"}
     }
     ansible.verbose= "vvv"
     ansible.playbook = "charjabox.yml"

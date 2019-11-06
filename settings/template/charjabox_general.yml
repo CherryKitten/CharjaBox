@@ -1,8 +1,6 @@
 #
 # General Settings for CharjaBox
 #
-# IMPORTANT: Do not edit files in settings.template/
-# Instead move/merge settings.template/ into settings/ and change the configuration there.
 
 # Your homeserver's hostname
 charjabox_hostname: "CharjaBox"

@@ -42,10 +42,10 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 
 1. Make sure all [Requirements](https://cherrykitten.github.io/CharjaBox/#requirements/) are met
 2. Clone the repository and `cd` into the directory
-3. Copy `settings.template` to `settings` and [configure](https://cherrykitten.github.io/CharjaBox/#configuration/) everything
+3. Copy `settings/template` to `settings/charjabox` and [configure](https://cherrykitten.github.io/CharjaBox/#configuration/) everything
 4. Create an `inventory` file and add your server's IP/Hostname/Domain
-4. Install needed roles: `ansible-galaxy install -r requirements.yml`
-5. Run the playbook: `ansible-playbook -i inventory -u $USER charjabox.yml`
+5. Install needed roles: `ansible-galaxy install -r requirements.yml`
+6. Run the playbook: `ansible-playbook -i inventory -u $USER charjabox.yml`
 
 You can use the script `charjabox/scripts/initialize.sh` to skip part of steps 3 and 4. This scripts asks you about your server IP, group name and settings folder and creates the files for you automatically.
 

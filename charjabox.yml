@@ -4,7 +4,7 @@
   become: true
   gather_facts: "True"
   vars_files:
-    - "{{ charjabox_settings_path }}/charjabox_general.yml"
+    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
   tags: general
   roles:
     - charjabox_general
@@ -14,8 +14,8 @@
   become: true
   gather_facts: "True"
   vars_files:
-    - "{{ charjabox_settings_path }}/charjabox_general.yml"
-    - "{{ charjabox_settings_path }}/smb.yml"
+    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
+    - "settings/{{ charjabox_settings_path }}/smb.yml"
   roles:
     - role: bertvv.samba
       when: smb_enabled
@@ -37,8 +37,8 @@
   become: true
   gather_facts: "True"
   vars_files:
-    - "{{ charjabox_settings_path }}/charjabox_general.yml"
-    - "{{ charjabox_settings_path }}/nginx.yml"
+    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
+    - "settings/{{ charjabox_settings_path }}/nginx.yml"
   roles:
     - role: nginx
       when: nginx_enabled
@@ -48,8 +48,8 @@
   become: true
   gather_facts: "True"
   vars_files:
-    - "{{ charjabox_settings_path }}/charjabox_general.yml"
-    - "{{ charjabox_settings_path }}/portainer.yml"
+    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
+    - "settings/{{ charjabox_settings_path }}/portainer.yml"
   tags: portainer
   roles:
     - role: portainer
@@ -60,8 +60,8 @@
   become: true
   gather_facts: "True"
   vars_files:
-    - "{{ charjabox_settings_path }}/charjabox_general.yml"
-    - "{{ charjabox_settings_path }}/plex.yml"
+    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
+    - "settings/{{ charjabox_settings_path }}/plex.yml"
   tags: plex
   roles:
     - role: plex
@@ -72,8 +72,8 @@
   become: true
   gather_facts: "True"
   vars_files:
-    - "{{ charjabox_settings_path }}/charjabox_general.yml"
-    - "{{ charjabox_settings_path }}/jellyfin.yml"
+    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
+    - "settings/{{ charjabox_settings_path }}/jellyfin.yml"
   tags: jellyfin
   roles:
     - role: jellyfin
@@ -84,8 +84,8 @@
   become: true
   gather_facts: "True"
   vars_files:
-    - "{{ charjabox_settings_path }}/charjabox_general.yml"
-    - "{{ charjabox_settings_path }}/heimdall.yml"
+    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
+    - "settings/{{ charjabox_settings_path }}/heimdall.yml"
   tags: heimdall
   roles:
     - role: heimdall
@@ -96,8 +96,8 @@
   become: true
   gather_facts: "True"
   vars_files:
-    - "{{ charjabox_settings_path }}/charjabox_general.yml"
-    - "{{ charjabox_settings_path }}/bind.yml"
+    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
+    - "settings/{{ charjabox_settings_path }}/bind.yml"
   tags: bind
   roles:
     - role: bind
@@ -108,8 +108,8 @@
   become: true
   gather_facts: "True"
   vars_files:
-    - "{{ charjabox_settings_path }}/charjabox_general.yml"
-    - "{{ charjabox_settings_path }}/firefly.yml"
+    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
+    - "settings/{{ charjabox_settings_path }}/firefly.yml"
   tags: firefly
   roles:
     - role: firefly
@@ -120,8 +120,8 @@
   become: true
   gather_facts: "True"
   vars_files:
-    - "{{ charjabox_settings_path }}/charjabox_general.yml"
-    - "{{ charjabox_settings_path }}/lancache.yml"
+    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
+    - "settings/{{ charjabox_settings_path }}/lancache.yml"
   tags: lancache
   roles:
     - role: lancache
@@ -132,8 +132,8 @@
   become: true
   gather_facts: "True"
   vars_files:
-    - "{{ charjabox_settings_path }}/charjabox_general.yml"
-    - "{{ charjabox_settings_path }}/dokuwiki.yml"
+    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
+    - "settings/{{ charjabox_settings_path }}/dokuwiki.yml"
   tags: dokuwiki
   roles:
     - role: dokuwiki

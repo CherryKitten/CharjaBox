@@ -84,11 +84,11 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     
 
     <h1 id="configuration">Configuration</h1>
-<p>Configuration is done in multiple files in the <code>settings</code> folder. You should never touch the <code>settings.template</code> folder in normal use.</p>
+<p>Configuration is done in multiple files in a group-specific subfolder of the <code>settings</code> folder. You should never touch the <code>settings/template</code> folder in normal use.</p>
 <p>If you use CharjaBox to set up multiple servers, you can use different settings folders for every server. </p>
 <p>To do this, set different hostnames or groups for your different servers in your <a href="https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#inventory-basics-hosts-and-groups">Inventory</a> and create 
 <code>host_vars/$HOSTNAME</code> or <code>group_vars/$GROUPNAME</code> files for each server/group. </p>
-<p>In those files you can set the <code>charjabox_settings_path</code> variable to a path matching the pattern <code>*.settings</code> and create a copy of <code>settings.template</code> in that path.</p>
+<p>In those files you can change the <code>charjabox_settings_path</code> variable and create a copy of <code>settings/template</code> inside of <code>settings/</code> with the same name as the variable.</p>
 <h2 id="general">General</h2>
 <p><code>charjabox_general.yml</code> includes all general configuration about your server, like Hostnames, Timezones, etc.</p>
 <h2 id="application-settings">Application Settings</h2>

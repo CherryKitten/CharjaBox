@@ -1,4 +1,2 @@
 dokuwiki_enabled: false
 dokuwiki_config_directory: "{{ docker_home }}/dokuwiki/config"
-dokuwiki_http_port: 6009
-dokuwiki_https_port: 6010

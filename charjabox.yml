@@ -39,6 +39,7 @@
   vars_files:
     - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
     - "settings/{{ charjabox_settings_path }}/nginx.yml"
+    - "settings/{{ charjabox_settings_path }}/charjabox_ports.yml"
   roles:
     - role: nginx
       when: nginx_enabled
@@ -50,6 +51,7 @@
   vars_files:
     - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
     - "settings/{{ charjabox_settings_path }}/portainer.yml"
+    - "settings/{{ charjabox_settings_path }}/charjabox_ports.yml"
   tags: portainer
   roles:
     - role: portainer
@@ -74,6 +76,7 @@
   vars_files:
     - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
     - "settings/{{ charjabox_settings_path }}/jellyfin.yml"
+    - "settings/{{ charjabox_settings_path }}/charjabox_ports.yml"
   tags: jellyfin
   roles:
     - role: jellyfin
@@ -86,6 +89,7 @@
   vars_files:
     - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
     - "settings/{{ charjabox_settings_path }}/heimdall.yml"
+    - "settings/{{ charjabox_settings_path }}/charjabox_ports.yml"
   tags: heimdall
   roles:
     - role: heimdall
@@ -98,6 +102,7 @@
   vars_files:
     - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
     - "settings/{{ charjabox_settings_path }}/bind.yml"
+    - "settings/{{ charjabox_settings_path }}/charjabox_ports.yml"
   tags: bind
   roles:
     - role: bind
@@ -110,6 +115,7 @@
   vars_files:
     - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
     - "settings/{{ charjabox_settings_path }}/firefly.yml"
+    - "settings/{{ charjabox_settings_path }}/charjabox_ports.yml"
   tags: firefly
   roles:
     - role: firefly
@@ -122,6 +128,7 @@
   vars_files:
     - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
     - "settings/{{ charjabox_settings_path }}/lancache.yml"
+    - "settings/{{ charjabox_settings_path }}/charjabox_ports.yml"
   tags: lancache
   roles:
     - role: lancache
@@ -134,6 +141,7 @@
   vars_files:
     - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
     - "settings/{{ charjabox_settings_path }}/dokuwiki.yml"
+    - "settings/{{ charjabox_settings_path }}/charjabox_ports.yml"
   tags: dokuwiki
   roles:
     - role: dokuwiki

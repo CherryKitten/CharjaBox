@@ -15,5 +15,6 @@ nav:
       - 'applications/portainer.md'
       - 'applications/plex.md'
       - 'applications/bind.md'
+      - 'applications/dokuwiki.md'
       - 'applications/timemachine.md'
       - 'applications/lancache.md'

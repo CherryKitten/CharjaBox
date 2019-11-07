@@ -22,6 +22,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 * Manual container management using Portainer
 * Home Media Streaming with Plex or Jellyfin
 * Your own wiki using Dokuwiki
+* macOS backups over the network with Time machine over SMB
 * Personal Finance management with Firefly III
 * Local DNS management with BIND
 * Download caching for many CDNs
@@ -37,6 +38,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 * [Nginx](https://www.nginx.com/) - Open source web server and a reverse proxy server
 * [Plex](https://www.plex.tv/) - Your very own personal streaming service
 * [Portainer](https://portainer.io/) - Web Interface for managing Docker containers
+* [Time machine](https://github.com/awlx/samba-timemachine) - Backup your macOS devices over the network
 
 ## Installation
 

@@ -146,3 +146,16 @@
   roles:
     - role: dokuwiki
       when: dokuwiki_enabled
+
+- name: timemachine
+  hosts: all
+  become: true
+  gather_facts: "True"
+  tags: timemachine
+  vars_files:
+    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
+    - "settings/{{ charjabox_settings_path }}/charjabox_ports.yml"
+    - "settings/{{ charjabox_settings_path }}/timemachine.yml"
+  roles:
+    - role: timemachine
+      when: timemachine_enabled

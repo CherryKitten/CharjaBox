@@ -1,0 +1,15 @@
+[Unit]
+Description= timemachine Docker Service
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutSec=infinity
+Restart=always
+RestartSec=5
+
+ExecStart=/usr/bin/docker-compose -f {{ docker_compose_dir }}/timemachine/docker-compose.timemachine.yml -p "Timemachine" up
+ExecStop=/usr/bin/docker-compose -f {{ docker_compose_dir }}/timemachine/docker-compose.timemachine.yml -p "Timemachine" stop
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,46 @@
+---
+- name: create timemachine directory
+  file:
+    path: "{{ timemachine_data_directory }}"
+    state: directory
+
+- name: create timemachine docker-compose directory
+  file:
+    path: "{{ docker_compose_dir }}/timemachine"
+    state: directory
+
+- name: copy docker-compose.yml for timemachine
+  template:
+    src: docker-compose.timemachine.yml.j2
+    dest: "{{ docker_compose_dir }}/timemachine/docker-compose.timemachine.yml"
+
+- name: configure timemachine systemd service
+  template:
+    src: timemachine.service.j2
+    dest: /etc/systemd/system/timemachine.service
+
+- name: Install avahi
+  apt:
+    name: "avahi-daemon"
+    state: present
+  register: result
+  until: result is succeeded
+
+- name: Setup timemachine service for avahi
+  template:
+    src: timemachine.avahi.service.j2
+    dest: "/etc/avahi/services/timemachine.service"
+
+- name: Reload avahi configuration
+  systemd:
+    name: avahi-daemon
+    enabled: "yes"
+    daemon-reload: "yes"
+    state: reloaded
+
+- name: start timemachine
+  systemd:
+    name: timemachine
+    enabled: "yes"
+    daemon-reload: "yes"
+    state: started

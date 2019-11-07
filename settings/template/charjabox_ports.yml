@@ -8,7 +8,6 @@ firefly_port: 4005
 heimdall_http_port: 4000
 heimdall_https_port: 4001
 
-
 jellyfin_http_port: 6005
 jellyfin_https_port: 6006
 
@@ -18,3 +17,5 @@ nginx_http_port: 80
 nginx_https_port: 443
 
 portainer_port: 9000
+
+timemachine_port: 10445

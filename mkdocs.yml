@@ -13,6 +13,7 @@ nav:
   - Applications:
       - 'applications/nginx.md'
       - 'applications/portainer.md'
+      - 'applications/smb.md'
       - 'applications/plex.md'
       - 'applications/bind.md'
       - 'applications/dokuwiki.md'

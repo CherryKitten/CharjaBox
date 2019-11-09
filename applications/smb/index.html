@@ -11,7 +11,7 @@
     
     <link rel="shortcut icon" href="../../img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Plex - CharjaBox</title>
+    <title>Samba - CharjaBox</title>
     <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="../../css/base.css" rel="stylesheet">
@@ -32,7 +32,7 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Plex", url: "#_top", children: [
+          {title: "Samba", url: "#_top", children: [
           ]},
         ];
 
@@ -60,20 +60,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../bind/" class="btn btn-xs btn-default pull-right">
+      <a href="../plex/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../bind/" class="btn btn-xs btn-link">
-        BIND
+      <a href="../plex/" class="btn btn-xs btn-link">
+        Plex
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../smb/" class="btn btn-xs btn-default pull-left">
+      <a href="../portainer/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../smb/" class="btn btn-xs btn-link">
-        Samba
+        Previous</a><a href="../portainer/" class="btn btn-xs btn-link">
+        Portainer
       </a>
     </div>
     
@@ -81,12 +81,35 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="plex">Plex</h1>
-<p><a href="https://www.plex.tv/">Plex</a> - Your very own personal streaming service</p>
-<p>You can set the paths to your media folders in the variables <code>plex_music_directory</code>, <code>plex_tv_directory</code>, and <code>plex_movies_directory</code>. </p>
-<p>To automatically add your server to your account, generate a claim token <a href="https://www.plex.tv/claim/">here</a> and insert that token into the <code>plex_token</code> variable. Please note that the claim token expires after 5 minutes, so generate it right before running the playbook.</p>
-<p>After the server is set up you can visit the Plex webinterface via <a href="https://app.plex.tv/desktop">the official Plex website</a> or port <code>32400</code> on your server. Changing the port for Plex can lead to some difficulties with the apps, so it is not encouraged to do that.</p>
-<p>Once you are on the webinterface, you can do your first time setup and let Plex scan through your media files.</p>
+    <h1 id="samba">Samba</h1>
+<p>CharjaBox uses the <a href="https://github.com/bertvv/ansible-role-samba">bertvv.samba role</a> to set up and configure SMB.</p>
+<p>Your shares are set up in <code>smb.yml</code> in your settings folder. The default/example setup looks like this and sets up a "Media" Share readable and writable by guests:</p>
+<pre><code>samba_shares:
+  - name: Media 
+    comment: 'Media Share'
+    guest_ok: yes
+    public: yes
+    writable: yes
+    browsable: yes
+    path: &quot;/mnt/Media&quot;
+</code></pre>
+
+<p>These are the most important options:</p>
+<pre><code>  - name (required): Name of your share
+    comment: 'Comment to describe your share'
+    guest_ok: yes/no # Allow guest access
+    public: yes/no # Controls read access for guest users
+    writable: yes/no # Writable for guests.
+    browsable: yes/no # Controls whether this share appears in file browser.
+    path: &quot;/mnt/Media&quot; # Path to the share
+    group: $group # The user group files in the share will be added to.
+    owner: $user # The owner of the share path
+    valid_users: $user # Controls read access for registered users. Use the syntax of the corresponding Samba setting.
+    write_list: $user # Controls write access for registered users. Use the syntax of the corresponding Samba setting.
+</code></pre>
+
+<p>For more options and information read the <a href="https://github.com/bertvv/ansible-role-samba#defining-shares">README</a> for the SMB role.</p>
+<p>If you can't access your Shares on a recent Mac, try setting <code>samba_mitigate_cve_2017_7494</code> to <code>false</code>.</p>
 
   <br>
     
@@ -99,20 +122,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../bind/" class="btn btn-xs btn-default pull-right">
+      <a href="../plex/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../bind/" class="btn btn-xs btn-link">
-        BIND
+      <a href="../plex/" class="btn btn-xs btn-link">
+        Plex
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../smb/" class="btn btn-xs btn-default pull-left">
+      <a href="../portainer/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../smb/" class="btn btn-xs btn-link">
-        Samba
+        Previous</a><a href="../portainer/" class="btn btn-xs btn-link">
+        Portainer
       </a>
     </div>
     
@@ -123,7 +146,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
 <footer class="col-md-12 wm-page-content">
       <p>
-        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/applications/plex.md"><i class="fa fa-github"></i>
+        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/applications/smb.md"><i class="fa fa-github"></i>
 Edit on GitHub</a>
       </p>
   <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/CherryKitten/CharjaBox/">Windmill Dark</a> theme by CherryKitten (noraj).</p>

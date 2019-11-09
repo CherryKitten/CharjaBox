@@ -14,6 +14,7 @@
   vars_files:
     - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
     - "settings/{{ charjabox_settings_path }}/smb.yml"
+  tags: smb
   roles:
     - role: bertvv.samba
       when: smb_enabled

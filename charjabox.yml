@@ -1,9 +1,15 @@
 ---
+- name: include vars
+  hosts: all
+  tasks:
+    - name: include vars
+      include_vars:
+        dir: "settings/{{ charjabox_settings_path }}"
+  tags: always
+
 - name: general setup
   hosts: all
   become: true
-  vars_files:
-    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
   tags: general
   roles:
     - charjabox_general
@@ -11,9 +17,6 @@
 - name: smb
   hosts: all
   become: true
-  vars_files:
-    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
-    - "settings/{{ charjabox_settings_path }}/smb.yml"
   tags: smb
   roles:
     - role: bertvv.samba
@@ -33,10 +36,6 @@
 - name: nginx
   hosts: all
   become: true
-  vars_files:
-    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
-    - "settings/{{ charjabox_settings_path }}/nginx.yml"
-    - "settings/{{ charjabox_settings_path }}/charjabox_ports.yml"
   roles:
     - role: nginx
       when: nginx_enabled
@@ -44,10 +43,6 @@
 - name: portainer
   hosts: all
   become: true
-  vars_files:
-    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
-    - "settings/{{ charjabox_settings_path }}/portainer.yml"
-    - "settings/{{ charjabox_settings_path }}/charjabox_ports.yml"
   tags: portainer
   roles:
     - role: portainer
@@ -56,9 +51,6 @@
 - name: plex
   hosts: all
   become: true
-  vars_files:
-    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
-    - "settings/{{ charjabox_settings_path }}/plex.yml"
   tags: plex
   roles:
     - role: plex
@@ -67,10 +59,6 @@
 - name: jellyfin
   hosts: all
   become: true
-  vars_files:
-    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
-    - "settings/{{ charjabox_settings_path }}/jellyfin.yml"
-    - "settings/{{ charjabox_settings_path }}/charjabox_ports.yml"
   tags: jellyfin
   roles:
     - role: jellyfin
@@ -79,10 +67,6 @@
 - name: heimdall
   hosts: all
   become: true
-  vars_files:
-    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
-    - "settings/{{ charjabox_settings_path }}/heimdall.yml"
-    - "settings/{{ charjabox_settings_path }}/charjabox_ports.yml"
   tags: heimdall
   roles:
     - role: heimdall
@@ -91,10 +75,6 @@
 - name: bind
   hosts: all
   become: true
-  vars_files:
-    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
-    - "settings/{{ charjabox_settings_path }}/bind.yml"
-    - "settings/{{ charjabox_settings_path }}/charjabox_ports.yml"
   tags: bind
   roles:
     - role: bind
@@ -103,10 +83,6 @@
 - name: firefly
   hosts: all
   become: true
-  vars_files:
-    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
-    - "settings/{{ charjabox_settings_path }}/firefly.yml"
-    - "settings/{{ charjabox_settings_path }}/charjabox_ports.yml"
   tags: firefly
   roles:
     - role: firefly
@@ -115,10 +91,6 @@
 - name: lancache
   hosts: all
   become: true
-  vars_files:
-    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
-    - "settings/{{ charjabox_settings_path }}/lancache.yml"
-    - "settings/{{ charjabox_settings_path }}/charjabox_ports.yml"
   tags: lancache
   roles:
     - role: lancache
@@ -127,10 +99,6 @@
 - name: dokuwiki
   hosts: all
   become: true
-  vars_files:
-    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
-    - "settings/{{ charjabox_settings_path }}/dokuwiki.yml"
-    - "settings/{{ charjabox_settings_path }}/charjabox_ports.yml"
   tags: dokuwiki
   roles:
     - role: dokuwiki
@@ -140,10 +108,6 @@
   hosts: all
   become: true
   tags: timemachine
-  vars_files:
-    - "settings/{{ charjabox_settings_path }}/charjabox_general.yml"
-    - "settings/{{ charjabox_settings_path }}/charjabox_ports.yml"
-    - "settings/{{ charjabox_settings_path }}/timemachine.yml"
   roles:
     - role: timemachine
       when: timemachine_enabled

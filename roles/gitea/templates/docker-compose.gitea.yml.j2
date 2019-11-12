@@ -1,0 +1,21 @@
+---
+version: '3'
+
+services:
+  gitea:
+    image: gitea/gitea:latest
+    restart: unless-stopped
+    ports:
+      - "{{ gitea_http_port }}:3000"
+      - "{{ gitea_ssh_port }}:22"
+    volumes:
+      - {{ gitea_data_directory }}:/data
+    environment:
+      -  APP_NAME="{{ gitea_appname }}"
+      -  RUN_MODE="{{ gitea_runmode }}"
+      -  SSH_DOMAIN="{{ gitea_domain }}"
+      -  SSH_PORT={{ gitea_ssh_port }}
+      -  DISABLE_SSH={{ gitea_disable_ssh }}
+      -  ROOT_URL="http://{{ gitea_domain }}:{{ gitea_http_port }}"
+      -  DISABLE_REGISTRATION={{ gitea_disable_registrations }}
+      -  REQUIRE_SIGNIN_VIEW={{ gitea_require_signin }}

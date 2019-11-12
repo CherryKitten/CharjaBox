@@ -5,6 +5,9 @@ dokuwiki_https_port: 6010
 
 firefly_port: 4005
 
+gitea_http_port: 3000
+gitea_ssh_port: 222
+
 heimdall_http_port: 4000
 heimdall_https_port: 4001
 

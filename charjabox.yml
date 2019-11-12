@@ -111,3 +111,11 @@
   roles:
     - role: timemachine
       when: timemachine_enabled
+
+- name: gitea
+  hosts: all
+  become: true
+  tags: gitea
+  roles:
+    - role: gitea
+      when: gitea_enabled

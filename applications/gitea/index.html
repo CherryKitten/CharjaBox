@@ -11,7 +11,7 @@
     
     <link rel="shortcut icon" href="../../img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Time machine - CharjaBox</title>
+    <title>Gitea - CharjaBox</title>
     <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="../../css/base.css" rel="stylesheet">
@@ -32,7 +32,7 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Time machine", url: "#_top", children: [
+          {title: "Gitea", url: "#_top", children: [
           ]},
         ];
 
@@ -60,20 +60,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../gitea/" class="btn btn-xs btn-default pull-right">
+      <a href="../lancache/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../gitea/" class="btn btn-xs btn-link">
-        Gitea
+      <a href="../lancache/" class="btn btn-xs btn-link">
+        Lancache
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../dokuwiki/" class="btn btn-xs btn-default pull-left">
+      <a href="../timemachine/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../dokuwiki/" class="btn btn-xs btn-link">
-        Dokuwiki
+        Previous</a><a href="../timemachine/" class="btn btn-xs btn-link">
+        Time machine
       </a>
     </div>
     
@@ -81,12 +81,17 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="time-machine">Time machine</h1>
-<p><a href="https://github.com/awlx/samba-timemachine">Time machine</a> - Backup your macOS devices over the network</p>
-<p>Time machine makes it possible to backup your macOS devices over the network.</p>
-<p>Set <code>timemachine_sharename</code> to configure the name you see when configuring time machine.</p>
-<p>Please set <code>timemachine_password</code> to something random. This is the password you use to connect to the time machine server. The user name is <code>timemachine</code>.</p>
-<p><code>timemachine_sizelimit</code> is the maximum amount of space Time Machine can use for backups in <code>MB</code>. <code>0</code> means no limit.</p>
+    <h1 id="gitea">Gitea</h1>
+<p><a href="https://gitea.io/">Gitea</a> - Git with a cup of tea</p>
+<p>Visit <code>http://$YourIP:$YourPort/install</code> after activating Gitea to complete the installation process.</p>
+<p>You can use the following settings to customize your Gitea installation:</p>
+<pre><code>gitea_appname: &quot;The name shown on your Gitea page&quot;
+gitea_runmode: &quot;prod or dev, use dev for testing and prod for actual use&quot;
+gitea_domain: &quot;Domain for your gitea instance&quot;
+gitea_disable_ssh: &quot;true/false&quot;
+gitea_disable_registrations: &quot;true/false&quot;
+gitea_require_signin: &quot;true/false&quot; When set to true, you can't access public projects without signing in.
+</code></pre>
 
   <br>
     
@@ -99,20 +104,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../gitea/" class="btn btn-xs btn-default pull-right">
+      <a href="../lancache/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../gitea/" class="btn btn-xs btn-link">
-        Gitea
+      <a href="../lancache/" class="btn btn-xs btn-link">
+        Lancache
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../dokuwiki/" class="btn btn-xs btn-default pull-left">
+      <a href="../timemachine/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../dokuwiki/" class="btn btn-xs btn-link">
-        Dokuwiki
+        Previous</a><a href="../timemachine/" class="btn btn-xs btn-link">
+        Time machine
       </a>
     </div>
     
@@ -123,7 +128,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
 <footer class="col-md-12 wm-page-content">
       <p>
-        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/applications/timemachine.md"><i class="fa fa-github"></i>
+        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/applications/gitea.md"><i class="fa fa-github"></i>
 Edit on GitHub</a>
       </p>
   <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/CherryKitten/CharjaBox/">Windmill Dark</a> theme by CherryKitten (noraj).</p>

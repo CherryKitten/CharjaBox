@@ -18,4 +18,5 @@ nav:
       - 'applications/bind.md'
       - 'applications/dokuwiki.md'
       - 'applications/timemachine.md'
+      - 'applications/gitea.md'
       - 'applications/lancache.md'

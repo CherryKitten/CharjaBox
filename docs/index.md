@@ -21,4 +21,5 @@ I will add more information, documentation and features soon
 * macOS backups over the network with Timemachine over SMB
 * Personal Finance management with Firefly III
 * Local DNS management with BIND
+* Hosting your own git repositories
 * Download caching for many CDNs

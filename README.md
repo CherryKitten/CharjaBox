@@ -25,6 +25,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 * macOS backups over the network with Time machine over SMB
 * Personal Finance management with Firefly III
 * Local DNS management with BIND
+* Hosting your own git repositories
 * Download caching for many CDNs
 
 ### Applications
@@ -32,6 +33,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 * [BIND](https://www.isc.org/bind/) - Domain Name Server for your home network
 * [Dokuwiki](https://www.dokuwiki.org/dokuwiki) - Simple to use and highly versatile Open Source wiki software that doesn't require a database
 * [Firefly III](https://firefly-iii.org/) - Free and open source personal finance manager
+* [Gitea](https://gitea.io/) - Git with a cup of tea
 * [Heimdall](https://heimdall.site/) - Application Dashboard for easy access to all your services
 * [Jellyfin](http://jellyfin.org/) - The Free Software Media System
 * [Lancache](https://github.com/lancachenet/monolithic) - Cache your video game downloads and operating system updates so you only have to download them once

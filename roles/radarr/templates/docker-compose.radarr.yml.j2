@@ -1,0 +1,13 @@
+---
+version: '3'
+
+services:
+  radarr:
+    image: linuxserver/radarr
+    restart: unless-stopped
+    ports:
+      - {{ radarr_port }}:7878
+    volumes:
+      - {{ radarr_config_directory }}:/config
+      - {{ radarr_data_directory }}:/downloads
+      - {{ charjabox_movies_directory }}:/movies

@@ -1,0 +1,30 @@
+---
+- name: create radarr directories
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "{{ radarr_data_directory }}"
+    - "{{ radarr_config_directory }}"
+
+- name: create radarr docker-compose directory
+  file:
+    path: "{{ docker_compose_dir }}/radarr"
+    state: directory
+
+- name: copy docker-compose.yml for radarr
+  template:
+    src: docker-compose.radarr.yml.j2
+    dest: "{{ docker_compose_dir }}/radarr/docker-compose.radarr.yml"
+
+- name: configure radarr systemd service
+  template:
+    src: radarr.service.j2
+    dest: /etc/systemd/system/radarr.service
+
+- name: start radarr
+  systemd:
+    name: radarr
+    enabled: "yes"
+    daemon-reload: "yes"
+    state: started

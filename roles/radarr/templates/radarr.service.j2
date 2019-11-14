@@ -1,0 +1,15 @@
+[Unit]
+Description= Radarr Docker Service
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutSec=infinity
+Restart=always
+RestartSec=5
+
+ExecStart=/usr/bin/docker-compose -f {{ docker_compose_dir }}/radarr/docker-compose.radarr.yml -p "Radarr" up
+ExecStop=/usr/bin/docker-compose -f {{ docker_compose_dir }}/radarr/docker-compose.radarr.yml -p "Radarr" stop
+
+[Install]
+WantedBy=multi-user.target

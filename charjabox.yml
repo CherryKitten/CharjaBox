@@ -127,3 +127,11 @@
   roles:
     - role: jackett
       when: jackett_enabled
+
+- name: radarr
+  hosts: all
+  become: true
+  tags: radarr
+  roles:
+    - role: radarr
+      when: radarr_enabled

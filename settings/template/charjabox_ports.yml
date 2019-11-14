@@ -23,4 +23,6 @@ nginx_https_port: 443
 
 portainer_port: 9000
 
+radarr_port: 7878
+
 timemachine_port: 10445

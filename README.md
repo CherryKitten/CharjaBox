@@ -21,6 +21,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 * Samba Sharing
 * Manual container management using Portainer
 * Home Media Streaming with Plex or Jellyfin
+* Media management with Sonarr, Radarr and Lidarr
 * Your own wiki using Dokuwiki
 * macOS backups over the network with Time machine over SMB
 * Personal Finance management with Firefly III
@@ -38,6 +39,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 * [Jackett](https://github.com/Jackett/Jackett) - API Support for your favorite torrent trackers.
 * [Jellyfin](http://jellyfin.org/) - The Free Software Media System
 * [Lancache](https://github.com/lancachenet/monolithic) - Cache your video game downloads and operating system updates so you only have to download them once
+* [Lidarr](https://lidarr.audio/) - Manage your music collection
 * [Nginx](https://www.nginx.com/) - Open source web server and a reverse proxy server
 * [Plex](https://www.plex.tv/) - Your very own personal streaming service
 * [Portainer](https://portainer.io/) - Web Interface for managing Docker containers

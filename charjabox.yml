@@ -143,3 +143,11 @@
   roles:
     - role: sonarr
       when: sonarr_enabled
+
+- name: lidarr
+  hosts: all
+  become: true
+  tags: lidarr
+  roles:
+    - role: lidarr
+      when: lidarr_enabled

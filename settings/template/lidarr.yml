@@ -1,0 +1,4 @@
+lidarr_enabled: false
+
+lidarr_config_directory: "{{ docker_home }}/lidarr/config"
+lidarr_data_directory: "{{ docker_home }}/lidarr/data"

@@ -23,6 +23,8 @@ nginx_https_port: 443
 
 portainer_port: 9000
 
+lidarr_port: 8686
+
 radarr_port: 7878
 
 sonarr_port: 8989

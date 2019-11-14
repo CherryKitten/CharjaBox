@@ -1,8 +1,8 @@
 plex_enabled: false
 
 plex_config_directory: "{{ docker_home }}/plex/config"
-plex_music_directory: "/path/to/music"
-plex_tv_directory: "/path/to/tv"
-plex_movies_directory: "/path/to/movies"
+plex_music_directory: "{{ charjabox_music_directory }}"
+plex_tv_directory: "{{ charjabox_tv_directory }}"
+plex_movies_directory: "{{ charjabox_movies_directory }}"
 
 plex_token: ""

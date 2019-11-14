@@ -20,3 +20,5 @@ nav:
       - 'applications/timemachine.md'
       - 'applications/gitea.md'
       - 'applications/lancache.md'
+      - Media management:
+          - 'applications/jackett.md'

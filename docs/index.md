@@ -17,6 +17,7 @@ I will add more information, documentation and features soon
 * Samba Sharing
 * Manual container management using Portainer
 * Home Media Streaming with Plex or Jellyfin
+* Media management with Sonarr, Radarr and Lidarr
 * Your own wiki using Dokuwiki
 * macOS backups over the network with Timemachine over SMB
 * Personal Finance management with Firefly III

@@ -23,4 +23,5 @@ nav:
       - Media management:
           - 'applications/jackett.md'
           - 'applications/radarr.md'
+          - 'applications/sonarr.md'
           - 'applications/lidarr.md'

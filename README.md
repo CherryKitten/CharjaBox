@@ -44,6 +44,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 * [Plex](https://www.plex.tv/) - Your very own personal streaming service
 * [Portainer](https://portainer.io/) - Web Interface for managing Docker containers
 * [Radarr](https://radarr.video/#home) - Manage your movie collection
+* [Sonarr](https://sonarr.tv/) - Manage your TV collection
 * [Time machine](https://github.com/awlx/samba-timemachine) - Backup your macOS devices over the network
 
 ## Installation

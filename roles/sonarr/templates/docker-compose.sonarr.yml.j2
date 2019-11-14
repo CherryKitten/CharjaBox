@@ -1,0 +1,13 @@
+---
+version: '3'
+
+services:
+  sonarr:
+    image: linuxserver/sonarr
+    restart: unless-stopped
+    ports:
+      - {{ sonarr_port }}:8989
+    volumes:
+      - {{ sonarr_config_directory }}:/config
+      - {{ sonarr_data_directory }}:/downloads
+      - {{ charjabox_tv_directory }}:/tv

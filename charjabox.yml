@@ -135,3 +135,11 @@
   roles:
     - role: radarr
       when: radarr_enabled
+
+- name: sonarr
+  hosts: all
+  become: true
+  tags: sonarr
+  roles:
+    - role: sonarr
+      when: sonarr_enabled

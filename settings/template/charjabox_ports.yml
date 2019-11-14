@@ -25,4 +25,6 @@ portainer_port: 9000
 
 radarr_port: 7878
 
+sonarr_port: 8989
+
 timemachine_port: 10445

@@ -1,0 +1,15 @@
+[Unit]
+Description= Sonarr Docker Service
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutSec=infinity
+Restart=always
+RestartSec=5
+
+ExecStart=/usr/bin/docker-compose -f {{ docker_compose_dir }}/sonarr/docker-compose.sonarr.yml -p "Sonarr" up
+ExecStop=/usr/bin/docker-compose -f {{ docker_compose_dir }}/sonarr/docker-compose.sonarr.yml -p "Sonarr" stop
+
+[Install]
+WantedBy=multi-user.target

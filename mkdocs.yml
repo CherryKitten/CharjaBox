@@ -22,4 +22,5 @@ nav:
       - 'applications/lancache.md'
       - Media management:
           - 'applications/jackett.md'
+          - 'applications/radarr.md'
           - 'applications/lidarr.md'

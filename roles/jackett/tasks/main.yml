@@ -1,0 +1,30 @@
+---
+- name: create jackett directories
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "{{ jackett_data_directory }}"
+    - "{{ jackett_config_directory }}"
+
+- name: create jackett docker-compose directory
+  file:
+    path: "{{ docker_compose_dir }}/jackett"
+    state: directory
+
+- name: copy docker-compose.yml for jackett
+  template:
+    src: docker-compose.jackett.yml.j2
+    dest: "{{ docker_compose_dir }}/jackett/docker-compose.jackett.yml"
+
+- name: configure jackett systemd service
+  template:
+    src: jackett.service.j2
+    dest: /etc/systemd/system/jackett.service
+
+- name: start jackett
+  systemd:
+    name: jackett
+    enabled: "yes"
+    daemon-reload: "yes"
+    state: started

@@ -119,3 +119,11 @@
   roles:
     - role: gitea
       when: gitea_enabled
+
+- name: jackett
+  hosts: all
+  become: true
+  tags: jackett
+  roles:
+    - role: jackett
+      when: jackett_enabled

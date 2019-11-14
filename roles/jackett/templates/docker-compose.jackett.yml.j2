@@ -1,0 +1,12 @@
+---
+version: '3'
+
+services:
+  jackett:
+    image: linuxserver/jackett
+    restart: unless-stopped
+    ports:
+      - {{ jackett_port }}:9117
+    volumes:
+      - {{ jackett_config_directory }}:/config
+      - {{ jackett_data_directory }}:/downloads

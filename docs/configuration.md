@@ -19,3 +19,36 @@ In those files you can change the `charjabox_settings_path` variable and set you
 ## Application Settings
 
 Every application has it's own settings file, where you can enable the Application and apply App-specific configuration.
+
+# Example
+
+I have a local server currently running Portainer, Heimdall, Nginx and Plex. I called the group `production` to differentiate it from a testing server. 
+
+The inventory file looks like this:
+
+```
+[production]
+192.168.1.22
+[testing]
+192.168.1.33
+[someothergroup]
+192.168.1.42
+
+```
+
+The group name `production` tells Ansible to look for the file `group_vars/production.yml`, which looks like this:
+
+```
+charjabox_settings_path: "production"
+
+```
+
+This variable tells the playbook to look for custom variables in `settings/production`, where I have the following files containing custom settings:
+
+```
+charjabox_general.yml
+heimdall.yml
+nginx.yml
+plex.yml
+portainer.yml
+```

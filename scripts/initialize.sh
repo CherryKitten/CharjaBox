@@ -11,7 +11,7 @@ if [[ ! -f inventory ]]; then
   read -p "How should your settings folder be called? (This folder will be created as a subfolder of settings/) " settingsname
   printf "[$groupname]\n$serverip\n" > inventory
   printf "charjabox_settings_path: \"$settingsname\"\n" > group_vars/$groupname.yml
-  cp -r settings/template/ settings/$settingsname/
+  cp -r settings/defaults/ settings/$settingsname/
 else
   echo "It seems like you have already initialized CharjaBox. This script is for initializing a clean setup directly after cloning."
 fi

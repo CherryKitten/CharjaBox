@@ -39,7 +39,7 @@ site/
 # CharjaBox
 inventory
 settings/*
-!settings/template
+!settings/defaults
 group_vars/*
 host_vars/*
 !group_vars/all.yml

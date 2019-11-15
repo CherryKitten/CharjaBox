@@ -16,6 +16,8 @@ In those files you can change the `charjabox_settings_path` variable and set you
 
 `charjabox_general.yml` includes all general configuration about your server, like Hostnames, Timezones, etc.
 
+`charjabox_ports.yml` includes all the ports for the applications in one place.
+
 ## Application Settings
 
 Every application has it's own settings file, where you can enable the Application and apply App-specific configuration.

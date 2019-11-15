@@ -36,6 +36,8 @@
               {title: "General", url: "#general" },
               {title: "Application Settings", url: "#application-settings" },
           ]},
+          {title: "Example", url: "#example", children: [
+          ]},
         ];
 
     </script>
@@ -93,8 +95,33 @@ Every file ending in <code>.yml</code> inside of <code>settings/$YOURSETTINGS</c
 <p>In those files you can change the <code>charjabox_settings_path</code> variable and set your settings in a folder inside of <code>settings/</code> with the same name as the variable.</p>
 <h2 id="general">General</h2>
 <p><code>charjabox_general.yml</code> includes all general configuration about your server, like Hostnames, Timezones, etc.</p>
+<p><code>charjabox_ports.yml</code> includes all the ports for the applications in one place.</p>
 <h2 id="application-settings">Application Settings</h2>
 <p>Every application has it's own settings file, where you can enable the Application and apply App-specific configuration.</p>
+<h1 id="example">Example</h1>
+<p>I have a local server currently running Portainer, Heimdall, Nginx and Plex. I called the group <code>production</code> to differentiate it from a testing server. </p>
+<p>The inventory file looks like this:</p>
+<pre><code>[production]
+192.168.1.22
+[testing]
+192.168.1.33
+[someothergroup]
+192.168.1.42
+
+</code></pre>
+
+<p>The group name <code>production</code> tells Ansible to look for the file <code>group_vars/production.yml</code>, which looks like this:</p>
+<pre><code>charjabox_settings_path: &quot;production&quot;
+
+</code></pre>
+
+<p>This variable tells the playbook to look for custom variables in <code>settings/production</code>, where I have the following files containing custom settings:</p>
+<pre><code>charjabox_general.yml
+heimdall.yml
+nginx.yml
+plex.yml
+portainer.yml
+</code></pre>
 
   <br>
     

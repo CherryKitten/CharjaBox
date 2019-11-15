@@ -4,15 +4,15 @@
 
 <img src='docs/img/mascot.png' alt='CharjaBox mascot' width="100"/>
 
-Work in progress Ansible based Homeserver setup using Docker.
+Ansible based Homeserver setup using Docker.
 
 Inspired by [Ansible NAS](https://github.com/davestephens/ansible-nas) and [HomelabOS](https://gitlab.com/NickBusey/HomelabOS)
 
 ## What is this?
 
-In the future this maybe could be a simple solution to quickly deploy a homeserver using Ansible and Docker.
-At the moment it can share files via SMB and create a Portainer container for managing Docker containers. But this is only the beginning.
-I will add more information, ~~documentation~~ and features soon
+CharjaBox is an Ansible playbook that can be used to easily deploy your Homeserver setup.
+
+All supported applications can be installed on your server using Docker by simply changing some variables and running the playbook.
 
 Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 
@@ -28,6 +28,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 * Local DNS management with BIND
 * Hosting your own git repositories
 * Download caching for many CDNs
+* and more...
 
 ### Applications
 

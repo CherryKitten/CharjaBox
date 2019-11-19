@@ -4,6 +4,7 @@ version: '3'
 services:
   bind:
     image: sameersbn/bind:9.11.3-20190706
+    container_name: BIND
     restart: unless-stopped
     ports:
       - "53:53/udp"

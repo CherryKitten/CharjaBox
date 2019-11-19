@@ -4,6 +4,7 @@ version: '3'
 services:
   heimdall:
     image: linuxserver/heimdall:latest
+    container_name: Heimdall
     restart: unless-stopped
     ports:
       - {{ heimdall_http_port }}:80

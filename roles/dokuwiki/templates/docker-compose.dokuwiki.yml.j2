@@ -4,6 +4,7 @@ version: '3'
 services:
   dokuwiki:
     image: linuxserver/dokuwiki:latest
+    container_name: Dokuwiki
     restart: unless-stopped
     ports:
       - {{ dokuwiki_http_port }}:80

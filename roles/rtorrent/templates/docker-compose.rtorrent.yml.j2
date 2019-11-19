@@ -4,6 +4,7 @@ version: '3'
 services:
   rtorrent:
     image: linuxserver/rutorrent
+    container_name: Rtorrent
     restart: unless-stopped
     ports:
       - {{ rtorrent_http_port }}:80

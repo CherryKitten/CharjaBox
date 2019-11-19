@@ -8,6 +8,7 @@ networks:
 services:
   firefly_iii_app:
     image: jc5x/firefly-iii
+    container_name: Firefly
     restart: unless-stopped
     ports:
       - {{ firefly_port }}:80

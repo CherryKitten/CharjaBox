@@ -4,6 +4,7 @@ version: '3'
 services:
   nginx:
     image: nginx
+    container_name: Nginx
     restart: unless-stopped
     ports:
       - {{ nginx_http_port }}:80

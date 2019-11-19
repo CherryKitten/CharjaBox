@@ -4,6 +4,7 @@ version: '3'
 services:
   lancache:
     image: lancachenet/monolithic:latest
+    container_name: Lancache
     restart: unless-stopped
     ports:
       - {{ lancache_port }}:80
@@ -17,6 +18,7 @@ services:
 {% if lancache_dns_enabled %}
   dns:
     image: lancachenet-dns
+    container_name: Lancache-DNS
     restart: unless-stopped
     ports:
       53:53/udp

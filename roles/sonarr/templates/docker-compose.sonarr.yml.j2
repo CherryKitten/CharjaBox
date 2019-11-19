@@ -4,6 +4,7 @@ version: '3'
 services:
   sonarr:
     image: linuxserver/sonarr
+    container_name: Sonarr
     restart: unless-stopped
     ports:
       - {{ sonarr_port }}:8989

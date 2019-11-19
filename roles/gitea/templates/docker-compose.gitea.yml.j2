@@ -4,6 +4,7 @@ version: '3'
 services:
   gitea:
     image: gitea/gitea:latest
+    container_name: Gitea
     restart: unless-stopped
     ports:
       - "{{ gitea_http_port }}:3000"

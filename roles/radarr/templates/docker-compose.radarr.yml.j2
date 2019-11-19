@@ -4,6 +4,7 @@ version: '3'
 services:
   radarr:
     image: linuxserver/radarr
+    container_name: Radarr
     restart: unless-stopped
     ports:
       - {{ radarr_port }}:7878

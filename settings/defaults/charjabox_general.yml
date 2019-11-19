@@ -30,6 +30,7 @@ docker_compose_dir: /opt/docker-compose
 
 # Default Media folders
 
+charjabox_downloads_directory: /path/to/downloads
 charjabox_music_directory: /path/to/music
 charjabox_movies_directory: /path/to/movies
 charjabox_tv_directory: /path/to/tv

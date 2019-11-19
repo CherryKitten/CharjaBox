@@ -154,3 +154,11 @@
   roles:
     - role: lidarr
       when: lidarr_enabled
+
+- name: rtorrent
+  hosts: all
+  become: true
+  tags: rtorrent
+  roles:
+    - role: rtorrent
+      when: rtorrent_enabled

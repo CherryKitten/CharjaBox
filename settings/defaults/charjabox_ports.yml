@@ -23,6 +23,12 @@ nginx_https_port: 443
 
 portainer_port: 9000
 
+rtorrent_http_port: 7991
+rtorrent_https_port: 7992
+rtorrent_scgi_port: 5000
+rtorrent_bittorrent_port: 51413
+rtorrent_bittorrent_port2: 6881
+
 lidarr_port: 8686
 
 radarr_port: 7878

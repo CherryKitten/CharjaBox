@@ -1,0 +1,16 @@
+---
+version: '3'
+
+services:
+  rtorrent:
+    image: linuxserver/rutorrent
+    restart: unless-stopped
+    ports:
+      - {{ rtorrent_http_port }}:80
+      - {{ rtorrent_https_port }}:443
+      - {{ rtorrent_scgi_port }}:5000
+      - {{ rtorrent_bittorrent_port }}:51413
+      - {{ rtorrent_bittorrent_port2 }}:6881/udp
+    volumes:
+      - {{ rtorrent_config_directory }}:/config
+      - {{ rtorrent_download_directory }}:/downloads

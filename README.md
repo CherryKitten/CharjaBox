@@ -22,6 +22,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 * Manual container management using Portainer
 * Home Media Streaming with Plex or Jellyfin
 * Media management with Sonarr, Radarr and Lidarr
+* Torrenting via r(u)Torrent
 * Your own wiki using Dokuwiki
 * macOS backups over the network with Time machine over SMB
 * Personal Finance management with Firefly III
@@ -45,6 +46,8 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 * [Plex](https://www.plex.tv/) - Your very own personal streaming service
 * [Portainer](https://portainer.io/) - Web Interface for managing Docker containers
 * [Radarr](https://radarr.video/#home) - Manage your movie collection
+* [rtorrent](https://github.com/rakshasa/rtorrent) - Text-based ncurses BitTorrent client
+* [ruTorrent](https://github.com/Novik/ruTorrent) - Web front-end for the popular Bittorrent client rtorrent
 * [Sonarr](https://sonarr.tv/) - Manage your TV collection
 * [Time machine](https://github.com/awlx/samba-timemachine) - Backup your macOS devices over the network
 

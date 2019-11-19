@@ -18,6 +18,7 @@ All supported applications can be installed on your server using Docker by simpl
 * Manual container management using Portainer
 * Home Media Streaming with Plex or Jellyfin
 * Media management with Sonarr, Radarr and Lidarr
+* Torrenting via r(u)Torrent
 * Your own wiki using Dokuwiki
 * macOS backups over the network with Timemachine over SMB
 * Personal Finance management with Firefly III

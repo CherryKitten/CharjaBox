@@ -35,6 +35,10 @@
         
         var pageToc = [
           {title: "CharjaBox", url: "#_top", children: [
+              {title: "What is this?", url: "#what-is-this" },
+              {title: "Features", url: "#features" },
+              {title: "Installation", url: "#installation" },
+              {title: "Special Thanks", url: "#special-thanks" },
           ]},
         ];
 
@@ -188,13 +192,16 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     
 
     <h1 id="charjabox">CharjaBox</h1>
+<p><img alt="GitHub" src="https://img.shields.io/github/license/CherryKitten/CharjaBox" />
+<a href="https://travis-ci.com/CherryKitten/CharjaBox"><img alt="Build Status" src="https://travis-ci.com/CherryKitten/CharjaBox.svg?branch=master" /></a></p>
 <p><img src='img/mascot.png' alt='CharjaBox mascot' width="100"/></p>
-<p>Work in progress Ansible based Homeserver setup using Docker.</p>
+<p>Ansible based Homeserver setup using Docker.</p>
 <p>Inspired by <a href="https://github.com/davestephens/ansible-nas">Ansible NAS</a> and <a href="https://gitlab.com/NickBusey/HomelabOS">HomelabOS</a></p>
-<p><strong>What is this?</strong></p>
+<h2 id="what-is-this">What is this?</h2>
 <p>CharjaBox is an Ansible playbook that can be used to easily deploy your Homeserver setup.</p>
 <p>All supported applications can be installed on your server using Docker by simply changing some variables and running the playbook.</p>
-<p><strong>Features</strong></p>
+<p>Read the documentation <a href="https://cherrykitten.github.io/CharjaBox">here</a>.</p>
+<h2 id="features">Features</h2>
 <ul>
 <li>Samba Sharing</li>
 <li>Manual container management using Portainer</li>
@@ -202,12 +209,47 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <li>Media management with Sonarr, Radarr and Lidarr</li>
 <li>Torrenting via r(u)Torrent</li>
 <li>Your own wiki using Dokuwiki</li>
-<li>macOS backups over the network with Timemachine over SMB</li>
+<li>macOS backups over the network with Time machine over SMB</li>
 <li>Personal Finance management with Firefly III</li>
 <li>Local DNS management with BIND</li>
 <li>Hosting your own git repositories</li>
 <li>Download caching for many CDNs</li>
-<li>and more..</li>
+<li>and more...</li>
+</ul>
+<h3 id="applications">Applications</h3>
+<ul>
+<li><a href="https://www.isc.org/bind/">BIND</a> - Domain Name Server for your home network</li>
+<li><a href="https://www.dokuwiki.org/dokuwiki">Dokuwiki</a> - Simple to use and highly versatile Open Source wiki software that doesn't require a database</li>
+<li><a href="https://firefly-iii.org/">Firefly III</a> - Free and open source personal finance manager</li>
+<li><a href="https://gitea.io/">Gitea</a> - Git with a cup of tea</li>
+<li><a href="https://heimdall.site/">Heimdall</a> - Application Dashboard for easy access to all your services</li>
+<li><a href="https://github.com/Jackett/Jackett">Jackett</a> - API Support for your favorite torrent trackers.</li>
+<li><a href="http://jellyfin.org/">Jellyfin</a> - The Free Software Media System</li>
+<li><a href="https://github.com/lancachenet/monolithic">Lancache</a> - Cache your video game downloads and operating system updates so you only have to download them once</li>
+<li><a href="https://lidarr.audio/">Lidarr</a> - Manage your music collection</li>
+<li><a href="https://www.nginx.com/">Nginx</a> - Open source web server and a reverse proxy server</li>
+<li><a href="https://www.plex.tv/">Plex</a> - Your very own personal streaming service</li>
+<li><a href="https://portainer.io/">Portainer</a> - Web Interface for managing Docker containers</li>
+<li><a href="https://radarr.video/#home">Radarr</a> - Manage your movie collection</li>
+<li><a href="https://github.com/rakshasa/rtorrent">rtorrent</a> - Text-based ncurses BitTorrent client</li>
+<li><a href="https://github.com/Novik/ruTorrent">ruTorrent</a> - Web front-end for the popular Bittorrent client rtorrent</li>
+<li><a href="https://sonarr.tv/">Sonarr</a> - Manage your TV collection</li>
+<li><a href="https://github.com/awlx/samba-timemachine">Time machine</a> - Backup your macOS devices over the network</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<ol>
+<li>Make sure all <a href="https://cherrykitten.github.io/CharjaBox/#requirements/">Requirements</a> are met</li>
+<li>Clone the repository and <code>cd</code> into the directory</li>
+<li>Copy the settings for the applications you want to use and the <code>charjabox_general.yml</code> file from <code>settings/defaults/</code> to <code>settings/charjabox</code> and <a href="https://cherrykitten.github.io/CharjaBox/#configuration/">configure</a> everything</li>
+<li>Create an <code>inventory</code> file and add your server's IP/Hostname/Domain</li>
+<li>Install needed roles: <code>ansible-galaxy install -r requirements.yml</code></li>
+<li>Run the playbook: <code>ansible-playbook -i inventory -u $USER charjabox.yml</code></li>
+</ol>
+<p>You can use the script <code>charjabox/scripts/initialize.sh</code> to skip part of steps 3 and 4. This scripts asks you about your server IP, group name and settings folder and creates the files for you automatically.</p>
+<p>You still need to do it manually if you want to use multiple servers for now. This functionality will be added to the script in the future.</p>
+<h2 id="special-thanks">Special Thanks</h2>
+<ul>
+<li>Thanks to <a href="https://github.com/DysphoricUnicorn">DysphoricUnicorn</a> for designing our beautiful mascot.</li>
 </ul>
 
   <br>
@@ -247,5 +289,5 @@ Edit on GitHub</a>
 </html>
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-11-19 13:01:46
+Build Date UTC : 2019-11-19 13:11:05
 -->

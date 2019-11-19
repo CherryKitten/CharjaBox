@@ -11,7 +11,7 @@
     
     <link rel="shortcut icon" href="../img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Installation - CharjaBox</title>
+    <title>Contributing - CharjaBox</title>
     <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
@@ -32,7 +32,9 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Installation", url: "#_top", children: [
+          {title: "Contributing", url: "#_top", children: [
+              {title: "Requesting an Application", url: "#requesting-an-application" },
+              {title: "Adding new Applications", url: "#adding-new-applications" },
           ]},
         ];
 
@@ -60,20 +62,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../contributing/" class="btn btn-xs btn-default pull-right">
+      <a href="../applications/nginx/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../contributing/" class="btn btn-xs btn-link">
-        Contributing
+      <a href="../applications/nginx/" class="btn btn-xs btn-link">
+        Nginx
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../configuration/" class="btn btn-xs btn-default pull-left">
+      <a href="../installation/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../configuration/" class="btn btn-xs btn-link">
-        Configuration
+        Previous</a><a href="../installation/" class="btn btn-xs btn-link">
+        Installation
       </a>
     </div>
     
@@ -81,17 +83,25 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="installation">Installation</h1>
-<ol>
-<li>Make sure all <a href="../requirements/">Requirements</a> are met</li>
-<li>Clone the repository and <code>cd</code> into the directory</li>
-<li>Copy the settings for the applications you want to use and the <code>charjabox_general.yml</code> file from <code>settings/defaults/</code> to <code>settings/charjabox</code> and <a href="https://cherrykitten.github.io/CharjaBox/#configuration/">configure</a> everything</li>
-<li>Create an <code>inventory</code> file and add your server's IP/Hostname/Domain</li>
-<li>Install needed roles: <code>ansible-galaxy install -r requirements.yml</code></li>
-<li>Run the playbook: <code>ansible-playbook -i inventory -u $USER charjabox.yml</code></li>
-</ol>
-<p>You can use the script <code>charjabox/scripts/initialize.sh</code> to skip part of steps 3 and 4. This scripts asks you about your server IP, group name and settings folder and creates the files for you automatically.</p>
-<p>You still need to do it manually if you want to use multiple servers for now. This functionality will be added to the script in the future.</p>
+    <h1 id="contributing">Contributing</h1>
+<p>There are many ways to contribute to CharjaBox. Everything helps!</p>
+<h2 id="requesting-an-application">Requesting an Application</h2>
+<p>If you want to request an Application, please open an Issue and use the correct issue template.</p>
+<h2 id="adding-new-applications">Adding new Applications</h2>
+<p>To add a new application, you can use an existing app as a template.</p>
+<p>You will need to create the following files:</p>
+<pre><code>settings/defaults/$appname.yml # For the settings
+roles/$appname/tasks/main.yml # The main task for the app
+roles/$appname/templates/$appname.service.j2 # Systemd Service file
+roles/$appname/templates/docker-compose.$appname.j2 # Docker-compose file
+</code></pre>
+
+<p>You will also need to edit the following files:</p>
+<pre><code>charjabox.yml # To add the role to the playbook
+settings/defaults/charjabox_ports.yml # To configure the ports
+</code></pre>
+
+<p>Please also add documentation for the new app in <code>docs/applications/$appname</code> and <code>README.md</code>, as well as <code>docs/index.md</code></p>
 
   <br>
     
@@ -104,20 +114,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../contributing/" class="btn btn-xs btn-default pull-right">
+      <a href="../applications/nginx/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../contributing/" class="btn btn-xs btn-link">
-        Contributing
+      <a href="../applications/nginx/" class="btn btn-xs btn-link">
+        Nginx
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../configuration/" class="btn btn-xs btn-default pull-left">
+      <a href="../installation/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../configuration/" class="btn btn-xs btn-link">
-        Configuration
+        Previous</a><a href="../installation/" class="btn btn-xs btn-link">
+        Installation
       </a>
     </div>
     
@@ -128,7 +138,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
 <footer class="col-md-12 wm-page-content">
       <p>
-        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/installation.md"><i class="fa fa-github"></i>
+        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/contributing.md"><i class="fa fa-github"></i>
 Edit on GitHub</a>
       </p>
   <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/CherryKitten/CharjaBox/">Windmill Dark</a> theme by CherryKitten (noraj).</p>

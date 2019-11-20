@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: "{{ charjabox_host | default('all') }}"
   become: true
   vars:
     docker_install_compose: true

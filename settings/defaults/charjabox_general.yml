@@ -8,7 +8,7 @@ charjabox_hostname: "CharjaBox"
 # Your homeserver's timezone
 charjabox_timezone: "Europe/Berlin"
 
-# Your email adress. Used for Let's Encrypt and settings of some applications
+# Your email adress
 charjabox_email: "your.mail@example.com"
 
 # Your homeserver's domain

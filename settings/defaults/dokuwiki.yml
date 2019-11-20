@@ -1,2 +1,3 @@
 dokuwiki_enabled: false
+
 dokuwiki_config_directory: "{{ docker_home }}/dokuwiki/config"

@@ -1,164 +1,76 @@
 ---
-- name: prepare the playbook
-  hosts: all
-  tasks:
+- hosts: all
+  become: true
+  vars:
+    docker_install_compose: true
+    docker_compose_path: /usr/bin/docker-compose
+
+  pre_tasks:
     - name: include defaults
       include_vars:
         dir: "settings/defaults"
+      tags: always
     - name: include vars
       include_vars:
         dir: "settings/{{ charjabox_settings_path }}"
-  tags: always
+      tags: always
 
-- name: general setup
-  hosts: all
-  become: true
-  tags: general
   roles:
-    - charjabox_general
-
-- name: smb
-  hosts: all
-  become: true
-  tags: smb
-  roles:
+    - role: charjabox_general
+      tags: general
     - role: bertvv.samba
       when: smb_enabled
+      tags: smb
     - role: smb
       when: smb_enabled
-
-- name: docker
-  hosts: all
-  become: true
-  vars:
-    - docker_install_compose: true
-    - docker_compose_path: /usr/bin/docker-compose
-  roles:
+      tags: smb
     - role: geerlingguy.docker
-
-- name: nginx
-  hosts: all
-  become: true
-  roles:
+      tags: always
     - role: nginx
       when: nginx_enabled
-
-- name: portainer
-  hosts: all
-  become: true
-  tags: portainer
-  roles:
+      tags: nginx
     - role: portainer
       when: portainer_enabled
-
-- name: plex
-  hosts: all
-  become: true
-  tags: plex
-  roles:
+      tags: portainer
     - role: plex
       when: plex_enabled
-
-- name: jellyfin
-  hosts: all
-  become: true
-  tags: jellyfin
-  roles:
+      tags: plex
     - role: jellyfin
       when: jellyfin_enabled
-
-- name: heimdall
-  hosts: all
-  become: true
-  tags: heimdall
-  roles:
+      tags: jellyfin
     - role: heimdall
       when: heimdall_enabled
-
-- name: bind
-  hosts: all
-  become: true
-  tags: bind
-  roles:
+      tags: heimdall
     - role: bind
       when: bind_enabled
-
-- name: firefly
-  hosts: all
-  become: true
-  tags: firefly
-  roles:
+      tags: bind
     - role: firefly
       when: firefly_enabled
-
-- name: lancache
-  hosts: all
-  become: true
-  tags: lancache
-  roles:
+      tags: firefly
     - role: lancache
       when: lancache_enabled
-
-- name: dokuwiki
-  hosts: all
-  become: true
-  tags: dokuwiki
-  roles:
+      tags: lancache
     - role: dokuwiki
       when: dokuwiki_enabled
-
-- name: timemachine
-  hosts: all
-  become: true
-  tags: timemachine
-  roles:
+      tags: dokuwiki
     - role: timemachine
       when: timemachine_enabled
-
-- name: gitea
-  hosts: all
-  become: true
-  tags: gitea
-  roles:
+      tags: timemachine
     - role: gitea
       when: gitea_enabled
-
-- name: jackett
-  hosts: all
-  become: true
-  tags: jackett
-  roles:
+      tags: gitea
     - role: jackett
       when: jackett_enabled
-
-- name: radarr
-  hosts: all
-  become: true
-  tags: radarr
-  roles:
+      tags: jackett
     - role: radarr
       when: radarr_enabled
-
-- name: sonarr
-  hosts: all
-  become: true
-  tags: sonarr
-  roles:
+      tags: radarr
     - role: sonarr
       when: sonarr_enabled
-
-- name: lidarr
-  hosts: all
-  become: true
-  tags: lidarr
-  roles:
+      tags: sonarr
     - role: lidarr
       when: lidarr_enabled
-
-- name: rtorrent
-  hosts: all
-  become: true
-  tags: rtorrent
-  roles:
+      tags: lidarr
     - role: rtorrent
       when: rtorrent_enabled
+      tags: rtorrent

@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  pre_tasks:
+    - name: Make sure the app variable is defined
+      fail:
+        msg: App not defined. Please use --extra-vars="app=NAME" to set the name of the application that you want to add.
+      when: app is not defined
+
+  tasks:
+    - name: Create directories for new app {{ app }}
+      file:
+        path: "{{ item.path }}"
+        state: "{{ item.state }}"
+      with_items:
+        - { path: "{{ playbook_dir }}/../roles/{{ app }}", state: directory }
+        - { path: "{{ playbook_dir }}/../roles/{{ app }}/tasks", state: directory }
+        - { path: "{{ playbook_dir }}/../roles/{{ app }}/templates", state: directory }
+        - { path: "{{ playbook_dir }}/../roles/{{ app }}/tasks/main.yml", state: touch }
+        - { path: "{{ playbook_dir }}/../roles/{{ app }}/templates/{{ app }}.service.j2", state: touch }
+        - { path: "{{ playbook_dir }}/../roles/{{ app }}/templates/docker-compose.{{ app }}.j2", state: touch }
+        - { path: "{{ playbook_dir }}/../settings/defaults/{{ app }}.yml", state: touch }

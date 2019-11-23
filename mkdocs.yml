@@ -15,13 +15,15 @@ nav:
       - 'applications/nginx.md'
       - 'applications/portainer.md'
       - 'applications/smb.md'
-      - 'applications/plex.md'
       - 'applications/bind.md'
       - 'applications/rtorrent.md'
       - 'applications/dokuwiki.md'
       - 'applications/timemachine.md'
       - 'applications/gitea.md'
       - 'applications/lancache.md'
+      - Media streaming:
+          - 'applications/airsonic.md'
+          - 'applications/plex.md'
       - Media management:
           - 'applications/jackett.md'
           - 'applications/radarr.md'

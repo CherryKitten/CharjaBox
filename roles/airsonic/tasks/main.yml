@@ -1,0 +1,32 @@
+---
+- name: create airsonic directory
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "{{ airsonic_data_directory }}"
+    - "{{ airsonic_data_directory }}/data"
+    - "{{ airsonic_data_directory }}/playlists"
+    - "{{ airsonic_data_directory }}/podcasts"
+
+- name: create airsonic docker-compose directory
+  file:
+    path: "{{ docker_compose_dir }}/airsonic"
+    state: directory
+
+- name: copy docker-compose.yml for airsonic
+  template:
+    src: docker-compose.airsonic.yml.j2
+    dest: "{{ docker_compose_dir }}/airsonic/docker-compose.airsonic.yml"
+
+- name: configure airsonic systemd service
+  template:
+    src: airsonic.service.j2
+    dest: /etc/systemd/system/airsonic.service
+
+- name: start airsonic
+  systemd:
+    name: airsonic
+    enabled: "yes"
+    daemon-reload: "yes"
+    state: started

@@ -74,3 +74,6 @@
     - role: rtorrent
       when: rtorrent_enabled
       tags: rtorrent
+    - role: airsonic
+      when: airsonic_enabled
+      tags: airsonic

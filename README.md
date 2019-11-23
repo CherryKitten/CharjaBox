@@ -20,7 +20,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 
 * Samba Sharing
 * Manual container management using Portainer
-* Home Media Streaming with Plex or Jellyfin
+* Home Media Streaming with Plex, Jellyfin and/or Airsonic
 * Media management with Sonarr, Radarr and Lidarr
 * Torrenting via r(u)Torrent
 * Your own wiki using Dokuwiki
@@ -33,6 +33,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 
 ### Applications
 
+* [Airsonic](https://airsonic.github.io/) - Free, web-based media streamer, providing ubiquitous access to your music
 * [BIND](https://www.isc.org/bind/) - Domain Name Server for your home network
 * [Dokuwiki](https://www.dokuwiki.org/dokuwiki) - Simple to use and highly versatile Open Source wiki software that doesn't require a database
 * [Firefly III](https://firefly-iii.org/) - Free and open source personal finance manager

@@ -1,0 +1,15 @@
+---
+version: '3'
+
+services:
+  dokuwiki:
+    image: airsonic/airsonic
+    container_name: Airsonic
+    restart: unless-stopped
+    ports:
+      - {{ airsonic_port }}:4040
+    volumes:
+      - {{ airsonic_data_directory }}/data:/airsonic/data
+      - {{ airsonic_data_directory }}/playlists:/airsonic/playlists
+      - {{ airsonic_data_directory }}/podcasts:/airsonic/podcasts
+      - {{ airsonic_music_directory }}:/airsonic/music

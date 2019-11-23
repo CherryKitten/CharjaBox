@@ -11,7 +11,7 @@
     
     <link rel="shortcut icon" href="../../img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Plex - CharjaBox</title>
+    <title>Airsonic - CharjaBox</title>
     <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="../../css/base.css" rel="stylesheet">
@@ -32,7 +32,7 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Plex", url: "#_top", children: [
+          {title: "Airsonic", url: "#_top", children: [
           ]},
         ];
 
@@ -60,20 +60,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../jackett/" class="btn btn-xs btn-default pull-right">
+      <a href="../plex/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../jackett/" class="btn btn-xs btn-link">
-        Jackett
+      <a href="../plex/" class="btn btn-xs btn-link">
+        Plex
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../airsonic/" class="btn btn-xs btn-default pull-left">
+      <a href="../lancache/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../airsonic/" class="btn btn-xs btn-link">
-        Airsonic
+        Previous</a><a href="../lancache/" class="btn btn-xs btn-link">
+        Lancache
       </a>
     </div>
     
@@ -81,12 +81,10 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="plex">Plex</h1>
-<p><a href="https://www.plex.tv/">Plex</a> - Your very own personal streaming service</p>
-<p>You can set the paths to your media folders in the variables <code>plex_music_directory</code>, <code>plex_tv_directory</code>, and <code>plex_movies_directory</code>. </p>
-<p>To automatically add your server to your account, generate a claim token <a href="https://www.plex.tv/claim/">here</a> and insert that token into the <code>plex_token</code> variable. Please note that the claim token expires after 5 minutes, so generate it right before running the playbook.</p>
-<p>After the server is set up you can visit the Plex webinterface via <a href="https://app.plex.tv/desktop">the official Plex website</a> or port <code>32400</code> on your server. Changing the port for Plex can lead to some difficulties with the apps, so it is not encouraged to do that.</p>
-<p>Once you are on the webinterface, you can do your first time setup and let Plex scan through your media files.</p>
+    <h1 id="airsonic">Airsonic</h1>
+<p><a href="https://airsonic.github.io/">Airsonic</a> - Free, web-based media streamer, providing ubiquitous access to your music</p>
+<p>After enabling Airsonic, immediately visit the Webinterface (default port 4040), login with <code>admin:admin</code> and change the password.
+All settings are changed via the Webinterface.</p>
 
   <br>
     
@@ -99,20 +97,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../jackett/" class="btn btn-xs btn-default pull-right">
+      <a href="../plex/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../jackett/" class="btn btn-xs btn-link">
-        Jackett
+      <a href="../plex/" class="btn btn-xs btn-link">
+        Plex
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../airsonic/" class="btn btn-xs btn-default pull-left">
+      <a href="../lancache/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../airsonic/" class="btn btn-xs btn-link">
-        Airsonic
+        Previous</a><a href="../lancache/" class="btn btn-xs btn-link">
+        Lancache
       </a>
     </div>
     
@@ -123,7 +121,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
 <footer class="col-md-12 wm-page-content">
       <p>
-        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/applications/plex.md"><i class="fa fa-github"></i>
+        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/applications/airsonic.md"><i class="fa fa-github"></i>
 Edit on GitHub</a>
       </p>
   <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/CherryKitten/CharjaBox/">Windmill Dark</a> theme by CherryKitten (noraj).</p>

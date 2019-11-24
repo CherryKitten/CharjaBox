@@ -1,0 +1,41 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  vars_prompt:
+    - name: "serverip"
+      prompt: "What is the IP/Hostname/Domain of your server?"
+      private: false
+
+    - name: "groupname"
+      prompt: "How should the server group be called?"
+      default: "Charjabox"
+      private: false
+
+    - name: "settingsname"
+      prompt: "How should your settings folder be called? (This folder will be created as a subfolder of settings/)"
+      default: "charjabox"
+      private: false
+
+  pre_tasks:
+    - name: check if CharjaBox was already initialized
+      stat:
+        path: "{{ playbook_dir }}/../inventory"
+      register: inventory
+    - name: fail if already initialized
+      fail:
+        msg: "It seems like you have already initialized CharjaBox. This script is for initializing a clean setup directly after cloning."
+      when: inventory.stat.exists
+
+  tasks:
+    - name: create inventory file
+      copy:
+        dest: "{{ playbook_dir }}/../inventory"
+        content: |
+          [{{ groupname }}]
+          {{ serverip }}
+    - name: create group_vars file
+      copy:
+        dest: "{{ playbook_dir }}/../group_vars/{{ groupname }}.yml"
+        content: |
+          charjabox_settings_path: "{{ settingsname }}"

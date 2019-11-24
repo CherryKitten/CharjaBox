@@ -255,7 +255,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <li>Install needed roles: <code>ansible-galaxy install -r requirements.yml</code></li>
 <li>Run the playbook: <code>ansible-playbook -i inventory -u $USER charjabox.yml</code></li>
 </ol>
-<p>You can use the script <code>charjabox/scripts/initialize.sh</code> to skip part of steps 3 and 4. This scripts asks you about your server IP, group name and settings folder and creates the files for you automatically.</p>
+<p>You can use the playbook <code>charjabox/scripts/initialize.yml</code> to skip part of steps 3 and 4. This playbook asks you about your server IP, group name and settings folder and creates the files for you automatically.</p>
 <p>You still need to do it manually if you want to use multiple servers for now. This functionality will be added to the script in the future.</p>
 <h2 id="special-thanks">Special Thanks</h2>
 <ul>
@@ -299,5 +299,5 @@ Edit on GitHub</a>
 </html>
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-11-24 16:27:35
+Build Date UTC : 2019-11-24 16:30:38
 -->

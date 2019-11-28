@@ -1,0 +1,14 @@
+---
+version: '3'
+
+services:
+  bazarr:
+    image: linuxserver/bazarr
+    container_name: bazarr
+    restart: unless-stopped
+    ports:
+      - {{ bazarr_port }}:6767
+    volumes:
+      - {{ bazarr_config_directory }}:/config
+      - {{ charjabox_tv_directory }}:/tv
+      - {{ charjabox_movies_directory }}:/movies

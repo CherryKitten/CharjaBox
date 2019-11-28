@@ -68,6 +68,9 @@
     - role: sonarr
       when: sonarr_enabled
       tags: sonarr
+    - role: bazarr
+      when: bazarr_enabled
+      tags: bazarr
     - role: lidarr
       when: lidarr_enabled
       tags: lidarr

@@ -1,0 +1,3 @@
+bazarr_enabled: false
+
+bazarr_config_directory: "{{ docker_home }}/bazarr/config"

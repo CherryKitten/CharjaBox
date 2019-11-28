@@ -1,0 +1,29 @@
+---
+- name: create bitwarden_rs directories
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "{{ bitwarden_rs_data_directory }}"
+
+- name: create bitwarden_rs docker-compose directory
+  file:
+    path: "{{ docker_compose_dir }}/bitwarden_rs"
+    state: directory
+
+- name: copy docker-compose.yml for bitwarden_rs
+  template:
+    src: docker-compose.bitwarden_rs.yml.j2
+    dest: "{{ docker_compose_dir }}/bitwarden_rs/docker-compose.bitwarden_rs.yml"
+
+- name: configure bitwarden_rs systemd service
+  template:
+    src: bitwarden_rs.service.j2
+    dest: /etc/systemd/system/bitwarden_rs.service
+
+- name: start bitwarden_rs
+  systemd:
+    name: bitwarden_rs
+    enabled: "yes"
+    daemon-reload: "yes"
+    state: started

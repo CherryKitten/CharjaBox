@@ -80,3 +80,6 @@
     - role: airsonic
       when: airsonic_enabled
       tags: airsonic
+    - role: bitwarden_rs
+      when: bitwarden_rs_enabled
+      tags: bitwarden_rs

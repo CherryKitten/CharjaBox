@@ -21,6 +21,7 @@ nav:
       - 'applications/timemachine.md'
       - 'applications/gitea.md'
       - 'applications/lancache.md'
+      - 'applications/bitwarden_rs.md'
       - Media streaming:
           - 'applications/airsonic.md'
           - 'applications/plex.md'

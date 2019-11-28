@@ -1,0 +1,22 @@
+bitwarden_rs_enabled: false
+
+bitwarden_rs_data_directory: "{{ docker_home }}/bitwarden_rs/data"
+
+bitwarden_rs_signups_allowed: true
+bitwarden_rs_invites_allowed: true
+bitwarden_rs_admintoken: ""
+
+bitwarden_rs_websocket_enabled: false
+
+bitwarden_rs_yubikey_enabled: false
+bitwarden_rs_yubikey_server: ""
+bitwarden_rs_yubikey_id: ""
+bitwarden_rs_yubikey_key: ""
+
+bitwarden_rs_smtp_enabled: false
+bitwarden_rs_smtp_host: ""
+bitwarden_rs_smtp_from: ""
+bitwarden_rs_smtp_port: ""
+bitwarden_rs_smtp_ssl: ""
+bitwarden_rs_smtp_username: ""
+bitwarden_rs_smtp_password: ""

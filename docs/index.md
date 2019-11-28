@@ -29,6 +29,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 * Local DNS management with BIND
 * Hosting your own git repositories
 * Download caching for many CDNs
+* Password management
 * and more...
 
 ### Applications
@@ -36,6 +37,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 * [Airsonic](https://airsonic.github.io/) - Free, web-based media streamer, providing ubiquitous access to your music
 * [Bazarr](https://github.com/morpheus65535/bazarr) - Companion application to Sonarr and Radarr for downloading subtitles
 * [BIND](https://www.isc.org/bind/) - Domain Name Server for your home network
+* [Bitwarden_rs](https://github.com/dani-garcia/bitwarden_rs) - Password manager compatible with [Bitwarden apps](https://bitwarden.com/)
 * [Dokuwiki](https://www.dokuwiki.org/dokuwiki) - Simple to use and highly versatile Open Source wiki software that doesn't require a database
 * [Firefly III](https://firefly-iii.org/) - Free and open source personal finance manager
 * [Gitea](https://gitea.io/) - Git with a cup of tea

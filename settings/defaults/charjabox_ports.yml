@@ -4,6 +4,9 @@ bazarr_port: 6767
 
 bind_webmin_port: 10000
 
+bitwarden_rs_http_port: 9001
+bitwarden_rs_websocket_port: 3012
+
 dokuwiki_http_port: 6009
 dokuwiki_https_port: 6010
 

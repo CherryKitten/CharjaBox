@@ -1,0 +1,15 @@
+[Unit]
+Description= Bitwarden_rs Docker Service
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutSec=infinity
+Restart=always
+RestartSec=5
+
+ExecStart=/usr/bin/docker-compose -f {{ docker_compose_dir }}/bitwarden_rs/docker-compose.bitwarden_rs.yml -p "bitwarden_rs" up
+ExecStop=/usr/bin/docker-compose -f {{ docker_compose_dir }}/bitwarden_rs/docker-compose.bitwarden_rs.yml -p "bitwarden_rs" stop
+
+[Install]
+WantedBy=multi-user.target

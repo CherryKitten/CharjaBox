@@ -1,0 +1,3 @@
+traefik_enabled: false
+
+traefik_config_directory: "{{docker_home}}/traefik/config"

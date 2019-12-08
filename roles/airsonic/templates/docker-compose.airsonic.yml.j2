@@ -2,7 +2,7 @@
 version: '3'
 
 services:
-  dokuwiki:
+  airsonic:
     image: airsonic/airsonic
     container_name: Airsonic
     restart: unless-stopped
@@ -13,3 +13,7 @@ services:
       - {{ airsonic_data_directory }}/playlists:/airsonic/playlists
       - {{ airsonic_data_directory }}/podcasts:/airsonic/podcasts
       - {{ airsonic_music_directory }}:/airsonic/music
+    labels:
+      traefik.enable: "{{ airsonic_traefik }}"
+      traefik.http.routers.airsonic.rule: "Host(`{{ airsonic_domain }}`)"
+      traefik.http.services.airsonic.loadbalancer.server.port: "{{ airsonic_port }}"

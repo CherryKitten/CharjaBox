@@ -2,3 +2,6 @@ airsonic_enabled: false
 
 airsonic_data_directory: "{{ docker_home }}/airsonic/data"
 airsonic_music_directory: "{{ charjabox_music_directory }}"
+
+airsonic_traefik: false
+airsonic_domain: "airsonic.{{ charjabox_domain }}"

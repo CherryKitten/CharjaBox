@@ -83,3 +83,6 @@
     - role: bitwarden_rs
       when: bitwarden_rs_enabled
       tags: bitwarden_rs
+    - role: traefik
+      when: traefik_enabled
+      tags: traefik

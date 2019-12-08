@@ -43,3 +43,7 @@ radarr_port: 7878
 sonarr_port: 8989
 
 timemachine_port: 10445
+
+traefik_http_port: 80
+traefik_https_port: 443
+traefik_webinterface_port: 8080

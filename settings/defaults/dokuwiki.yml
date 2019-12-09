@@ -1,3 +1,6 @@
 dokuwiki_enabled: false
 
 dokuwiki_config_directory: "{{ docker_home }}/dokuwiki/config"
+
+dokuwiki_traefik_enabled: false
+dokuwiki_domain: "dokuwiki.{{ charjabox_domain }}"

@@ -12,3 +12,11 @@ services:
       - {{ lidarr_config_directory }}:/config
       - {{ lidarr_data_directory }}:/downloads
       - {{ charjabox_music_directory }}:/music
+    labels:
+      traefik.enable: "{{ lidarr_traefik_enabled }}"
+      traefik.http.routers.lidarr.entrypoints: "web"
+      traefik.http.routers.lidarr.rule: "Host(`{{ lidarr_domain }}`)"
+      traefik.http.routers.lidarr-s.entrypoints: "web-secure"
+      traefik.http.routers.lidarr-s.rule: "Host(`{{ lidarr_domain }}`)"
+      traefik.http.routers.lidarr-s.tls: "true"
+      traefik.http.services.lidarr.loadbalancer.server.port: "8686"

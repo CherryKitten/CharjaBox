@@ -4,3 +4,6 @@ bind_data_directory: "{{ docker_home }}/bind/data"
 
 bind_webmin_enabled: "true"
 bind_webmin_password: "Insert a Secure Password Here"
+
+bind_webmin_traefik_enabled: false
+bind_webmin_domain: "bind.{{ charjabox_domain }}"

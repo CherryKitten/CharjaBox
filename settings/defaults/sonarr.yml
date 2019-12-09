@@ -2,3 +2,6 @@ sonarr_enabled: false
 
 sonarr_config_directory: "{{ docker_home }}/sonarr/config"
 sonarr_data_directory: "{{ docker_home }}/sonarr/data"
+
+sonarr_traefik_enabled: false
+sonarr_domain: "sonarr.{{ charjabox_domain }}"

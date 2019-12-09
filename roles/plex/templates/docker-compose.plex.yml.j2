@@ -24,4 +24,11 @@ services:
     environment:
       - TZ={{ charjabox_timezone }}
       - PLEX_CLAIM={{ plex_token }}
-
+    labels:
+      traefik.enable: "{{ plex_traefik_enabled }}"
+      traefik.http.routers.plex.entrypoints: "web"
+      traefik.http.routers.plex.rule: "Host(`{{ plex_domain }}`)"
+      traefik.http.routers.plex-s.entrypoints: "web-secure"
+      traefik.http.routers.plex-s.rule: "Host(`{{ plex_domain }}`)"
+      traefik.http.routers.plex-s.tls: "true"
+      traefik.http.services.plex.loadbalancer.server.port: "32400"

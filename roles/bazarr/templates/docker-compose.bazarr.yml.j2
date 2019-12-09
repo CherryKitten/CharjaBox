@@ -12,3 +12,11 @@ services:
       - {{ bazarr_config_directory }}:/config
       - {{ charjabox_tv_directory }}:/tv
       - {{ charjabox_movies_directory }}:/movies
+    labels:
+      traefik.enable: "{{ bazarr_traefik_enabled }}"
+      traefik.http.routers.bazarr.entrypoints: "web"
+      traefik.http.routers.bazarr.rule: "Host(`{{ bazarr_domain }}`)"
+      traefik.http.routers.bazarr-s.entrypoints: "web-secure"
+      traefik.http.routers.bazarr-s.rule: "Host(`{{ bazarr_domain }}`)"
+      traefik.http.routers.bazarr-s.tls: "true"
+      traefik.http.services.bazarr.loadbalancer.server.port: "6767"

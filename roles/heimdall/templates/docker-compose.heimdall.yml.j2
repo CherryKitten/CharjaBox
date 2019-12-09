@@ -11,3 +11,7 @@ services:
       - {{ heimdall_https_port }}:443
     volumes:
       - {{ heimdall_config_directory }}:/config
+    labels:
+      traefik.enable: "{{ heimdall_traefik_enabled }}"
+      traefik.http.routers.heimdall.rule: "Host(`{{ heimdall_domain }}`)"
+      traefik.http.services.heimdall.loadbalancer.server.port: "80"

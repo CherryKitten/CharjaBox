@@ -6,3 +6,6 @@ plex_tv_directory: "{{ charjabox_tv_directory }}"
 plex_movies_directory: "{{ charjabox_movies_directory }}"
 
 plex_token: "" # Generate a token at plex.tv/claim and use it to automatically log in your server to your account.
+
+plex_traefik_enabled: false
+plex_domain: "plex.{{ charjabox_domain }}"

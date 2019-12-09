@@ -1,3 +1,6 @@
 heimdall_enabled: false
 
 heimdall_config_directory: "{{ docker_home }}/heimdall/config"
+
+heimdall_traefik_enabled: false
+heimdall_domain: "heimdall.{{ charjabox_domain }}"

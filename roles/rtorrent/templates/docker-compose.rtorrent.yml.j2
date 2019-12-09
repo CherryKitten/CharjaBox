@@ -15,3 +15,11 @@ services:
     volumes:
       - {{ rtorrent_config_directory }}:/config
       - {{ rtorrent_download_directory }}:/downloads
+    labels:
+      traefik.enable: "{{ rtorrent_traefik_enabled }}"
+      traefik.http.routers.rtorrent.entrypoints: "web"
+      traefik.http.routers.rtorrent.rule: "Host(`{{ rtorrent_domain }}`)"
+      traefik.http.routers.rtorrent-s.entrypoints: "web-secure"
+      traefik.http.routers.rtorrent-s.rule: "Host(`{{ rtorrent_domain }}`)"
+      traefik.http.routers.rtorrent-s.tls: "true"
+      traefik.http.services.rtorrent.loadbalancer.server.port: "80"

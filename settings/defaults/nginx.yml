@@ -2,3 +2,6 @@ nginx_enabled: false
 
 nginx_config_directory: "{{docker_home}}/nginx/config"
 nginx_data_directory: "{{docker_home}}/nginx/data"
+
+nginx_traefik_enabled: false
+nginx_domain: "nginx.{{ charjabox_domain }}"

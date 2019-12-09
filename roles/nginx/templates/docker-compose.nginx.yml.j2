@@ -12,3 +12,11 @@ services:
     volumes:
       - {{ nginx_config_directory }}:/etc/nginx/
       - {{ nginx_data_directory }}:/var/www
+    labels:
+      traefik.enable: "{{ nginx_traefik_enabled }}"
+      traefik.http.routers.nginx.entrypoints: "web"
+      traefik.http.routers.nginx.rule: "Host(`{{ nginx_domain }}`)"
+      traefik.http.routers.nginx-s.entrypoints: "web-secure"
+      traefik.http.routers.nginx-s.rule: "Host(`{{ nginx_domain }}`)"
+      traefik.http.routers.nginx-s.tls: "true"
+      traefik.http.services.nginx.loadbalancer.server.port: "80"

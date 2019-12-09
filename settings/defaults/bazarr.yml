@@ -1,3 +1,6 @@
 bazarr_enabled: false
 
 bazarr_config_directory: "{{ docker_home }}/bazarr/config"
+
+bazarr_traefik_enabled: false
+bazarr_domain: "bazarr.{{ charjabox_domain }}"

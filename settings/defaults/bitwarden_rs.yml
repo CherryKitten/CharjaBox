@@ -20,3 +20,6 @@ bitwarden_rs_smtp_port: ""
 bitwarden_rs_smtp_ssl: ""
 bitwarden_rs_smtp_username: ""
 bitwarden_rs_smtp_password: ""
+
+bitwarden_rs_traefik_enabled: false
+bitwarden_rs_domain: "bitwarden.{{ charjabox_domain }}"

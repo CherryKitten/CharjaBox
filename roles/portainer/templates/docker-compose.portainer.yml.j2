@@ -11,3 +11,11 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - {{ portainer_data_directory }}:/data
+    labels:
+      traefik.enable: "{{ portainer_traefik_enabled }}"
+      traefik.http.routers.portainer.entrypoints: "web"
+      traefik.http.routers.portainer.rule: "Host(`{{ portainer_domain }}`)"
+      traefik.http.routers.portainer-s.entrypoints: "web-secure"
+      traefik.http.routers.portainer-s.rule: "Host(`{{ portainer_domain }}`)"
+      traefik.http.routers.portainer-s.tls: "true"
+      traefik.http.services.portainer.loadbalancer.server.port: "9000"

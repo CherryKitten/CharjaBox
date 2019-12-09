@@ -2,3 +2,6 @@ rtorrent_enabled: false
 
 rtorrent_config_directory: "{{ docker_home }}/rtorrent/config"
 rtorrent_download_directory: "{{ charjabox_downloads_directory }}"
+
+rtorrent_traefik_enabled: false
+rtorrent_domain: "rtorrent.{{ charjabox_domain }}"

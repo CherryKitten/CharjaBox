@@ -8,3 +8,6 @@ gitea_domain: "gitea.{{ charjabox_domain }}"
 gitea_disable_ssh: "false"
 gitea_disable_registrations: "false"
 gitea_require_signin: "false"
+
+gitea_traefik_enabled: false
+gitea_domain: "gitea.{{ charjabox_domain }}"

@@ -32,3 +32,11 @@ services:
       - SMTP_USERNAME="{{ bitwarden_rs_smtp_username }}"
       - SMTP_PASSWORD="{{ bitwarden_rs_smtp_password }}"
 {% endif %}
+    labels:
+      traefik.enable: "{{ bitwarden_rs_traefik_enabled }}"
+      traefik.http.routers.bitwarden_rs.entrypoints: "web"
+      traefik.http.routers.bitwarden_rs.rule: "Host(`{{ bitwarden_rs_domain }}`)"
+      traefik.http.routers.bitwarden_rs-s.entrypoints: "web-secure"
+      traefik.http.routers.bitwarden_rs-s.rule: "Host(`{{ bitwarden_rs_domain }}`)"
+      traefik.http.routers.bitwarden_rs-s.tls: "true"
+      traefik.http.services.bitwarden_rs.loadbalancer.server.port: "80"

@@ -5,8 +5,8 @@ entryPoints:
     address: ":443"
 
 api:
-  dashboard: true
-  insecure: true
+  dashboard: "{{ traefik_dashboard_enabled }}"
+  insecure: "{{ traefik_insecure_api }}"
 
 providers:
   docker:

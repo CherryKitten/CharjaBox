@@ -1,3 +1,5 @@
 traefik_enabled: false
+traefik_dashboard_enabled: false
 
 traefik_config_directory: "{{docker_home}}/traefik/config"
+traefik_insecure_api: false

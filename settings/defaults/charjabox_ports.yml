@@ -28,6 +28,8 @@ lancache_port: 6666
 nginx_http_port: 80
 nginx_https_port: 443
 
+plex_web_port: 32400
+
 portainer_port: 9000
 
 rtorrent_http_port: 7991

@@ -7,7 +7,7 @@ services:
     container_name: Plex
     restart: unless-stopped
     ports:
-      - "32400:32400"
+      - "{{ plex_web_port }}:32400"
       - "3005:3005"
       - "8324:8324"
       - "32469:32649"

@@ -1,8 +1,10 @@
 entryPoints:
-  http:
+  web:
     address: ":80"
-  https:
+  web-secure:
     address: ":443"
+
+defaultEntryPoints: ["http", "https"]
 
 api:
   dashboard: "{{ traefik_dashboard_enabled }}"

@@ -11,7 +11,7 @@
     
     <link rel="shortcut icon" href="../../img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Nginx - CharjaBox</title>
+    <title>Traefik - CharjaBox</title>
     <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="../../css/base.css" rel="stylesheet">
@@ -32,7 +32,7 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Nginx", url: "#_top", children: [
+          {title: "Traefik", url: "#_top", children: [
           ]},
         ];
 
@@ -60,20 +60,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../traefik/" class="btn btn-xs btn-default pull-right">
+      <a href="../portainer/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../traefik/" class="btn btn-xs btn-link">
-        Traefik
+      <a href="../portainer/" class="btn btn-xs btn-link">
+        Portainer
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../../contributing/" class="btn btn-xs btn-default pull-left">
+      <a href="../nginx/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../../contributing/" class="btn btn-xs btn-link">
-        Contributing
+        Previous</a><a href="../nginx/" class="btn btn-xs btn-link">
+        Nginx
       </a>
     </div>
     
@@ -81,11 +81,11 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="nginx">Nginx</h1>
-<p><a href="https://www.nginx.com/">Nginx</a> - Open source web server and a reverse proxy server</p>
-<p><code>nginx_config_directory</code> binds to <code>/etc/nginx</code>, for information on how to configure nginx see the <a href="https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/">nginx documentation</a>.</p>
-<p><code>nginx_data_directory</code> binds to <code>/var/www/</code>, put everything the webserver should serve in here.</p>
-<p>For information on how to setup nginx as a reverse proxy for your other apps, see <a href="https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/">this documentation page</a>.</p>
+    <h1 id="traefik">Traefik</h1>
+<p><a href="https://containo.us/traefik/">Traefik</a> - Automate reverse proxy access to your server</p>
+<p>To enable Traefik set <code>traefik_enabled</code> to <code>true</code>, then set <code>$appname_traefik_enabled</code> to <code>true</code> for every app you want to be proxied.</p>
+<p>To enable acess to Traefik's webinterface at <code>traefik_webinterface_port</code> set <code>traefik_dashboard_enabled</code> and <code>traefik_insecure_api</code> to <code>true</code>. Secure acess will be implemented soon.</p>
+<p>SSL configuration and automated Let's Encrypt certificates will also be added soon.</p>
 
   <br>
     
@@ -98,20 +98,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../traefik/" class="btn btn-xs btn-default pull-right">
+      <a href="../portainer/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../traefik/" class="btn btn-xs btn-link">
-        Traefik
+      <a href="../portainer/" class="btn btn-xs btn-link">
+        Portainer
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../../contributing/" class="btn btn-xs btn-default pull-left">
+      <a href="../nginx/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../../contributing/" class="btn btn-xs btn-link">
-        Contributing
+        Previous</a><a href="../nginx/" class="btn btn-xs btn-link">
+        Nginx
       </a>
     </div>
     
@@ -122,7 +122,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
 <footer class="col-md-12 wm-page-content">
       <p>
-        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/applications/nginx.md"><i class="fa fa-github"></i>
+        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/applications/traefik.md"><i class="fa fa-github"></i>
 Edit on GitHub</a>
       </p>
   <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/CherryKitten/CharjaBox/">Windmill Dark</a> theme by CherryKitten (noraj).</p>

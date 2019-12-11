@@ -13,6 +13,7 @@ nav:
   - 'contributing.md'
   - Applications:
       - 'applications/nginx.md'
+      - 'applications/traefik.md'
       - 'applications/portainer.md'
       - 'applications/smb.md'
       - 'applications/bind.md'

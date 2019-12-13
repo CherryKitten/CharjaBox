@@ -17,7 +17,7 @@ bitwarden_rs_smtp_enabled: false
 bitwarden_rs_smtp_host: ""
 bitwarden_rs_smtp_from: ""
 bitwarden_rs_smtp_port: ""
-bitwarden_rs_smtp_ssl: ""
+bitwarden_rs_smtp_ssl: true
 bitwarden_rs_smtp_username: ""
 bitwarden_rs_smtp_password: ""
 

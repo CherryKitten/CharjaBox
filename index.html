@@ -1,212 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  
-  
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Work in progress Ansible based Homeserver setup using Docker.">
     <meta name="author" content="CherryKitten">
     
-    <link rel="shortcut icon" href="./img/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>CharjaBox</title>
-    <link href="./css/bootstrap-3.3.7.min.css" rel="stylesheet">
-    <link href="./css/font-awesome-4.7.0.css" rel="stylesheet">
-    <link href="./css/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/highlight.css">
+    <link rel="img/favicon.ico">
+
+    
+    <title>Home - CharjaBox</title>
+    
+
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="css/base.min.css" rel="stylesheet">
+    <link href="css/cinder.min.css" rel="stylesheet">
+    <link href="css/highlight.min.css" rel="stylesheet">
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
 
-    <script src="./js/jquery-3.2.1.min.js"></script>
-    <script src="./js/bootstrap-3.3.7.min.js"></script>
-    <script src="./js/highlight.pack.js"></script>
-    
-      <script src="./js/elasticlunr.min.js"></script>
-    
-    <base target="_top">
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <script>
-      var base_url = '.';
-      var is_top_frame = (window === window.parent);
-        
-        var pageToc = [
-          {title: "CharjaBox", url: "#_top", children: [
-              {title: "What is this?", url: "#what-is-this" },
-              {title: "Features", url: "#features" },
-              {title: "Installation", url: "#installation" },
-              {title: "Special Thanks", url: "#special-thanks" },
-          ]},
-        ];
-
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
     </script>
-    <script src="./js/base.js"></script>
-      <script src="search/main.js"></script> 
+
+    
+
+     
 </head>
 
-<body>
-<script>
-if (is_top_frame) { $('body').addClass('wm-top-page'); }
-</script>
+<body class="homepage" >
 
-<nav class="navbar wm-page-top-frame">
-  <div class="container-fluid wm-top-container">
-    
-    <div class="wm-top-tool pull-right wm-vcenter">
-      <form class="dropdown wm-vcentered" id="wm-search-form" action="./search.html">
-        
-        <button id="wm-search-show" class="btn btn-sm btn-default" type="submit"
-          ><i class="fa fa-search" aria-hidden="true"></i></button>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
 
-        <div class="input-group input-group-sm wm-top-search">
-          <input type="text" name="q" class="form-control" id="mkdocs-search-query" placeholder="Search" autocomplete="off">
-          <span class="input-group-btn" role="search">
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             
-            <button class="btn btn-default dropdown-toggle collapse" data-toggle="dropdown" type="button"><span class="caret"></span></button>
-            <ul id="mkdocs-search-results" class="dropdown-menu dropdown-menu-right"></ul>
-            <button id="wm-search-go" class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-          </span>
+
+            <!-- Main title -->
+
+            <a class="navbar-brand" href=".">CharjaBox</a>
         </div>
-      </form>
-    </div>
 
-    
-    <div class="wm-top-tool wm-vcenter pull-right wm-small-left">
-      <button id="wm-toc-button" type="button" class="btn btn-sm btn-default wm-vcentered"><i class="fa fa-th-list" aria-hidden="true"></i></button>
-    </div>
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="active">
+                        <a href=".">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="requirements/">Requirements</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="configuration/">Configuration</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="installation/">Installation</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="contributing/">Contributing</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Applications <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="applications/smb/">SMB</a>
+</li>
 
-    
-    
+                        
+                            
+<li >
+    <a href="applications/rtorrent/">r(u)torrent</a>
+</li>
 
-    
-    <a href="" class="wm-top-brand wm-top-link wm-vcenter">
-      
-      <div class="wm-top-title">
-        CharjaBox<br>
+                        
+                            
+<li >
+    <a href="applications/dokuwiki/">Dokuwiki</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="applications/gitea/">Gitea</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="applications/lancache/">Lancache</a>
+</li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Media streaming</a>
+    <ul class="dropdown-menu">
         
-      </div>
-    </a>
-  </div>
-</nav>
+            
+<li >
+    <a href="applications/airsonic/">Airsonic</a>
+</li>
 
-  <div id="main-content" class="wm-page-top-frame">
-    
-<nav class="wm-toc-pane">
-  
-    <ul class="wm-toctree wm-toc-repo">
-      <li class="wm-toc-li wm-toc-lev1">
-      <a class="wm-article-link wm-toc-text" href="https://github.com/CherryKitten/CharjaBox/">
-        <i class="fa fa-github"></i>
+        
+            
+<li >
+    <a href="applications/plex/">Plex</a>
+</li>
 
-        GitHub
-      </a>
-      </li>
+        
     </ul>
-  <ul class="wm-toctree">
-        <li class="wm-toc-li wm-toc-lev1 "><a href="" class="wm-article-link wm-toc-text">Home</a>
-</li>
-        <li class="wm-toc-li wm-toc-lev1 "><a href="requirements/" class="wm-article-link wm-toc-text">Requirements</a>
-</li>
-        <li class="wm-toc-li wm-toc-lev1 "><a href="configuration/" class="wm-article-link wm-toc-text">Configuration</a>
-</li>
-        <li class="wm-toc-li wm-toc-lev1 "><a href="installation/" class="wm-article-link wm-toc-text">Installation</a>
-</li>
-        <li class="wm-toc-li wm-toc-lev1 "><a href="contributing/" class="wm-article-link wm-toc-text">Contributing</a>
-</li>
-        <li class="wm-toc-li wm-toc-lev1 wm-toc-opener"><span class="wm-toc-text">Applications</span>
-</li>
-<li class="wm-toc-li-nested collapse">
-  <ul class="wm-toctree">
-      <li class="wm-toc-li wm-toc-lev2 "><a href="applications/nginx/" class="wm-article-link wm-toc-text">Nginx</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="applications/traefik/" class="wm-article-link wm-toc-text">Traefik</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="applications/portainer/" class="wm-article-link wm-toc-text">Portainer</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="applications/smb/" class="wm-article-link wm-toc-text">Samba</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="applications/bind/" class="wm-article-link wm-toc-text">BIND</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="applications/rtorrent/" class="wm-article-link wm-toc-text">r(u)Torrent</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="applications/dokuwiki/" class="wm-article-link wm-toc-text">Dokuwiki</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="applications/timemachine/" class="wm-article-link wm-toc-text">Time machine</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="applications/gitea/" class="wm-article-link wm-toc-text">Gitea</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="applications/lancache/" class="wm-article-link wm-toc-text">Lancache</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="applications/bitwarden_rs/" class="wm-article-link wm-toc-text">Bitwarden_rs</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev2 wm-toc-opener"><span class="wm-toc-text">Media streaming</span>
-</li>
-<li class="wm-toc-li-nested collapse">
-  <ul class="wm-toctree">
-      <li class="wm-toc-li wm-toc-lev3 "><a href="applications/airsonic/" class="wm-article-link wm-toc-text">Airsonic</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="applications/plex/" class="wm-article-link wm-toc-text">Plex</a>
-</li>
-  </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Media management</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="applications/jackett/">Jackett</a>
 </li>
 
-      <li class="wm-toc-li wm-toc-lev2 wm-toc-opener"><span class="wm-toc-text">Media management</span>
-</li>
-<li class="wm-toc-li-nested collapse">
-  <ul class="wm-toctree">
-      <li class="wm-toc-li wm-toc-lev3 "><a href="applications/jackett/" class="wm-article-link wm-toc-text">Jackett</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="applications/radarr/" class="wm-article-link wm-toc-text">Radarr</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="applications/sonarr/" class="wm-article-link wm-toc-text">Sonarr</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="applications/lidarr/" class="wm-article-link wm-toc-text">Lidarr</a>
-</li>
-      <li class="wm-toc-li wm-toc-lev3 "><a href="applications/bazarr/" class="wm-article-link wm-toc-text">Bazarr</a>
-</li>
-  </ul>
+        
+            
+<li >
+    <a href="applications/radarr/">Radarr</a>
 </li>
 
-  </ul>
+        
+            
+<li >
+    <a href="applications/sonarr/">Sonarr</a>
 </li>
 
-  </ul>
-</nav>
+        
+            
+<li >
+    <a href="applications/lidarr/">Lidarr</a>
+</li>
 
-    <div class="wm-content-pane">
-      <iframe class="wm-article" name="article"></iframe>
+        
+            
+<li >
+    <a href="applications/bazarr/">Bazarr</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Server & Network management</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="applications/portainer/">Portainer</a>
+</li>
+
+        
+            
+<li >
+    <a href="applications/bind/">BIND</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Security & Backup</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="applications/bitwarden_rs/">Bitwarden_rs</a>
+</li>
+
+        
+            
+<li >
+    <a href="applications/timemachine/">Timemachine</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Webservers & reverse proxies</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="applications/nginx/">Nginx</a>
+</li>
+
+        
+            
+<li >
+    <a href="applications/traefik/">Traefik</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="prev" >
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="requirements/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/index.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
     </div>
-  </div>
+</div>
 
-<div class="container-fluid wm-page-content">
-  <a name="_top"></a>
-    
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#charjabox">CharjaBox</a></li>
+            <li class="second-level"><a href="#what-is-this">What is this?</a></li>
+                
+            <li class="second-level"><a href="#features">Features</a></li>
+                
+                <li class="third-level"><a href="#applications">Applications</a></li>
+            <li class="second-level"><a href="#installation">Installation</a></li>
+                
+            <li class="second-level"><a href="#special-thanks">Special Thanks</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
 
-    
-    
-      
-    
-
-  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
-    
-    <div class="wm-article-nav pull-right">
-      <a href="requirements/" class="btn btn-xs btn-default pull-right">
-        Next
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-      </a>
-      <a href="requirements/" class="btn btn-xs btn-link">
-        Requirements
-      </a>
-    </div>
-    
-  </div>
-
-    
-
-    <h1 id="charjabox">CharjaBox</h1>
+<h1 id="charjabox">CharjaBox</h1>
 <p><img alt="GitHub" src="https://img.shields.io/github/license/CherryKitten/CharjaBox" />
 <a href="https://travis-ci.com/CherryKitten/CharjaBox"><img alt="Build Status" src="https://travis-ci.com/CherryKitten/CharjaBox.svg?branch=master" /></a></p>
 <p><img src='img/mascot.png' alt='CharjaBox mascot' width="100"/></p>
@@ -270,44 +370,97 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <h2 id="special-thanks">Special Thanks</h2>
 <ul>
 <li>Thanks to <a href="https://github.com/DysphoricUnicorn">DysphoricUnicorn</a> for designing our beautiful mascot.</li>
-</ul>
-
-  <br>
-    
-
-    
-    
-      
-    
-
-  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
-    
-    <div class="wm-article-nav pull-right">
-      <a href="requirements/" class="btn btn-xs btn-default pull-right">
-        Next
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-      </a>
-      <a href="requirements/" class="btn btn-xs btn-link">
-        Requirements
-      </a>
+</ul></div>
+        
+        
     </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+
+        
+        
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap-3.0.3.min.js"></script>
+    <script src="js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>var base_url = "."</script>
     
-  </div>
+    <script src="js/base.js"></script>
+    <script src="search/main.js"></script>
 
-    <br>
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
 </div>
+    </body>
 
-<footer class="col-md-12 wm-page-content">
-      <p>
-        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/index.md"><i class="fa fa-github"></i>
-Edit on GitHub</a>
-      </p>
-  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/CherryKitten/CharjaBox/">Windmill Dark</a> theme by CherryKitten (noraj).</p>
-</footer>
-
-</body>
 </html>
+
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-12-11 15:20:18
+Build Date UTC : 2019-12-13 13:15:34
 -->

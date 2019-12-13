@@ -1,159 +1,559 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  
-  
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta name="description" content="Work in progress Ansible based Homeserver setup using Docker.">
     <meta name="author" content="CherryKitten">
     
-    <link rel="shortcut icon" href="../../img/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="../../img/favicon.ico">
+
+    
     <title>Bitwarden_rs - CharjaBox</title>
-    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
-    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
-    <link href="../../css/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/highlight.css">
+    
+
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+    <link href="../../css/highlight.min.css" rel="stylesheet">
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
 
-    <script src="../../js/jquery-3.2.1.min.js"></script>
-    <script src="../../js/bootstrap-3.3.7.min.js"></script>
-    <script src="../../js/highlight.pack.js"></script>
-    
-    <base target="_top">
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <script>
-      var base_url = '../..';
-      var is_top_frame = false;
-        
-        var pageToc = [
-          {title: "Bitwarden_rs", url: "#_top", children: [
-              {title: "Enable/Disable registrations", url: "#enabledisable-registrations" },
-              {title: "Admin interface", url: "#admin-interface" },
-              {title: "Websocket notifications", url: "#websocket-notifications" },
-              {title: "Email", url: "#email" },
-              {title: "Yubikey OTP authentication", url: "#yubikey-otp-authentication" },
-          ]},
-        ];
-
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
     </script>
-    <script src="../../js/base.js"></script>
-      <script src="../../search/main.js"></script> 
+
+    
+
+     
 </head>
 
 <body>
-<script>
-if (is_top_frame) { $('body').addClass('wm-top-page'); }
-</script>
 
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
 
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
 
-<div class="container-fluid wm-page-content">
-  <a name="_top"></a>
-    
+            <!-- Main title -->
 
-    
-    
-      
-    
+            <a class="navbar-brand" href="../..">CharjaBox</a>
+        </div>
 
-  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
-    
-    <div class="wm-article-nav pull-right">
-      <a href="../airsonic/" class="btn btn-xs btn-default pull-right">
-        Next
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-      </a>
-      <a href="../airsonic/" class="btn btn-xs btn-link">
-        Airsonic
-      </a>
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../requirements/">Requirements</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../configuration/">Configuration</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../installation/">Installation</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../contributing/">Contributing</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Applications <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../smb/">SMB</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../rtorrent/">r(u)torrent</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../dokuwiki/">Dokuwiki</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../gitea/">Gitea</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../lancache/">Lancache</a>
+</li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Media streaming</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../airsonic/">Airsonic</a>
+</li>
+
+        
+            
+<li >
+    <a href="../plex/">Plex</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Media management</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../jackett/">Jackett</a>
+</li>
+
+        
+            
+<li >
+    <a href="../radarr/">Radarr</a>
+</li>
+
+        
+            
+<li >
+    <a href="../sonarr/">Sonarr</a>
+</li>
+
+        
+            
+<li >
+    <a href="../lidarr/">Lidarr</a>
+</li>
+
+        
+            
+<li >
+    <a href="../bazarr/">Bazarr</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Server & Network management</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../portainer/">Portainer</a>
+</li>
+
+        
+            
+<li >
+    <a href="../bind/">BIND</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Security & Backup</a>
+    <ul class="dropdown-menu">
+        
+            
+<li class="active">
+    <a href="./">Bitwarden_rs</a>
+</li>
+
+        
+            
+<li >
+    <a href="../timemachine/">Timemachine</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Webservers & reverse proxies</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../nginx/">Nginx</a>
+</li>
+
+        
+            
+<li >
+    <a href="../traefik/">Traefik</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../bind/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../timemachine/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/applications/bitwarden_rs.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
     </div>
-    
-    <div class="wm-article-nav">
-      <a href="../lancache/" class="btn btn-xs btn-default pull-left">
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../lancache/" class="btn btn-xs btn-link">
-        Lancache
-      </a>
-    </div>
-    
-  </div>
+</div>
 
-    
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#general">General</a></li>
+        <li class="first-level "><a href="#enabledisable-registrations">Enable/Disable registrations</a></li>
+        <li class="first-level "><a href="#admin-interface">Admin interface</a></li>
+        <li class="first-level "><a href="#websocket-notifications">Websocket notifications</a></li>
+        <li class="first-level "><a href="#email">Email</a></li>
+        <li class="first-level "><a href="#yubikey-otp-authentication">Yubikey OTP authentication</a></li>
+        <li class="first-level "><a href="#variables">Variables</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
 
-    <h1 id="bitwarden_rs">Bitwarden_rs</h1>
+<h1 id="general">General</h1>
 <p><a href="https://github.com/dani-garcia/bitwarden_rs">Bitwarden_rs</a> - Password manager compatible with <a href="https://bitwarden.com/">Bitwarden apps</a></p>
-<h2 id="enabledisable-registrations">Enable/Disable registrations</h2>
+<h1 id="enabledisable-registrations">Enable/Disable registrations</h1>
 <p>To disable open registrations and/or invites set <code>bitwarden_rs_signups_allowed</code> and/or <code>bitwarden_rs_invites_allowed</code> to <code>false</code>. Disabling signups does not automatically disable invites.</p>
-<h2 id="admin-interface">Admin interface</h2>
+<h1 id="admin-interface">Admin interface</h1>
 <p>To enable the Admin webinterface, set <code>bitwarden_rs_admintoken</code> to a secure password. When this is set you access the admin interface at <code>/admin</code>.</p>
-<h2 id="websocket-notifications">Websocket notifications</h2>
+<h1 id="websocket-notifications">Websocket notifications</h1>
 <p>To enable WebSockets notifications, an external reverse proxy is necessary, and it must be configured to do the following:
 - Route the <code>/notifications/hub</code> endpoint to the WebSocket server, by default at port <code>3012</code>, making sure to pass the <code>Connection</code> and <code>Upgrade</code> headers. (Note the port can be changed with <code>WEBSOCKET_PORT</code> variable)
 - Route everything else, including <code>/notifications/hub/negotiate</code>, to the standard Rocket server, by default at port <code>9001</code>.</p>
 <p>Then you need to enable WebSockets negotiation on the bitwarden_rs side by setting the <code>bitwarden_rs_websocket_enabled</code> variable to <code>true</code>.</p>
 <p>More information <a href="https://github.com/dani-garcia/bitwarden_rs/wiki/Enabling-WebSocket-notifications">here</a></p>
-<h2 id="email">Email</h2>
+<h1 id="email">Email</h1>
 <p>To activate the e-mail functionality of bitwarden_rs you need to configure an smtp server connection.</p>
 <p>First, set <code>bitwarden_rs_smtp_enabled</code> to <code>true</code>, then configure the following variables, according to your existing smtp server:</p>
 <pre><code>bitwarden_rs_smtp_host: &quot;&quot;
 bitwarden_rs_smtp_from: &quot;&quot;
 bitwarden_rs_smtp_port: &quot;&quot;
-bitwarden_rs_smtp_ssl: &quot;&quot;
+bitwarden_rs_smtp_ssl: true
 bitwarden_rs_smtp_username: &quot;&quot;
 bitwarden_rs_smtp_password: &quot;&quot;
 </code></pre>
 
 <p>More information <a href="https://github.com/dani-garcia/bitwarden_rs/wiki/SMTP-configuration">here</a>.</p>
-<h2 id="yubikey-otp-authentication">Yubikey OTP authentication</h2>
+<h1 id="yubikey-otp-authentication">Yubikey OTP authentication</h1>
 <p>To enable YubiKey authentication, you must set the variables <code>bitwarden_rs_yubikey_server</code>, <code>bitwarden_rs_yubikey_id</code> and <code>bitwarden_rs_yubikey_key</code> to a valid configuration, then enable it by setting <code>bitwarden_rs_yubikey_enabled: true</code></p>
 <p>More information <a href="https://github.com/dani-garcia/bitwarden_rs/wiki/Enabling-Yubikey-OTP-authentication">here</a></p>
-
-  <br>
-    
-
-    
-    
-      
-    
-
-  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
-    
-    <div class="wm-article-nav pull-right">
-      <a href="../airsonic/" class="btn btn-xs btn-default pull-right">
-        Next
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-      </a>
-      <a href="../airsonic/" class="btn btn-xs btn-link">
-        Airsonic
-      </a>
+<h1 id="variables">Variables</h1>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Default</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bitwarden_rs_enabled</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable the application</td>
+</tr>
+<tr>
+<td>bitwarden_rs_data_directory</td>
+<td>String</td>
+<td>"{{ docker_home }}/bitwarden_rs/data"</td>
+<td>Path were application data should be stored</td>
+</tr>
+<tr>
+<td>bitwarden_rs_signups_allowed</td>
+<td>Boolean</td>
+<td>true</td>
+<td>Enable/Disable open account creation</td>
+</tr>
+<tr>
+<td>bitwarden_rs_invites_allowed</td>
+<td>Boolean</td>
+<td>true</td>
+<td>Enable/Disable account creation via invites</td>
+</tr>
+<tr>
+<td>bitwarden_rs_admintoken</td>
+<td>String</td>
+<td>""</td>
+<td>Password for admin interface. If left blank the interface is disabled.</td>
+</tr>
+<tr>
+<td>bitwarden_rs_websocket_enabled</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable Websocket</td>
+</tr>
+<tr>
+<td>bitwarden_rs_yubikey_enabled</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable Yubikey OTP authentication</td>
+</tr>
+<tr>
+<td>bitwarden_rs_yubikey_server</td>
+<td>String</td>
+<td>""</td>
+<td>The server to use for Yubikey OTP authentication</td>
+</tr>
+<tr>
+<td>bitwarden_rs_yubikey_id</td>
+<td>String</td>
+<td>""</td>
+<td>The ID to use on the Yubikey server</td>
+</tr>
+<tr>
+<td>bitwarden_rs_yubikey_key</td>
+<td>String</td>
+<td>""</td>
+<td>The secret key for the Yubikey ID</td>
+</tr>
+<tr>
+<td>bitwarden_rs_smtp_enabled</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable sending of mails via smtp</td>
+</tr>
+<tr>
+<td>bitwarden_rs_smtp_host</td>
+<td>String</td>
+<td>""</td>
+<td>SMTP Host to use for sending mail</td>
+</tr>
+<tr>
+<td>bitwarden_rs_smtp_from</td>
+<td>String</td>
+<td>""</td>
+<td>SMTP ´from:´ header</td>
+</tr>
+<tr>
+<td>bitwarden_rs_smtp_port</td>
+<td>String</td>
+<td>""</td>
+<td>SMTP Port to connect to</td>
+</tr>
+<tr>
+<td>bitwarden_rs_smtp_ssl</td>
+<td>Boolean</td>
+<td>true</td>
+<td>Enable/Disable SSL connections to SMTP Host</td>
+</tr>
+<tr>
+<td>bitwarden_rs_smtp_username</td>
+<td>String</td>
+<td>""</td>
+<td>Username to authenticate with the SMTP Host</td>
+</tr>
+<tr>
+<td>bitwarden_rs_smtp_password</td>
+<td>String</td>
+<td>""</td>
+<td>Password to authenticate with the SMTP Host</td>
+</tr>
+<tr>
+<td>bitwarden_rs_traefik_enabled</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable access to application via Traefik</td>
+</tr>
+<tr>
+<td>bitwarden_rs_domain</td>
+<td>String</td>
+<td>"bitwarden.{{ charjabox_domain }}"</td>
+<td>Domain used to access the application</td>
+</tr>
+<tr>
+<td>bitwarden_rs_http_port</td>
+<td>Int</td>
+<td>9001</td>
+<td>Port used to access the application</td>
+</tr>
+<tr>
+<td>bitwarden_rs_websocket_port</td>
+<td>Int</td>
+<td>3012</td>
+<td>Port used for Websocket</td>
+</tr>
+</tbody>
+</table></div>
+        
+        
     </div>
-    
-    <div class="wm-article-nav">
-      <a href="../lancache/" class="btn btn-xs btn-default pull-left">
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../lancache/" class="btn btn-xs btn-link">
-        Lancache
-      </a>
-    </div>
-    
-  </div>
 
-    <br>
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+
+        
+        
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
 </div>
+    </body>
 
-<footer class="col-md-12 wm-page-content">
-      <p>
-        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/applications/bitwarden_rs.md"><i class="fa fa-github"></i>
-Edit on GitHub</a>
-      </p>
-  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/CherryKitten/CharjaBox/">Windmill Dark</a> theme by CherryKitten (noraj).</p>
-</footer>
-
-</body>
 </html>

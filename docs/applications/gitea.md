@@ -1,15 +1,20 @@
-# Gitea
+# General
 [Gitea](https://gitea.io/) - Git with a cup of tea
 
 Visit `http://$YourIP:$YourPort/install` after activating Gitea to complete the installation process.
 
-You can use the following settings to customize your Gitea installation:
+# Variables
 
-```
-gitea_appname: "The name shown on your Gitea page"
-gitea_runmode: "prod or dev, use dev for testing and prod for actual use"
-gitea_domain: "Domain for your gitea instance"
-gitea_disable_ssh: "true/false"
-gitea_disable_registrations: "true/false"
-gitea_require_signin: "true/false" When set to true, you can't access public projects without signing in.
-```
+| Variable                    | Type    | Default                        | Comment                                          |
+|-----------------------------|---------|--------------------------------|--------------------------------------------------|
+| gitea_enabled               | Boolean | false                          | Enable/Disable the application                   |
+| gitea_data_directory        | String  | "{{ docker_home }}/gitea/data" | Path were application data should be stored      |
+| gitea_appname               | String  | "Gitea: Git with a cup of tea" | Title of application webpage                     |
+| gitea_runmode               | String  | "prod"                         | Either "prod" or "dev", for debugging purposes   |
+| gitea_domain                | String  | "gitea.{{ charjabox_domain }}" | Domain used to access the application            |
+| gitea_disable_ssh           | Boolean | false                          | Enable/Disable SSH access to the application     |
+| gitea_disable_registrations | Boolean | false                          | Enable/Disable registrations                     |
+| gitea_require_signin        | Boolean | false                          | Require signin to access public resources        |
+| gitea_traefik_enabled       | Boolean | false                          | Enable/Disable access to application via Traefik |
+| gitea_http_port             | Int     | 3000                           | Port used to access the application              |
+| gitea_ssh_port              | Int     | 222                            | Port used to access SSH                          |

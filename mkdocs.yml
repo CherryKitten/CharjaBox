@@ -16,6 +16,7 @@ nav:
       - r(u)torrent: 'applications/rtorrent.md'
       - Dokuwiki: 'applications/dokuwiki.md'
       - Gitea: 'applications/gitea.md'
+      - Firefly III: 'applications/firefly.md'
       - Lancache: 'applications/lancache.md'
       - Media streaming:
           - Airsonic: 'applications/airsonic.md'

@@ -11,7 +11,7 @@
     <link rel="../../img/favicon.ico">
 
     
-    <title>Traefik - CharjaBox</title>
+    <title>Firefly III - CharjaBox</title>
     
 
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -129,8 +129,8 @@
 
                         
                             
-<li >
-    <a href="../firefly/">Firefly III</a>
+<li class="active">
+    <a href="./">Firefly III</a>
 </li>
 
                         
@@ -254,8 +254,8 @@
 
         
             
-<li class="active">
-    <a href="./">Traefik</a>
+<li >
+    <a href="../traefik/">Traefik</a>
 </li>
 
         
@@ -276,17 +276,17 @@
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../nginx/">
+                        <a rel="prev" href="../gitea/">
                             <i class="fas fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li class="disabled">
-                        <a rel="next" >
+                    <li >
+                        <a rel="next" href="../lancache/">
                             Next <i class="fas fa-arrow-right"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/applications/traefik.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/applications/firefly.md"><i class="fab fa-github"></i> Edit on GitHub</a>
                     </li>
             </ul>
         </div>
@@ -298,16 +298,70 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#traefik">Traefik</a></li>
+        <li class="first-level active"><a href="#general">General</a></li>
+        <li class="first-level "><a href="#variables">Variables</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="traefik">Traefik</h1>
-<p><a href="https://containo.us/traefik/">Traefik</a> - Automate reverse proxy access to your server</p>
-<p>To enable Traefik set <code>traefik_enabled</code> to <code>true</code>, then set <code>$appname_traefik_enabled</code> to <code>true</code> for every app you want to be proxied.</p>
-<p>To enable acess to Traefik's webinterface at <code>traefik_webinterface_port</code> set <code>traefik_dashboard_enabled</code> and <code>traefik_insecure_api</code> to <code>true</code>. Secure acess will be implemented soon.</p>
-<p>SSL configuration and automated Let's Encrypt certificates will also be added soon.</p></div>
+<h1 id="general">General</h1>
+<p><a href="https://firefly-iii.org/">Firefly III</a> - Free and open source personal finance manager</p>
+<p>After enabling Firefly, you can access the Webinterface and create an account. Then you can configure Firefly with your bank accounts, budgets, etc.</p>
+<h1 id="variables">Variables</h1>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Default</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>firefly_enabled</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable the application</td>
+</tr>
+<tr>
+<td>firefly_config_directory</td>
+<td>String</td>
+<td>"{{ docker_home }}/firefly/config"</td>
+<td>Path were application config should be stored</td>
+</tr>
+<tr>
+<td>firefly_db_password</td>
+<td>String</td>
+<td>""</td>
+<td>Password for Firefly Database</td>
+</tr>
+<tr>
+<td>firefly_app_key</td>
+<td>String</td>
+<td>"SomeRandomStringOf32CharsExactly"</td>
+<td>Encryption Key for Firefly, Must be exactly 32 Chars. Change this to something you generated randomly</td>
+</tr>
+<tr>
+<td>firefly_traefik_enabled</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable access to application via Traefik</td>
+</tr>
+<tr>
+<td>firefly_domain</td>
+<td>String</td>
+<td>"firefly.{{ charjabox_domain }}"</td>
+<td>Domain used to access the application</td>
+</tr>
+<tr>
+<td>firefly_port</td>
+<td>Int</td>
+<td>4005</td>
+<td>Port used to access the application</td>
+</tr>
+</tbody>
+</table></div>
         
         
     </div>

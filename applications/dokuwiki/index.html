@@ -130,6 +130,12 @@
                         
                             
 <li >
+    <a href="../firefly/">Firefly III</a>
+</li>
+
+                        
+                            
+<li >
     <a href="../lancache/">Lancache</a>
 </li>
 
@@ -292,19 +298,67 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#dokuwiki">Dokuwiki</a></li>
+        <li class="first-level active"><a href="#general">General</a></li>
+        <li class="first-level "><a href="#variables">Variables</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="dokuwiki">Dokuwiki</h1>
-<ul>
-<li><a href="https://www.dokuwiki.org/dokuwiki">Dokuwiki</a> - Simple to use and highly versatile Open Source wiki software that doesn't require a database</li>
-</ul>
+<h1 id="general">General</h1>
+<p><a href="https://www.dokuwiki.org/dokuwiki">Dokuwiki</a> - Simple to use and highly versatile Open Source wiki software that doesn't require a database</p>
 <p>Upon first install go to <code>http://$IP:$PORT/install.php</code>.</p>
 <p>Once you have completed the setup, restart the container, login as admin and set "Use nice URLs" in the admin/Configuration Settings panel to .htaccess and tick Use slash as namespace separator in URLs to enable nice URLs.</p>
 <p>You will find the webui at <code>http://$IP:$PORT/</code>, for more info see <a href="https://www.dokuwiki.org/dokuwiki/">Dokuwiki</a>.</p>
-<p><em>This explanation was copied from the <a href="https://hub.docker.com/r/linuxserver/dokuwiki">Linuxserver.io page for Dokuwiki</a>.</em></p></div>
+<p><em>This explanation was copied from the <a href="https://hub.docker.com/r/linuxserver/dokuwiki">Linuxserver.io page for Dokuwiki</a>.</em></p>
+<h1 id="variables">Variables</h1>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Default</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dokuwiki_enabled</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable the application</td>
+</tr>
+<tr>
+<td>dokuwiki_config_directory</td>
+<td>String</td>
+<td>"{{ docker_home }}/dokuwiki/config"</td>
+<td>Path were application config should be stored</td>
+</tr>
+<tr>
+<td>dokuwiki_traefik_enabled</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable access to application via Traefik</td>
+</tr>
+<tr>
+<td>dokuwiki_domain</td>
+<td>String</td>
+<td>"dokuwiki.{{ charjabox_domain }}"</td>
+<td>Domain used to access the application</td>
+</tr>
+<tr>
+<td>dokuwiki_http_port</td>
+<td>Int</td>
+<td>6009</td>
+<td>Port used to access the application via HTTP</td>
+</tr>
+<tr>
+<td>dokuwiki_https_port</td>
+<td>Int</td>
+<td>6010</td>
+<td>Port used to access the application via HTTPS</td>
+</tr>
+</tbody>
+</table></div>
         
         
     </div>

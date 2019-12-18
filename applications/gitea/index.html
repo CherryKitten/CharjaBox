@@ -130,6 +130,12 @@
                         
                             
 <li >
+    <a href="../firefly/">Firefly III</a>
+</li>
+
+                        
+                            
+<li >
     <a href="../lancache/">Lancache</a>
 </li>
 
@@ -275,7 +281,7 @@
                         </a>
                     </li>
                     <li >
-                        <a rel="next" href="../lancache/">
+                        <a rel="next" href="../firefly/">
                             Next <i class="fas fa-arrow-right"></i>
                         </a>
                     </li>
@@ -292,22 +298,94 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#gitea">Gitea</a></li>
+        <li class="first-level active"><a href="#general">General</a></li>
+        <li class="first-level "><a href="#variables">Variables</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="gitea">Gitea</h1>
+<h1 id="general">General</h1>
 <p><a href="https://gitea.io/">Gitea</a> - Git with a cup of tea</p>
 <p>Visit <code>http://$YourIP:$YourPort/install</code> after activating Gitea to complete the installation process.</p>
-<p>You can use the following settings to customize your Gitea installation:</p>
-<pre><code>gitea_appname: &quot;The name shown on your Gitea page&quot;
-gitea_runmode: &quot;prod or dev, use dev for testing and prod for actual use&quot;
-gitea_domain: &quot;Domain for your gitea instance&quot;
-gitea_disable_ssh: &quot;true/false&quot;
-gitea_disable_registrations: &quot;true/false&quot;
-gitea_require_signin: &quot;true/false&quot; When set to true, you can't access public projects without signing in.
-</code></pre></div>
+<h1 id="variables">Variables</h1>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Default</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gitea_enabled</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable the application</td>
+</tr>
+<tr>
+<td>gitea_data_directory</td>
+<td>String</td>
+<td>"{{ docker_home }}/gitea/data"</td>
+<td>Path were application data should be stored</td>
+</tr>
+<tr>
+<td>gitea_appname</td>
+<td>String</td>
+<td>"Gitea: Git with a cup of tea"</td>
+<td>Title of application webpage</td>
+</tr>
+<tr>
+<td>gitea_runmode</td>
+<td>String</td>
+<td>"prod"</td>
+<td>Either "prod" or "dev", for debugging purposes</td>
+</tr>
+<tr>
+<td>gitea_domain</td>
+<td>String</td>
+<td>"gitea.{{ charjabox_domain }}"</td>
+<td>Domain used to access the application</td>
+</tr>
+<tr>
+<td>gitea_disable_ssh</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable SSH access to the application</td>
+</tr>
+<tr>
+<td>gitea_disable_registrations</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable registrations</td>
+</tr>
+<tr>
+<td>gitea_require_signin</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Require signin to access public resources</td>
+</tr>
+<tr>
+<td>gitea_traefik_enabled</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable access to application via Traefik</td>
+</tr>
+<tr>
+<td>gitea_http_port</td>
+<td>Int</td>
+<td>3000</td>
+<td>Port used to access the application</td>
+</tr>
+<tr>
+<td>gitea_ssh_port</td>
+<td>Int</td>
+<td>222</td>
+<td>Port used to access SSH</td>
+</tr>
+</tbody>
+</table></div>
         
         
     </div>

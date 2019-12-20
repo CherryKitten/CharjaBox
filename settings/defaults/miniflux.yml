@@ -1,0 +1,11 @@
+miniflux_enabled: false
+
+miniflux_data_directory: "{{ docker_home }}/miniflux/data"
+
+miniflux_db_password: ""
+
+miniflux_admin_username: "Admin"
+miniflux_admin_password: ""
+
+miniflux_traefik_enabled: false
+miniflux_domain: "miniflux.{{ charjabox_domain }}"

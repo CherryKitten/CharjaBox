@@ -86,3 +86,6 @@
     - role: traefik
       when: traefik_enabled
       tags: traefik
+    - role: miniflux
+      when: miniflux_enabled
+      tags: miniflux

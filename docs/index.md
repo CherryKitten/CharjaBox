@@ -24,6 +24,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 * Media management with Sonarr, Radarr and Lidarr
 * Torrenting via r(u)Torrent
 * Your own wiki using Dokuwiki
+* RSS Feed Reader
 * macOS backups over the network with Time machine over SMB
 * Personal Finance management with Firefly III
 * Local DNS management with BIND
@@ -46,6 +47,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 * [Jellyfin](http://jellyfin.org/) - The Free Software Media System
 * [Lancache](https://github.com/lancachenet/monolithic) - Cache your video game downloads and operating system updates so you only have to download them once
 * [Lidarr](https://lidarr.audio/) - Manage your music collection
+* [Miniflux](https://miniflux.app/) - Minimalist and opinionated feed reader
 * [Nginx](https://www.nginx.com/) - Open source web server and a reverse proxy server
 * [Plex](https://www.plex.tv/) - Your very own personal streaming service
 * [Portainer](https://portainer.io/) - Web Interface for managing Docker containers

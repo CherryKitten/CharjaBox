@@ -25,6 +25,8 @@ jellyfin_https_port: 6006
 
 lancache_port: 6666
 
+miniflux_port: 8778
+
 nginx_http_port: 80
 nginx_https_port: 443
 

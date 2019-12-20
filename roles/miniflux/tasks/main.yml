@@ -1,0 +1,27 @@
+---
+- name: create miniflux directory
+  file:
+    path: "{{ miniflux_data_directory }}"
+    state: directory
+
+- name: create miniflux docker-compose directory
+  file:
+    path: "{{ docker_compose_dir }}/miniflux"
+    state: directory
+
+- name: copy docker-compose.yml for miniflux
+  template:
+    src: docker-compose.miniflux.yml.j2
+    dest: "{{ docker_compose_dir }}/miniflux/docker-compose.miniflux.yml"
+
+- name: configure miniflux systemd service
+  template:
+    src: miniflux.service.j2
+    dest: /etc/systemd/system/miniflux.service
+
+- name: start miniflux
+  systemd:
+    name: miniflux
+    enabled: "yes"
+    daemon-reload: "yes"
+    state: started

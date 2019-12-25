@@ -4,9 +4,11 @@ language: python
 install:
   - pip install mkdocs
   - pip install mkdocs-cinder
+  - pip install ansible-lint
 
 script:
   - mkdocs build
+  - ansible-lint charjabox.yml
 
 deploy:
   provider: pages

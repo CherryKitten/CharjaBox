@@ -310,15 +310,65 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#sonarr">Sonarr</a></li>
+        <li class="first-level active"><a href="#general">General</a></li>
+        <li class="first-level "><a href="#variables">Variables</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="sonarr">Sonarr</h1>
+<h1 id="general">General</h1>
 <p><a href="https://sonarr.tv/">Sonarr</a> - Manage your TV collection</p>
 <p>Set <code>sonarr_data_directory</code> to the folder where downloaded <code>.torrent</code> files should get stored.</p>
-<p>Sonarr uses the path set in <code>charjabox_tv_directory</code> in <code>charjabox_general.yml</code> to access your TV collection.</p></div>
+<p>Sonarr uses the path set in <code>charjabox_tv_directory</code> in <code>charjabox_general.yml</code> to access your TV collection.</p>
+<h1 id="variables">Variables</h1>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Default</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sonarr_enabled</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable the application</td>
+</tr>
+<tr>
+<td>sonarr_config_directory</td>
+<td>String</td>
+<td>"{{ docker_home }}/sonarr/config"</td>
+<td>Path were application config should be stored</td>
+</tr>
+<tr>
+<td>sonarr_data_directory</td>
+<td>String</td>
+<td>"{{ docker_home }}/sonarr/data"</td>
+<td>Path were application data should be stored</td>
+</tr>
+<tr>
+<td>sonarr_traefik_enabled</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable access to application via Traefik</td>
+</tr>
+<tr>
+<td>sonarr_domain</td>
+<td>String</td>
+<td>"sonarr.{{ charjabox_domain }}"</td>
+<td>Domain used to access the application</td>
+</tr>
+<tr>
+<td>sonarr_port</td>
+<td>Int</td>
+<td>8989</td>
+<td>Port to access the application</td>
+</tr>
+</tbody>
+</table></div>
         
         
     </div>

@@ -310,19 +310,93 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#rutorrent">r(u)Torrent</a></li>
+        <li class="first-level active"><a href="#general">General</a></li>
+        <li class="first-level "><a href="#variables">Variables</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="rutorrent">r(u)Torrent</h1>
+<h1 id="general">General</h1>
 <ul>
 <li><a href="https://github.com/rakshasa/rtorrent">rtorrent</a> - Text-based ncurses BitTorrent client</li>
 <li><a href="https://github.com/Novik/ruTorrent">ruTorrent</a> - Web front-end for the popular Bittorrent client rtorrent</li>
 </ul>
 <p>Settings for rtorrent can be changed in <code>rtorrent_config_directory/rtorrent/rtorrent.rc</code>. </p>
 <p>"Settings, changed by the user through the "Settings" panel in ruTorrent, are valid until rtorrent restart. After which all settings will be set according to the rtorrent config file (/config/rtorrent/rtorrent.rc),this is a limitation of the actual apps themselves."</p>
-<p>To set a password for rutorrent add the auth configuration to <code>rtorrent_config_directory/nginx/nginx.conf</code>, see <a href="https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/">here</a> for more information.</p></div>
+<p>To set a password for rutorrent add the auth configuration to <code>rtorrent_config_directory/nginx/nginx.conf</code>, see <a href="https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/">here</a> for more information.</p>
+<h1 id="variables">Variables</h1>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Default</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rtorrent_enabled</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable the application</td>
+</tr>
+<tr>
+<td>rtorrent_config_directory</td>
+<td>String</td>
+<td>"{{ docker_home }}/rtorrent/config"</td>
+<td>Path were application config should be stored</td>
+</tr>
+<tr>
+<td>rtorrent_download_directory</td>
+<td>String</td>
+<td>"{{ charjabox_downloads_directory }}"</td>
+<td>Path were downloads should be stored</td>
+</tr>
+<tr>
+<td>rtorrent_traefik_enabled</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable access to application via Traefik</td>
+</tr>
+<tr>
+<td>rtorrent_domain</td>
+<td>String</td>
+<td>"rtorrent.{{ charjabox_domain }}"</td>
+<td>Domain used to access the application</td>
+</tr>
+<tr>
+<td>rtorrent_http_port</td>
+<td>Int</td>
+<td>7991</td>
+<td>Port used to access the application via HTTP</td>
+</tr>
+<tr>
+<td>rtorrent_https_port</td>
+<td>Int</td>
+<td>7992</td>
+<td>Port used to access the application via HTTPS</td>
+</tr>
+<tr>
+<td>rtorrent_scgi_port</td>
+<td>Int</td>
+<td>5000</td>
+<td>Port used for scgi socket</td>
+</tr>
+<tr>
+<td>rtorrent_bittorrent_port</td>
+<td>Int</td>
+<td>51413</td>
+<td>Port used for torrent protocols</td>
+</tr>
+<tr>
+<td>rtorrent_bittorrent_port2</td>
+<td>Int</td>
+<td>6881</td>
+<td>Port used for torrent protocols</td>
+</tr>
+</tbody>
+</table></div>
         
         
     </div>

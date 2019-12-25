@@ -310,16 +310,72 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#nginx">Nginx</a></li>
+        <li class="first-level active"><a href="#general">General</a></li>
+        <li class="first-level "><a href="#variables">Variables</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="nginx">Nginx</h1>
+<h1 id="general">General</h1>
 <p><a href="https://www.nginx.com/">Nginx</a> - Open source web server and a reverse proxy server</p>
 <p><code>nginx_config_directory</code> binds to <code>/etc/nginx</code>, for information on how to configure nginx see the <a href="https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/">nginx documentation</a>.</p>
 <p><code>nginx_data_directory</code> binds to <code>/var/www/</code>, put everything the webserver should serve in here.</p>
-<p>For information on how to setup nginx as a reverse proxy for your other apps, see <a href="https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/">this documentation page</a>.</p></div>
+<p>For information on how to setup nginx as a reverse proxy for your other apps, see <a href="https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/">this documentation page</a>.</p>
+<h1 id="variables">Variables</h1>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Default</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nginx_enabled</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable the application</td>
+</tr>
+<tr>
+<td>nginx_config_directory</td>
+<td>String</td>
+<td>"{{docker_home}}/nginx/config"</td>
+<td>Path were application config should be stored</td>
+</tr>
+<tr>
+<td>nginx_data_directory</td>
+<td>String</td>
+<td>"{{docker_home}}/nginx/data"</td>
+<td>Path were application data should be stored</td>
+</tr>
+<tr>
+<td>nginx_traefik_enabled</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable access to application via Traefik</td>
+</tr>
+<tr>
+<td>nginx_domain</td>
+<td>String</td>
+<td>"nginx.{{ charjabox_domain }}"</td>
+<td>Domain used to access the application</td>
+</tr>
+<tr>
+<td>nginx_http_port</td>
+<td>Int</td>
+<td>80</td>
+<td>Port used to access the application via HTTP</td>
+</tr>
+<tr>
+<td>nginx_https_port</td>
+<td>Int</td>
+<td>443</td>
+<td>Port used to access the application via HTTPs</td>
+</tr>
+</tbody>
+</table></div>
         
         
     </div>

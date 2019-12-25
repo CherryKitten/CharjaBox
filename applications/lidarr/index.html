@@ -310,15 +310,65 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#lidarr">Lidarr</a></li>
+        <li class="first-level active"><a href="#general">General</a></li>
+        <li class="first-level "><a href="#variables">Variables</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="lidarr">Lidarr</h1>
+<h1 id="general">General</h1>
 <p><a href="https://lidarr.audio/">Lidarr</a> - Manage your music collection</p>
 <p>Set <code>lidarr_data_directory</code> to the folder where downloaded <code>.torrent</code> files should get stored.</p>
-<p>Lidarr uses the path set in <code>charjabox_music_directory</code> in <code>charjabox_general.yml</code> to access your music collection.</p></div>
+<p>Lidarr uses the path set in <code>charjabox_music_directory</code> in <code>charjabox_general.yml</code> to access your music collection.</p>
+<h1 id="variables">Variables</h1>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Default</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lidarr_enabled</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable the application</td>
+</tr>
+<tr>
+<td>lidarr_config_directory</td>
+<td>String</td>
+<td>"{{ docker_home }}/lidarr/config"</td>
+<td>Path were application config should be stored</td>
+</tr>
+<tr>
+<td>lidarr_data_directory</td>
+<td>String</td>
+<td>"{{ docker_home }}/lidarr/data"</td>
+<td>Path were application data should be stored</td>
+</tr>
+<tr>
+<td>lidarr_traefik_enabled</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable access to application via Traefik</td>
+</tr>
+<tr>
+<td>lidarr_domain</td>
+<td>String</td>
+<td>"lidarr.{{ charjabox_domain }}"</td>
+<td>Domain used to access the application</td>
+</tr>
+<tr>
+<td>lidarr_port</td>
+<td>Int</td>
+<td>8686</td>
+<td>Port used to access the application</td>
+</tr>
+</tbody>
+</table></div>
         
         
     </div>

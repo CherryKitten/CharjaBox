@@ -7,11 +7,11 @@ For information on running Jackett behind a reverse proxy, see [here](https://gi
 
 # Variables
 
-| Variable                   | Type    | Default                                 | Comment                                          |
-|----------------------------|---------|-----------------------------------------|--------------------------------------------------|
-| jackett\_enabled           | Boolean | false                                   | Enable/Disable the application                   |
-| jackett\_config\_directory | String  | "\{\{ docker\_home \}\}/jackett/config" | Path were application config should be stored    |
-| jackett\_data\_directory   | String  | "\{\{ docker\_home \}\}/jackett/data"   | Path were application data should be stored      |
-| jackett\_traefik\_enabled  | Boolean | false                                   | Enable/Disable access to application via Traefik |
-| jackett\_domain            | String  | "jackett\.\{\{ charjabox\_domain \}\}"  | Domain used to access the application            |
-| jackett\_port              | Int     | 9117                                    | Port used to access the application              |
+| Variable                 | Type    | Default                            | Comment                                          |
+|--------------------------|---------|------------------------------------|--------------------------------------------------|
+| jackett_enabled          | Boolean | false                              | Enable/Disable the application                   |
+| jackett_config_directory | String  | "{{ docker_home }}/jackett/config" | Path were application config should be stored    |
+| jackett_data_directory   | String  | "{{ docker_home }}/jackett/data"   | Path were application data should be stored      |
+| jackett_traefik_enabled  | Boolean | false                              | Enable/Disable access to application via Traefik |
+| jackett_domain           | String  | "jackett.{{ charjabox_domain }}"   | Domain used to access the application            |
+| jackett_port             | Int     | 9117                               | Port used to access the application              |

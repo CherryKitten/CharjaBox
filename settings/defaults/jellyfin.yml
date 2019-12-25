@@ -1,9 +1,9 @@
 jellyfin_enabled: false
 
 jellyfin_config_directory: "{{ docker_home }}/jellyfin/config"
-jellyfin_music_directory: "/path/to/music"
-jellyfin_tv_directory: "/path/to/tv"
-jellyfin_movies_directory: "/path/to/movies"
+jellyfin_music_directory: "{{ charjabox_music_directory }}"
+jellyfin_tv_directory: "{{ charjabox_tv_directory }}"
+jellyfin_movies_directory: "{{ charjabox_movies_directory }}"
 
 jellyfin_traefik_enabled: false
 jellyfin_domain: "jellyfin.{{ charjabox_domain }}"

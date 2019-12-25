@@ -1,4 +1,4 @@
-# Lancache
+# General
 [Lancache](https://github.com/lancachenet/monolithic) - Cache your video game downloads and operating system updates so you only have to download them once
 
 If you do not run your own DNS server, you can set `lancache_dns_enabled` to `true` and use the integrated DNS server.
@@ -6,6 +6,8 @@ If you do not run your own DNS server, you can set `lancache_dns_enabled` to `tr
 You can also use the variables `lancache_limits_memory`, `lancache_limits_size`, `lancache_limits_age` to set the caches memory use, maximum disk space use and maximum age for cached files respectively.
 
 If you run your own DNS server, you can get all the domains for the supported CDNs from [here](https://github.com/uklans/cache-domains). Redirect those to your CharjaBox IP (and set up a reverse proxy for those domains if not using port 80).
+
+# Configuration
 
 A simple example setup using BIND and Nginx with the Cache running on `192.168.1.22` on port `6666` could look like this:
 
@@ -86,3 +88,16 @@ server {
         }
 }
 ```
+
+# Variables
+
+| Variable                    | Type    | Default                                  | Comment                                                                     |
+|-----------------------------|---------|------------------------------------------|-----------------------------------------------------------------------------|
+| lancache\_enabled           | Boolean | false                                    | Enable/Disable the application                                              |
+| lancache\_dns\_enabled      | Boolean | false                                    | Enable/Disable integrated DNS server                                        |
+| lancache\_config\_directory | String  | "\{\{ docker\_home \}\}/lancache/config" | Path were application config should be stored                               |
+| lancache\_data\_directory   | String  | "\{\{ docker\_home \}\}/lancache/data"   | Path were application data should be stored, This includes all cached files |
+| lancache\_limits\_memory    | String  | "500m"                                   | Limit for memory usage for the caching process                              |
+| lancache\_limits\_size      | String  | "1000000m"                               | Limit for total size of cached files                                        |
+| lancache\_limits\_age       | String  | "3560d"                                  | Time after which to delete old files                                        |
+| lancache\_port              | Int     | 6666                                     | Port used to access the application                                         |

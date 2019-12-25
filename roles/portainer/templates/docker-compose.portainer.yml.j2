@@ -10,7 +10,7 @@ services:
       - {{ portainer_port }}:9000
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - {{ portainer_data_directory }}:/data
+      - {{ portainer_config_directory }}:/data
     labels:
       traefik.enable: "{{ portainer_traefik_enabled }}"
       traefik.http.routers.portainer.entrypoints: "web"

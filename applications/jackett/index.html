@@ -304,15 +304,65 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#jackett">Jackett</a></li>
+        <li class="first-level active"><a href="#general">General</a></li>
+        <li class="first-level "><a href="#variables">Variables</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="jackett">Jackett</h1>
+<h1 id="general">General</h1>
 <p><a href="https://github.com/Jackett/Jackett">Jackett</a> - API Support for your favorite torrent trackers. </p>
 <p>Jackett works as a proxy server: it translates queries from apps (Sonarr, Radarr, SickRage, CouchPotato, Mylar, Lidarr, DuckieTV, qBittorrent, Nefarious etc) into tracker-site-specific http queries, parses the html response, then sends results back to the requesting software. This allows for getting recent uploads (like RSS) and performing searches. Jackett is a single repository of maintained indexer scraping &amp; translation logic - removing the burden from other apps.</p>
-<p>For information on running Jackett behind a reverse proxy, see <a href="https://github.com/Jackett/Jackett#running-jackett-behind-a-reverse-proxy">here</a>.</p></div>
+<p>For information on running Jackett behind a reverse proxy, see <a href="https://github.com/Jackett/Jackett#running-jackett-behind-a-reverse-proxy">here</a>.</p>
+<h1 id="variables">Variables</h1>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Default</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jackett_enabled</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable the application</td>
+</tr>
+<tr>
+<td>jackett_config_directory</td>
+<td>String</td>
+<td>"{{ docker_home }}/jackett/config"</td>
+<td>Path were application config should be stored</td>
+</tr>
+<tr>
+<td>jackett_data_directory</td>
+<td>String</td>
+<td>"{{ docker_home }}/jackett/data"</td>
+<td>Path were application data should be stored</td>
+</tr>
+<tr>
+<td>jackett_traefik_enabled</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Enable/Disable access to application via Traefik</td>
+</tr>
+<tr>
+<td>jackett_domain</td>
+<td>String</td>
+<td>"jackett.{{ charjabox_domain }}"</td>
+<td>Domain used to access the application</td>
+</tr>
+<tr>
+<td>jackett_port</td>
+<td>Int</td>
+<td>9117</td>
+<td>Port used to access the application</td>
+</tr>
+</tbody>
+</table></div>
         
         
     </div>

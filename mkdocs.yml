@@ -12,6 +12,7 @@ nav:
   - Installation: 'installation.md'
   - Contributing: 'contributing.md'
   - Applications:
+      - Heimdall: 'applications/heimdall.md'
       - SMB: 'applications/smb.md'
       - r(u)torrent: 'applications/rtorrent.md'
       - Dokuwiki: 'applications/dokuwiki.md'

@@ -10,6 +10,7 @@ Lidarr uses the path set in `charjabox_music_directory` in `charjabox_general.ym
 | Variable                | Type    | Default                           | Comment                                          |
 |-------------------------|---------|-----------------------------------|--------------------------------------------------|
 | lidarr_enabled          | Boolean | false                             | Enable/Disable the application                   |
+| lidarr_tag              | String  | "latest"                          | Tag to use for the docker image                  |
 | lidarr_config_directory | String  | "{{ docker_home }}/lidarr/config" | Path were application config should be stored    |
 | lidarr_data_directory   | String  | "{{ docker_home }}/lidarr/data"   | Path were application data should be stored      |
 | lidarr_traefik_enabled  | Boolean | false                             | Enable/Disable access to application via Traefik |

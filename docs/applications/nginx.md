@@ -12,6 +12,7 @@ For information on how to setup nginx as a reverse proxy for your other apps, se
 | Variable               | Type    | Default                        | Comment                                          |
 |------------------------|---------|--------------------------------|--------------------------------------------------|
 | nginx_enabled          | Boolean | false                          | Enable/Disable the application                   |
+| nginx_tag              | String  | "latest"                       | Tag to use for the docker image                  |
 | nginx_config_directory | String  | "{{docker_home}}/nginx/config" | Path were application config should be stored    |
 | nginx_data_directory   | String  | "{{docker_home}}/nginx/data"   | Path were application data should be stored      |
 | nginx_traefik_enabled  | Boolean | false                          | Enable/Disable access to application via Traefik |

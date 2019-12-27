@@ -12,6 +12,7 @@ BIND has to run on port `53` for DNS to work. The Webinterface port can be set b
 | Variable                    | Type    | Default                       | Comment                                     |
 |-----------------------------|---------|-------------------------------|---------------------------------------------|
 | bind_enabled                | Boolean | false                         | Enable/Disable the application              |
+| bind_tag                    | String  | "latest"                      | Tag to use for the docker image                  |
 | bind_data_directory         | String  | "{{ docker_home }}/bind/data" | Path were application data should be stored |
 | bind_webmin_enabled         | Boolean | false                         | Enable/Disable Webmin                       |
 | bind_webmin_password        | String  | ""                            | Password for Webmin                         |

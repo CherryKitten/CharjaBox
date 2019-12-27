@@ -10,6 +10,7 @@ All settings are changed via the Webinterface.
 | Variable                 | Type                              | Default                           | Comment                                          |
 |--------------------------|-----------------------------------|-----------------------------------|--------------------------------------------------|
 | airsonic_enabled         | Boolean                           | false                             | Enable/Disable the application                   |
+| airsonic_tag             | String                            | "latest"                          | Tag to use for the docker image                  |
 | airsonic_data_directory  | String                            | "{{ docker_home }}/airsonic/data" | Path were application data should be stored      |
 | airsonic_music_directory | String                            | "{{ charjabox_music_directory }}" | Path were music files are stored                 |
 | airsonic_traefik_enabled | Boolean                           | false                             | Enable/Disable access to application via Traefik |

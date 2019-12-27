@@ -14,6 +14,7 @@ Once you are on the webinterface, you can do your first time setup and let Plex 
 | Variable              | Type    | Default                            | Comment                                          |
 |-----------------------|---------|------------------------------------|--------------------------------------------------|
 | plex_enabled          | Boolean | false                              | Enable/Disable the application                   |
+| plex_tag              | String  | "latest"                           | Tag to use for the docker image                  |
 | plex_config_directory | String  | "{{ docker_home }}/plex/config"    | Path were application config should be stored    |
 | plex_music_directory  | String  | "{{ charjabox_music_directory }}"  | Path were music is stored                        |
 | plex_tv_directory     | String  | "{{ charjabox_tv_directory }}"     | Path were TV shows are stored                    |

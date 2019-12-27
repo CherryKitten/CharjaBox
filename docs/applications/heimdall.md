@@ -6,6 +6,7 @@
 | Variable                  | Type    | Default                             | Comment                                          |
 |---------------------------|---------|-------------------------------------|--------------------------------------------------|
 | heimdall_enabled          | Boolean | false                               | Enable/Disable the application                   |
+| heimdall_tag              | String  | "latest"                            | Tag to use for the docker image                  |
 | heimdall_config_directory | String  | "{{ docker_home }}/heimdall/config" | Path were application config should be stored    |
 | heimdall_traefik_enabled  | Boolean | false                               | Enable/Disable access to application via Traefik |
 | heimdall_domain           | String  | "heimdall.{{ charjabox_domain }}"   | Domain used to access the application            |

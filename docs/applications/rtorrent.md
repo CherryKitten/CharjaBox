@@ -13,6 +13,7 @@ To set a password for rutorrent add the auth configuration to `rtorrent_config_d
 | Variable                    | Type    | Default                               | Comment                                          |
 |-----------------------------|---------|---------------------------------------|--------------------------------------------------|
 | rtorrent_enabled            | Boolean | false                                 | Enable/Disable the application                   |
+| rtorrent_tag                | String  | "latest"                              | Tag to use for the docker image                  |
 | rtorrent_config_directory   | String  | "{{ docker_home }}/rtorrent/config"   | Path were application config should be stored    |
 | rtorrent_download_directory | String  | "{{ charjabox_downloads_directory }}" | Path were downloads should be stored             |
 | rtorrent_traefik_enabled    | Boolean | false                                 | Enable/Disable access to application via Traefik |

@@ -8,6 +8,8 @@ After enabling Firefly, you can access the Webinterface and create an account. T
 | Variable                 | Type    | Default                            | Comment                                                                                               |
 |--------------------------|---------|------------------------------------|-------------------------------------------------------------------------------------------------------|
 | firefly_enabled          | Boolean | false                              | Enable/Disable the application                                                                        |
+| firefly_tag              | String  | "latest"                           | Tag to use for the docker image                                                                       |
+| firefly_db_tag           | String  | "10"                               | Tag to use for the database docker image                                                              |
 | firefly_config_directory | String  | "{{ docker_home }}/firefly/config" | Path were application config should be stored                                                         |
 | firefly_db_password      | String  | ""                                 | Password for Firefly Database                                                                         |
 | firefly_app_key          | String  | "SomeRandomStringOf32CharsExactly" | Encryption Key for Firefly, Must be exactly 32 Chars. Change this to something you generated randomly |

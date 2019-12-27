@@ -94,6 +94,7 @@ server {
 | Variable                  | Type    | Default                             | Comment                                                                     |
 |---------------------------|---------|-------------------------------------|-----------------------------------------------------------------------------|
 | lancache_enabled          | Boolean | false                               | Enable/Disable the application                                              |
+| lancache_tag              | String  | "latest"                            | Tag to use for the docker image                                             |
 | lancache_dns_enabled      | Boolean | false                               | Enable/Disable integrated DNS server                                        |
 | lancache_config_directory | String  | "{{ docker_home }}/lancache/config" | Path were application config should be stored                               |
 | lancache_data_directory   | String  | "{{ docker_home }}/lancache/data"   | Path were application data should be stored, This includes all cached files |

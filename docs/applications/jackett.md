@@ -10,6 +10,7 @@ For information on running Jackett behind a reverse proxy, see [here](https://gi
 | Variable                 | Type    | Default                            | Comment                                          |
 |--------------------------|---------|------------------------------------|--------------------------------------------------|
 | jackett_enabled          | Boolean | false                              | Enable/Disable the application                   |
+| jackett_tag              | String  | "latest"                           | Tag to use for the docker image                  |
 | jackett_config_directory | String  | "{{ docker_home }}/jackett/config" | Path were application config should be stored    |
 | jackett_data_directory   | String  | "{{ docker_home }}/jackett/data"   | Path were application data should be stored      |
 | jackett_traefik_enabled  | Boolean | false                              | Enable/Disable access to application via Traefik |

@@ -42,6 +42,7 @@ More information [here](https://github.com/dani-garcia/bitwarden_rs/wiki/Enablin
 | Variable                       | Type    | Default                               | Comment                                                                |
 |--------------------------------|---------|---------------------------------------|------------------------------------------------------------------------|
 | bitwarden_rs_enabled           | Boolean | false                                 | Enable/Disable the application                                         |
+| bitwarden_rs_tag               | String  | "latest"                              | Tag to use for the docker image                  |
 | bitwarden_rs_data_directory    | String  | "{{ docker_home }}/bitwarden_rs/data" | Path were application data should be stored                            |
 | bitwarden_rs_signups_allowed   | Boolean | true                                  | Enable/Disable open account creation                                   |
 | bitwarden_rs_invites_allowed   | Boolean | true                                  | Enable/Disable account creation via invites                            |

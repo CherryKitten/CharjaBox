@@ -3,7 +3,7 @@ version: '3'
 
 services:
   airsonic:
-    image: airsonic/airsonic
+    image: airsonic/airsonic:{{ airsonic_tag }}
     container_name: Airsonic
     restart: unless-stopped
     ports:

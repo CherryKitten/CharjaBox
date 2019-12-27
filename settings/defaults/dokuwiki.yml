@@ -1,5 +1,6 @@
 dokuwiki_enabled: false
 
+dokuwiki_tag: "latest"
 dokuwiki_config_directory: "{{ docker_home }}/dokuwiki/config"
 
 dokuwiki_traefik_enabled: false

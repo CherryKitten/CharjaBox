@@ -3,7 +3,7 @@ version: '3'
 
 services:
   heimdall:
-    image: linuxserver/heimdall:latest
+    image: linuxserver/heimdall:{{ heimdall_tag }}
     container_name: Heimdall
     restart: unless-stopped
     ports:

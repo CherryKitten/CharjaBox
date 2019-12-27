@@ -1,5 +1,6 @@
 jackett_enabled: false
 
+jackett_tag: "latest"
 jackett_config_directory: "{{ docker_home }}/jackett/config"
 jackett_data_directory: "{{ docker_home }}/jackett/data"
 

@@ -1,5 +1,6 @@
 bitwarden_rs_enabled: false
 
+bitwarden_rs_tag: "latest"
 bitwarden_rs_data_directory: "{{ docker_home }}/bitwarden_rs/data"
 
 bitwarden_rs_signups_allowed: true

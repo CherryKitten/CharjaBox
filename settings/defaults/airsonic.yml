@@ -1,5 +1,6 @@
 airsonic_enabled: false
 
+airsonic_tag: "latest"
 airsonic_data_directory: "{{ docker_home }}/airsonic/data"
 airsonic_music_directory: "{{ charjabox_music_directory }}"
 

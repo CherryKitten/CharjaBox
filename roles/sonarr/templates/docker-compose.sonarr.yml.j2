@@ -3,7 +3,7 @@ version: '3'
 
 services:
   sonarr:
-    image: linuxserver/sonarr
+    image: linuxserver/sonarr:{{ sonarr_tag }}
     container_name: Sonarr
     restart: unless-stopped
     ports:

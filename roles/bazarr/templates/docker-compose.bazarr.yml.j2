@@ -3,7 +3,7 @@ version: '3'
 
 services:
   bazarr:
-    image: linuxserver/bazarr
+    image: linuxserver/bazarr:{{ bazarr_tag }}
     container_name: bazarr
     restart: unless-stopped
     ports:

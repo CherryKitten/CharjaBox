@@ -1,5 +1,6 @@
 gitea_enabled: false
 
+gitea_tag: "latest"
 gitea_data_directory: "{{ docker_home }}/gitea/data"
 
 gitea_appname: "Gitea: Git with a cup of tea"

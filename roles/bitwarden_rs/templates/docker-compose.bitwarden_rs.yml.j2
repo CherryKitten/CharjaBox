@@ -3,7 +3,7 @@ version: '3'
 
 services:
   bitwarden_rs:
-    image: bitwardenrs/server
+    image: bitwardenrs/server:{{ bitwarden_rs_tag }}
     container_name: bitwarden_rs
     restart: unless-stopped
     ports:

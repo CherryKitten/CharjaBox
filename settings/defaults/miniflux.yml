@@ -1,5 +1,7 @@
 miniflux_enabled: false
 
+miniflux_tag: "latest"
+miniflux_db_tag: 11.1
 miniflux_data_directory: "{{ docker_home }}/miniflux/data"
 
 miniflux_db_password: ""

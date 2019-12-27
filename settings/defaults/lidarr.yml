@@ -1,5 +1,6 @@
 lidarr_enabled: false
 
+lidarr_tag: "latest"
 lidarr_config_directory: "{{ docker_home }}/lidarr/config"
 lidarr_data_directory: "{{ docker_home }}/lidarr/data"
 

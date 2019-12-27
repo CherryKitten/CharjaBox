@@ -3,7 +3,7 @@ version: '3'
 
 services:
   traefik:
-    image: traefik
+    image: traefik:{{ traefik_tag }}
     container_name: traefik
     restart: unless-stopped
     network_mode: host

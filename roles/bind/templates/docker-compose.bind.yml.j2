@@ -3,7 +3,7 @@ version: '3'
 
 services:
   bind:
-    image: sameersbn/bind:9.11.3-20190706
+    image: sameersbn/bind:9.11.3-20190706:{{ bind_tag }}
     container_name: BIND
     restart: unless-stopped
     ports:

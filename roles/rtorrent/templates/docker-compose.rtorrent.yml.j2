@@ -3,7 +3,7 @@ version: '3'
 
 services:
   rtorrent:
-    image: linuxserver/rutorrent
+    image: linuxserver/rutorrent:{{ rtorrent_tag }}
     container_name: Rtorrent
     restart: unless-stopped
     ports:

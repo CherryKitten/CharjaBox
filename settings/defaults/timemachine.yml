@@ -1,5 +1,6 @@
 timemachine_enabled: false
 
+timemachine_tag: "latest"
 timemachine_data_directory: "{{ docker_home }}/timemachine/data"
 
 timemachine_sharename: "Timemachine"

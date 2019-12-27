@@ -1,7 +1,7 @@
 ---
 - name: create portainer directory
   file:
-    path: "{{ portainer_data_directory }}"
+    path: "{{ portainer_config_directory }}"
     state: directory
 
 - name: create portainer docker-compose directory

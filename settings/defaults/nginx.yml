@@ -1,5 +1,6 @@
 nginx_enabled: false
 
+nginx_tag: "latest"
 nginx_config_directory: "{{docker_home}}/nginx/config"
 nginx_data_directory: "{{docker_home}}/nginx/data"
 

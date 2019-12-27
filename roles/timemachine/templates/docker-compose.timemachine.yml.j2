@@ -3,7 +3,7 @@ version: '3'
 
 services:
   timemachine:
-    image: awlnx/samba-timemachine:latest
+    image: awlnx/samba-timemachine:{{ timemachine_tag }}
     container_name: Timemachine
     restart: unless-stopped
     ports:

@@ -3,7 +3,7 @@ version: '3'
 
 services:
   lancache:
-    image: lancachenet/monolithic:latest
+    image: lancachenet/monolithic:{{ lancache_tag }}
     container_name: Lancache
     restart: unless-stopped
     ports:

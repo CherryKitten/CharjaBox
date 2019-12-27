@@ -2,7 +2,7 @@
 version: "3"
 services:
   jellyfin:
-    image: jellyfin/jellyfin
+    image: jellyfin/jellyfin:{{ jellyfin_tag }}
     container_name: Jellyfin
     restart: unless-stopped
     ports:

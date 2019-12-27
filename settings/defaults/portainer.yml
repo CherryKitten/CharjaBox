@@ -1,5 +1,6 @@
 portainer_enabled: false
 
+portainer_tag: "latest"
 portainer_config_directory: "{{ docker_home }}/portainer/config"
 
 portainer_traefik_enabled: false

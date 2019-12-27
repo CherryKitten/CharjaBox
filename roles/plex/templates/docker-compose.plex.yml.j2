@@ -3,7 +3,7 @@ version: '3'
 
 services:
   plex:
-    image: plexinc/pms-docker
+    image: plexinc/pms-docker:{{ plex_tag }}
     container_name: Plex
     restart: unless-stopped
     ports:

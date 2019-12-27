@@ -3,7 +3,7 @@ version: '3'
 
 services:
   dokuwiki:
-    image: linuxserver/dokuwiki:latest
+    image: linuxserver/dokuwiki:{{ dokuwiki_tag }}
     container_name: Dokuwiki
     restart: unless-stopped
     ports:

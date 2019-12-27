@@ -1,5 +1,6 @@
 sonarr_enabled: false
 
+sonarr_tag: "latest"
 sonarr_config_directory: "{{ docker_home }}/sonarr/config"
 sonarr_data_directory: "{{ docker_home }}/sonarr/data"
 

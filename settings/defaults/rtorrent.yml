@@ -1,5 +1,6 @@
 rtorrent_enabled: false
 
+rtorrent_tag: "latest"
 rtorrent_config_directory: "{{ docker_home }}/rtorrent/config"
 rtorrent_download_directory: "{{ charjabox_downloads_directory }}"
 

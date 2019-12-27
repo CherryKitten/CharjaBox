@@ -7,7 +7,7 @@ networks:
 
 services:
   firefly_iii_app:
-    image: jc5x/firefly-iii
+    image: jc5x/firefly-iii:{{ firefly_tag }}
     container_name: Firefly
     restart: unless-stopped
     ports:
@@ -40,7 +40,7 @@ services:
       traefik.http.services.firefly.loadbalancer.server.port: "80"
 
   firefly_iii_db:
-    image: "postgres:10"
+    image: postgres:{{ firefly_db_tag }}
     environment:
       - POSTGRES_USER=firefly
       - POSTGRES_DB=firefly

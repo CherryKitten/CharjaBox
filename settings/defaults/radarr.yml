@@ -1,5 +1,6 @@
 radarr_enabled: false
 
+radarr_tag: "latest"
 radarr_config_directory: "{{ docker_home }}/radarr/config"
 radarr_data_directory: "{{ docker_home }}/radarr/data"
 

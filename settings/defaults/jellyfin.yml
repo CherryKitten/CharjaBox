@@ -1,5 +1,6 @@
 jellyfin_enabled: false
 
+jellyfin_tag: "latest"
 jellyfin_config_directory: "{{ docker_home }}/jellyfin/config"
 jellyfin_music_directory: "{{ charjabox_music_directory }}"
 jellyfin_tv_directory: "{{ charjabox_tv_directory }}"

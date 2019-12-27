@@ -3,7 +3,7 @@ version: '3'
 
 services:
   jackett:
-    image: linuxserver/jackett
+    image: linuxserver/jackett:{{ jackett_tag }}
     container_name: Jackett
     restart: unless-stopped
     ports:

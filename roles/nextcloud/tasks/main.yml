@@ -1,0 +1,32 @@
+---
+- name: fail if critical variables not changed
+  fail:
+    msg: "Please change all password variables. Running without custom passwords is not safe."
+  when: nextcloud_admin_password == "" or nextcloud_db_password == "" or nextcloud_db_rootpassword == ""
+
+- name: create nextcloud directory
+  file:
+    path: "{{ nextcloud_data_directory }}"
+    state: directory
+
+- name: create nextcloud docker-compose directory
+  file:
+    path: "{{ docker_compose_dir }}/nextcloud"
+    state: directory
+
+- name: copy docker-compose.yml for nextcloud
+  template:
+    src: docker-compose.nextcloud.yml.j2
+    dest: "{{ docker_compose_dir }}/nextcloud/docker-compose.nextcloud.yml"
+
+- name: configure nextcloud systemd service
+  template:
+    src: nextcloud.service.j2
+    dest: /etc/systemd/system/nextcloud.service
+
+- name: start nextcloud
+  systemd:
+    name: nextcloud
+    enabled: "yes"
+    daemon-reload: "yes"
+    state: started

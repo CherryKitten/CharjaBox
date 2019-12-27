@@ -1,0 +1,25 @@
+nextcloud_enabled: false
+
+nextcloud_tag: "latest"
+nextcloud_db_tag: "latest"
+
+nextcloud_data_directory: "{{ docker_home }}/nextcloud/data"
+
+nextcloud_traefik_enabled: false
+nextcloud_domain: "nextcloud.{{ charjabox_domain }}"
+
+nextcloud_admin_username: "nextcloud"
+nextcloud_admin_password: ""
+nextcloud_db_password: ""
+nextcloud_db_rootpassword: ""
+
+nextcloud_smtp_enabled: false
+
+nextcloud_smtp_host: ""
+nextcloud_smtp_secure: "ssl"
+nextcloud_smtp_port: 465
+nextcloud_smtp_authtype: "LOGIN"
+nextcloud_smtp_user: ""
+nextcloud_smtp_password: ""
+nextcloud_smtp_from: "{{ charjabox_email }}"
+nextcloud_smtp_domain: "{{ nextcloud_domain }}"

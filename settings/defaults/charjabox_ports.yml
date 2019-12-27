@@ -27,6 +27,8 @@ lancache_port: 6666
 
 miniflux_port: 8778
 
+nextcloud_port: 8380
+
 nginx_http_port: 80
 nginx_https_port: 443
 

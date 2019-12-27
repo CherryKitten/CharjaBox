@@ -89,3 +89,6 @@
     - role: miniflux
       when: miniflux_enabled
       tags: miniflux
+    - role: nextcloud
+      when: nextcloud_enabled
+      tags: nextcloud

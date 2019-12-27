@@ -14,6 +14,7 @@ nav:
   - Applications:
       - Heimdall: 'applications/heimdall.md'
       - SMB: 'applications/smb.md'
+      - Nextcloud: 'applications/nextcloud.md'
       - r(u)torrent: 'applications/rtorrent.md'
       - Dokuwiki: 'applications/dokuwiki.md'
       - Gitea: 'applications/gitea.md'

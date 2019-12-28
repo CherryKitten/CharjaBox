@@ -1,4 +1,9 @@
 ---
+- name: fail if critical variables not changed
+  fail:
+    msg: "Please change all password variables. Running without custom passwords is not safe."
+  when: not timemachine_password
+
 - name: create timemachine directory
   file:
     path: "{{ timemachine_data_directory }}"

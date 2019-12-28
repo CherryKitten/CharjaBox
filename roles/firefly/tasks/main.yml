@@ -1,4 +1,9 @@
 ---
+- name: fail if critical variables not changed
+  fail:
+    msg: "Please change all password variables. Running without custom passwords is not safe."
+  when: not firefly_db_password or not firefly_app_key
+
 - name: create firefly directory
   file:
     path: "{{ item }}"

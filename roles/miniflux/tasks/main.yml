@@ -1,4 +1,9 @@
 ---
+- name: fail if critical variables not changed
+  fail:
+    msg: "Please change all password variables. Running without custom passwords is not safe."
+  when: not miniflux_db_password or not miniflux_admin_password
+
 - name: create miniflux directory
   file:
     path: "{{ miniflux_data_directory }}"

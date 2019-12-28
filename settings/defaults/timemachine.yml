@@ -4,5 +4,5 @@ timemachine_tag: "latest"
 timemachine_data_directory: "{{ docker_home }}/timemachine/data"
 
 timemachine_sharename: "Timemachine"
-timemachine_password: "PLSREPLACE"
+timemachine_password: ""
 timemachine_sizelimit: 1024000

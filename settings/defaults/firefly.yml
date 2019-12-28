@@ -4,9 +4,9 @@ firefly_tag: "latest"
 firefly_db_tag: "10"
 firefly_config_directory: "{{ docker_home }}/firefly/config"
 
-firefly_db_password: "Insert Secure Password Here Please"
+firefly_db_password: ""
 
-firefly_app_key: "SomeRandomStringOf32CharsExactly"
+firefly_app_key: ""
 
 firefly_traefik_enabled: false
 firefly_domain: "firefly.{{ charjabox_domain }}"

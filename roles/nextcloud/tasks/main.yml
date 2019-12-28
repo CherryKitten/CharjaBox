@@ -2,7 +2,7 @@
 - name: fail if critical variables not changed
   fail:
     msg: "Please change all password variables. Running without custom passwords is not safe."
-  when: nextcloud_admin_password == "" or nextcloud_db_password == "" or nextcloud_db_rootpassword == ""
+  when: not nextcloud_admin_password or not nextcloud_db_password or not nextcloud_db_rootpassword
 
 - name: create nextcloud directory
   file:

@@ -1,7 +1,8 @@
 bind_enabled: false
 
 bind_tag: "latest"
-bind_data_directory: "{{ docker_home }}/bind/data"
+bind_directories:
+  data: "{{ docker_home }}/bind/data"
 
 bind_webmin_enabled: "true"
 bind_webmin_password: ""

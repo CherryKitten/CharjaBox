@@ -1,0 +1,15 @@
+[Unit]
+Description={{ item }} Docker Service
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutSec=infinity
+Restart=always
+RestartSec=5
+
+ExecStart=/usr/bin/docker-compose -f {{ docker_compose_dir }}/docker-compose.{{ item }}.yml -p "{{ item }}" up
+ExecStop=/usr/bin/docker-compose -f {{ docker_compose_dir }}/docker-compose.{{ item }}.yml -p "{{ item }}" stop
+
+[Install]
+WantedBy=multi-user.target

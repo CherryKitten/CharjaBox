@@ -1,0 +1,35 @@
+---
+version: '3'
+
+services:
+  miniflux-db:
+    image: postgres:{{ miniflux_db_tag }}
+    container_name: Miniflux-DB
+    restart: unless-stopped
+    volumes:
+      - {{ miniflux_directories.data }}:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: miniflux
+      POSTGRES_PASSWORD: "{{ miniflux_db_password }}"
+  miniflux:
+    image: miniflux/miniflux:{{ miniflux_tag }}
+    container_name: Miniflux
+    restart: unless-stopped
+    links:
+      - miniflux-db:db
+    ports:
+      - {{ miniflux_port }}:8080
+    environment:
+      DATABASE_URL: "postgres://miniflux:{{ miniflux_db_password }}@db/miniflux?sslmode=disable"
+      RUN_MIGRATIONS: "1"
+      CREATE_ADMIN: "1"
+      ADMIN_USERNAME: "{{ miniflux_admin_username }}"
+      ADMIN_PASSWORD: "{{ miniflux_admin_password }}"
+    labels:
+      traefik.enable: "{{ miniflux_traefik_enabled }}"
+      traefik.http.routers.miniflux.entrypoints: "web"
+      traefik.http.routers.miniflux.rule: "Host(`{{ miniflux_domain }}`)"
+      traefik.http.routers.miniflux-s.entrypoints: "web-secure"
+      traefik.http.routers.miniflux-s.rule: "Host(`{{ miniflux_domain }}`)"
+      traefik.http.routers.miniflux-s.tls: "true"
+      traefik.http.services.miniflux.loadbalancer.server.port: "8080"

@@ -1,0 +1,5 @@
+---
+- name: upload traefik.yml template
+  template:
+    src: traefik.yml.j2
+    dest: "{{ traefik_directories.config }}/traefik.yml"

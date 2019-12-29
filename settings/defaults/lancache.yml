@@ -2,8 +2,9 @@ lancache_enabled: false
 lancache_dns_enabled: false # Use this if you don't have your own DNS Server running
 
 lancache_tag: "latest"
-lancache_config_directory: "{{ docker_home }}/lancache/config"
-lancache_data_directory: "{{ docker_home }}/lancache/data" #This is were the cached downloads are saved, so make sure to have enough space in that directory.
+lancache_directories:
+  config: "{{ docker_home }}/lancache/config"
+  data: "{{ docker_home }}/lancache/data" #This is were the cached downloads are saved, so make sure to have enough space in that directory.
 
 lancache_limits_memory: "500m"
 lancache_limits_size: "1000000m"

@@ -4,6 +4,29 @@
   vars:
     docker_install_compose: true
     docker_compose_path: /usr/bin/docker-compose
+    apps:
+      - airsonic
+      - bazarr
+      - bind
+      - bitwarden_rs
+      - dokuwiki
+      - firefly
+      - gitea
+      - heimdall
+      - jackett
+      - jellyfin
+      - lancache
+      - lidarr
+      - miniflux
+      - nextcloud
+      - nginx
+      - plex
+      - portainer
+      - radarr
+      - rtorrent
+      - sonarr
+      - timemachine
+      - traefik
 
   pre_tasks:
     - name: include defaults
@@ -14,6 +37,8 @@
       include_vars:
         dir: "settings/{{ charjabox_settings_path }}"
       tags: always
+    - include: tasks/prep.yml
+      tags: always
 
   roles:
     - role: charjabox_general
@@ -21,74 +46,11 @@
     - role: bertvv.samba
       when: smb_enabled
       tags: smb
-    - role: smb
-      when: smb_enabled
-      tags: smb
     - role: geerlingguy.docker
       tags: always
-    - role: nginx
-      when: nginx_enabled
-      tags: nginx
-    - role: portainer
-      when: portainer_enabled
-      tags: portainer
-    - role: plex
-      when: plex_enabled
-      tags: plex
-    - role: jellyfin
-      when: jellyfin_enabled
-      tags: jellyfin
-    - role: heimdall
-      when: heimdall_enabled
-      tags: heimdall
-    - role: bind
-      when: bind_enabled
-      tags: bind
-    - role: firefly
-      when: firefly_enabled
-      tags: firefly
-    - role: lancache
-      when: lancache_enabled
-      tags: lancache
-    - role: dokuwiki
-      when: dokuwiki_enabled
-      tags: dokuwiki
-    - role: timemachine
-      when: timemachine_enabled
-      tags: timemachine
-    - role: gitea
-      when: gitea_enabled
-      tags: gitea
-    - role: jackett
-      when: jackett_enabled
-      tags: jackett
-    - role: radarr
-      when: radarr_enabled
-      tags: radarr
-    - role: sonarr
-      when: sonarr_enabled
-      tags: sonarr
-    - role: bazarr
-      when: bazarr_enabled
-      tags: bazarr
-    - role: lidarr
-      when: lidarr_enabled
-      tags: lidarr
-    - role: rtorrent
-      when: rtorrent_enabled
-      tags: rtorrent
-    - role: airsonic
-      when: airsonic_enabled
-      tags: airsonic
-    - role: bitwarden_rs
-      when: bitwarden_rs_enabled
-      tags: bitwarden_rs
-    - role: traefik
-      when: traefik_enabled
-      tags: traefik
-    - role: miniflux
-      when: miniflux_enabled
-      tags: miniflux
-    - role: nextcloud
-      when: nextcloud_enabled
-      tags: nextcloud
+    - role: charjabox_deploy
+      tags: deploy
+
+  tasks:
+    - include: tasks/smb.yml
+      when: smb_enabled

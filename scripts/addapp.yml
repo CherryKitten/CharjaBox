@@ -13,10 +13,6 @@
         path: "{{ item.path }}"
         state: "{{ item.state }}"
       with_items:
-        - { path: "{{ playbook_dir }}/../roles/{{ app }}", state: directory }
-        - { path: "{{ playbook_dir }}/../roles/{{ app }}/tasks", state: directory }
         - { path: "{{ playbook_dir }}/../roles/{{ app }}/templates", state: directory }
-        - { path: "{{ playbook_dir }}/../roles/{{ app }}/tasks/main.yml", state: touch }
-        - { path: "{{ playbook_dir }}/../roles/{{ app }}/templates/{{ app }}.service.j2", state: touch }
-        - { path: "{{ playbook_dir }}/../roles/{{ app }}/templates/docker-compose.{{ app }}.yml.j2", state: touch }
+        - { path: "{{ playbook_dir }}/../roles/charjabox_deploy/templates/docker-compose.{{ app }}.yml.j2", state: touch }
         - { path: "{{ playbook_dir }}/../settings/defaults/{{ app }}.yml", state: touch }

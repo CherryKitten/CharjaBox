@@ -1,8 +1,9 @@
 radarr_enabled: false
 
 radarr_tag: "latest"
-radarr_config_directory: "{{ docker_home }}/radarr/config"
-radarr_data_directory: "{{ docker_home }}/radarr/data"
+radarr_directories:
+  config: "{{ docker_home }}/radarr/config"
+  data: "{{ docker_home }}/radarr/data"
 
 radarr_traefik_enabled: false
 radarr_domain: "radarr.{{ charjabox_domain }}"

@@ -1,0 +1,9 @@
+---
+- fail:
+    msg: "Please change all password variables for {{ outer_item }}. Running without custom passwords is not safe."
+  when: >
+    ( outer_item == "bind" and ( not bind_webmin_password and bind_webmin_enabled ) ) or
+    ( outer_item == "firefly" and ( not firefly_db_password or not firefly_app_key )  ) or
+    ( outer_item == "miniflux" and ( not miniflux_db_password or not miniflux_admin_password ) ) or
+    ( outer_item == "nextcloud" and ( not nextcloud_admin_password or not nextcloud_db_password or not nextcloud_db_rootpassword ) ) or
+    ( outer_item == "timemachine" and ( not timemachine_password ) )

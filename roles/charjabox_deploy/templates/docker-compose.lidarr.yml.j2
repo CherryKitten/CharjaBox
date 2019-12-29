@@ -1,0 +1,22 @@
+---
+version: '3'
+
+services:
+  lidarr:
+    image: linuxserver/lidarr:{{ lidarr_tag }}
+    container_name: Lidarr
+    restart: unless-stopped
+    ports:
+      - {{ lidarr_port }}:8686
+    volumes:
+      - {{ lidarr_directories.config }}:/config
+      - {{ lidarr_directories.data }}:/downloads
+      - {{ charjabox_music_directory }}:/music
+    labels:
+      traefik.enable: "{{ lidarr_traefik_enabled }}"
+      traefik.http.routers.lidarr.entrypoints: "web"
+      traefik.http.routers.lidarr.rule: "Host(`{{ lidarr_domain }}`)"
+      traefik.http.routers.lidarr-s.entrypoints: "web-secure"
+      traefik.http.routers.lidarr-s.rule: "Host(`{{ lidarr_domain }}`)"
+      traefik.http.routers.lidarr-s.tls: "true"
+      traefik.http.services.lidarr.loadbalancer.server.port: "8686"

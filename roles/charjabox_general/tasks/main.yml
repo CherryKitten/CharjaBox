@@ -27,3 +27,8 @@
     create_home: no
     group: charjabox
     shell: /usr/sbin/nologin
+
+- name: create docker-compose directory
+  file:
+    path: "{{ docker_compose_dir }}"
+    state: directory

@@ -1,0 +1,6 @@
+---
+- name: upload default nginx config to server
+  copy:
+    src: nginx-config/
+    dest: "{{ nginx_directories.config }}"
+    force: no

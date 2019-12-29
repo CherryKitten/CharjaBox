@@ -1,0 +1,25 @@
+---
+version: '3'
+
+services:
+  rtorrent:
+    image: linuxserver/rutorrent:{{ rtorrent_tag }}
+    container_name: Rtorrent
+    restart: unless-stopped
+    ports:
+      - {{ rtorrent_http_port }}:80
+      - {{ rtorrent_https_port }}:443
+      - {{ rtorrent_scgi_port }}:5000
+      - {{ rtorrent_bittorrent_port }}:51413
+      - {{ rtorrent_bittorrent_port2 }}:6881/udp
+    volumes:
+      - {{ rtorrent_directories.config }}:/config
+      - {{ rtorrent_directories.downloads }}:/downloads
+    labels:
+      traefik.enable: "{{ rtorrent_traefik_enabled }}"
+      traefik.http.routers.rtorrent.entrypoints: "web"
+      traefik.http.routers.rtorrent.rule: "Host(`{{ rtorrent_domain }}`)"
+      traefik.http.routers.rtorrent-s.entrypoints: "web-secure"
+      traefik.http.routers.rtorrent-s.rule: "Host(`{{ rtorrent_domain }}`)"
+      traefik.http.routers.rtorrent-s.tls: "true"
+      traefik.http.services.rtorrent.loadbalancer.server.port: "80"

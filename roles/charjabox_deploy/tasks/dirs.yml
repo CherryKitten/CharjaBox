@@ -1,0 +1,6 @@
+---
+- name: "create directories for {{ outer_item }}"
+  file:
+    path: "{{ item.value }}"
+    state: directory
+  loop: '{{ lookup("vars", outer_item + "_directories")|dict2items }}'

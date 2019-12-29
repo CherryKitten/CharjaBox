@@ -1,0 +1,21 @@
+---
+version: '3'
+
+services:
+  dokuwiki:
+    image: linuxserver/dokuwiki:{{ dokuwiki_tag }}
+    container_name: Dokuwiki
+    restart: unless-stopped
+    ports:
+      - {{ dokuwiki_http_port }}:80
+      - {{ dokuwiki_https_port }}:443
+    volumes:
+      - {{ dokuwiki_directories.config }}:/config
+    labels:
+      traefik.enable: "{{ dokuwiki_traefik_enabled }}"
+      traefik.http.routers.dokuwiki.entrypoints: "web"
+      traefik.http.routers.dokuwiki.rule: "Host(`{{ dokuwiki_domain }}`)"
+      traefik.http.routers.dokuwiki-s.entrypoints: "web-secure"
+      traefik.http.routers.dokuwiki-s.rule: "Host(`{{ dokuwiki_domain }}`)"
+      traefik.http.routers.dokuwiki-s.tls: "true"
+      traefik.http.services.dokuwiki.loadbalancer.server.port: "80"

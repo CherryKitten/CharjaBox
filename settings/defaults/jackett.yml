@@ -1,8 +1,9 @@
 jackett_enabled: false
 
 jackett_tag: "latest"
-jackett_config_directory: "{{ docker_home }}/jackett/config"
-jackett_data_directory: "{{ docker_home }}/jackett/data"
+jackett_directories:
+ config: "{{ docker_home }}/jackett/config"
+ data: "{{ docker_home }}/jackett/data"
 
 jackett_traefik_enabled: false
 jackett_domain: "jackett.{{ charjabox_domain }}"

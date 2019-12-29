@@ -1,0 +1,19 @@
+---
+- name: Install avahi
+  apt:
+    name: "avahi-daemon"
+    state: present
+  register: result
+  until: result is succeeded
+
+- name: Setup timemachine service for avahi
+  template:
+    src: timemachine.avahi.service.j2
+    dest: "/etc/avahi/services/timemachine.service"
+
+- name: Reload avahi configuration
+  systemd:
+    name: avahi-daemon
+    enabled: "yes"
+    daemon-reload: "yes"
+    state: reloaded

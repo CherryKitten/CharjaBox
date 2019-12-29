@@ -1,0 +1,34 @@
+---
+version: '3'
+
+services:
+  plex:
+    image: plexinc/pms-docker:{{ plex_tag }}
+    container_name: Plex
+    restart: unless-stopped
+    ports:
+      - "{{ plex_web_port }}:32400"
+      - "3005:3005"
+      - "8324:8324"
+      - "32469:32649"
+      - "1900:1900/udp"
+      - "32410:32410/udp"
+      - "32412:32412/udp"
+      - "32413:32413/udp"
+      - "32414:32414/udp"
+    volumes:
+      - {{ plex_directories.config }}:/config
+      - {{ plex_music_directory }}:/data/music
+      - {{ plex_tv_directory }}:/data/tv
+      - {{ plex_movies_directory }}:/data/movies
+    environment:
+      - TZ={{ charjabox_timezone }}
+      - PLEX_CLAIM={{ plex_token }}
+    labels:
+      traefik.enable: "{{ plex_traefik_enabled }}"
+      traefik.http.routers.plex.entrypoints: "web"
+      traefik.http.routers.plex.rule: "Host(`{{ plex_domain }}`)"
+      traefik.http.routers.plex-s.entrypoints: "web-secure"
+      traefik.http.routers.plex-s.rule: "Host(`{{ plex_domain }}`)"
+      traefik.http.routers.plex-s.tls: "true"
+      traefik.http.services.plex.loadbalancer.server.port: "32400"

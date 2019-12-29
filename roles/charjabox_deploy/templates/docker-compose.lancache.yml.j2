@@ -1,0 +1,28 @@
+---
+version: '3'
+
+services:
+  lancache:
+    image: lancachenet/monolithic:{{ lancache_tag }}
+    container_name: Lancache
+    restart: unless-stopped
+    ports:
+      - {{ lancache_port }}:80
+    volumes:
+      - {{ lancache_directories.config }}:/data/logs
+      - {{ lancache_directories.data }}:/data/cache
+    environment:
+      - CACHE_MEM_SIZE={{ lancache_limits_memory }}
+      - CACHE_DISK_SIZE={{ lancache_limits_size }}
+      - CACHE_MAX_AGE={{ lancache_limits_age }}
+{% if lancache_dns_enabled %}
+  dns:
+    image: lancachenet-dns
+    container_name: Lancache-DNS
+    restart: unless-stopped
+    ports:
+      53:53/udp
+    environment:
+      USE_GENERIC_CACHE=true
+      LANCACHE_IP=lancache
+{% endif %}

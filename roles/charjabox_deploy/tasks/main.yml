@@ -1,0 +1,45 @@
+---
+- name: Test if critical variables are set
+  include_tasks: checkvars.yml
+  loop: "{{ apps_enabled }}"
+  loop_control:
+    loop_var: outer_item
+  when: outer_item in [ 'bind', 'firefly', 'miniflux', 'nextcloud', 'timemachine' ]
+
+- name: Include directory creation
+  include_tasks: dirs.yml
+  loop: "{{ apps_enabled }}"
+  loop_control:
+    loop_var: outer_item
+
+- name: Copy docker-compose files for enabled applications
+  template:
+    src: "docker-compose.{{ item }}.yml.j2"
+    dest: "{{ docker_compose_dir }}/docker-compose.{{ item }}.yml"
+  loop: "{{ apps_enabled }}"
+
+- name: configure systemd services for enabled applications
+  template:
+    src: "service.j2"
+    dest: "/etc/systemd/system/{{ item }}.service"
+  loop: "{{ apps_enabled }}"
+
+- name: Run additional tasks for nginx
+  include_tasks: nginx.yml
+  when: nginx_enabled
+
+- name: Run additional tasks for timemachine
+  include_tasks: timemachine.yml
+  when: timemachine_enabled
+
+- name: Run additional tasks for traefik
+  include_tasks: traefik.yml
+  when: traefik_enabled
+
+- name: start systemd services for enabled applications
+  systemd:
+    name: "{{ item }}"
+    enabled: true
+    daemon-reload: true
+    state: started
+  loop: "{{ apps_enabled }}"

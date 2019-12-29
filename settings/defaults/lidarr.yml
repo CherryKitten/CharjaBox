@@ -1,8 +1,9 @@
 lidarr_enabled: false
 
 lidarr_tag: "latest"
-lidarr_config_directory: "{{ docker_home }}/lidarr/config"
-lidarr_data_directory: "{{ docker_home }}/lidarr/data"
+lidarr_directories:
+  config: "{{ docker_home }}/lidarr/config"
+  data: "{{ docker_home }}/lidarr/data"
 
 lidarr_traefik_enabled: false
 lidarr_domain: "lidarr.{{ charjabox_domain }}"

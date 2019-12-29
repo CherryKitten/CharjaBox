@@ -1,7 +1,8 @@
 heimdall_enabled: false
 
 heimdall_tag: "latest"
-heimdall_config_directory: "{{ docker_home }}/heimdall/config"
+heimdall_directories:
+  config: "{{ docker_home }}/heimdall/config"
 
 heimdall_traefik_enabled: false
 heimdall_domain: "heimdall.{{ charjabox_domain }}"

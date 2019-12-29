@@ -1,0 +1,16 @@
+---
+version: '3'
+
+services:
+  timemachine:
+    image: awlnx/samba-timemachine:{{ timemachine_tag }}
+    container_name: Timemachine
+    restart: unless-stopped
+    ports:
+      - {{ timemachine_port }}:445
+    volumes:
+      - {{ timemachine_directories.data }}:/backups
+    environment:
+      - SHARENAME={{ timemachine_sharename }}
+      - PASS={{ timemachine_password }}
+      - TMSIZE={{ timemachine_sizelimit }}

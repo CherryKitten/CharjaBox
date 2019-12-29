@@ -1,7 +1,8 @@
 plex_enabled: false
 
 plex_tag: "latest"
-plex_config_directory: "{{ docker_home }}/plex/config"
+plex_directories:
+  config: "{{ docker_home }}/plex/config"
 plex_music_directory: "{{ charjabox_music_directory }}"
 plex_tv_directory: "{{ charjabox_tv_directory }}"
 plex_movies_directory: "{{ charjabox_movies_directory }}"

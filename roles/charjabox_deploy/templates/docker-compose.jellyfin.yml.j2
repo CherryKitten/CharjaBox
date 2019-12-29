@@ -1,0 +1,23 @@
+---
+version: "3"
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:{{ jellyfin_tag }}
+    container_name: Jellyfin
+    restart: unless-stopped
+    ports:
+      - {{ jellyfin_http_port }}:8096 # HTTP port
+      - {{ jellyfin_https_port }}:8920 # HTTPS port
+    volumes:
+      - {{ jellyfin_directories.config }}:/config
+      - {{ jellyfin_music_directory }}:/media/music
+      - {{ jellyfin_tv_directory }}:/media/tv
+      - {{ jellyfin_movies_directory }}:/media/movies
+    labels:
+      traefik.enable: "{{ jellyfin_traefik_enabled }}"
+      traefik.http.routers.jellyfin.entrypoints: "web"
+      traefik.http.routers.jellyfin.rule: "Host(`{{ jellyfin_domain }}`)"
+      traefik.http.routers.jellyfin-s.entrypoints: "web-secure"
+      traefik.http.routers.jellyfin-s.rule: "Host(`{{ jellyfin_domain }}`)"
+      traefik.http.routers.jellyfin-s.tls: "true"
+      traefik.http.services.jellyfin.loadbalancer.server.port: "8096"

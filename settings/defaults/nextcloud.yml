@@ -2,8 +2,8 @@ nextcloud_enabled: false
 
 nextcloud_tag: "latest"
 nextcloud_db_tag: "latest"
-
-nextcloud_data_directory: "{{ docker_home }}/nextcloud/data"
+nextcloud_directories:
+  data: "{{ docker_home }}/nextcloud/data"
 
 nextcloud_traefik_enabled: false
 nextcloud_domain: "nextcloud.{{ charjabox_domain }}"

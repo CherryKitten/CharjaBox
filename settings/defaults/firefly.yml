@@ -2,7 +2,8 @@ firefly_enabled: false
 
 firefly_tag: "latest"
 firefly_db_tag: "10"
-firefly_config_directory: "{{ docker_home }}/firefly/config"
+firefly_directories:
+  config: "{{ docker_home }}/firefly/config"
 
 firefly_db_password: ""
 

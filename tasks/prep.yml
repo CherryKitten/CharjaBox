@@ -10,13 +10,13 @@
   set_fact:
     apps_enabled: "{{ apps_enabled + [  item  ] }}"
   loop: "{{ apps }}"
-  when: '{{ lookup("vars", item + "_enabled") }}'
+  when: 'lookup("vars", item + "_enabled")'
 
 - name: Append disabled apps to list
   set_fact:
     apps_disabled: "{{ apps_disabled + [  item  ] }}"
   loop: "{{ apps }}"
-  when: '{{ not lookup("vars", item + "_enabled") }}'
+  when: 'not lookup("vars", item + "_enabled")'
 
 #- name: "Make sure {{ item }} is not running"
 #  systemd:

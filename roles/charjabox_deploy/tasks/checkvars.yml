@@ -1,5 +1,6 @@
 ---
-- fail:
+- name: Check if critical variables where changed
+  fail:
     msg: "Please change all password variables for {{ outer_item }}. Running without custom passwords is not safe."
   when: >
     ( outer_item == "bind" and ( not bind_webmin_password and bind_webmin_enabled ) ) or

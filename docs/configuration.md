@@ -1,6 +1,6 @@
 # Configuration
 
-Configuration is done in multiple files in a group-specific subfolder of the `settings` folder. By default the directory `settings/charjabox/` is used if you don't specify a different path. You should never touch the `settings/defaults/` folder in normal use.
+Configuration is done in one or multiple files in a group-specific subfolder of the `settings` folder. By default the directory `settings/charjabox/` is used if you don't specify a different path. You should never touch the `settings/defaults/` folder in normal use.
 
 You only need to add the settings that you actually change to your settings folder. If you do this by copying the whole files over from `settings/defaults/` or by creating your own files with just the variables you need is up to you.
 Every file ending in `.yml` inside of `settings/$YOURSETTINGS` will be recognized by CharjaBox. 
@@ -20,7 +20,7 @@ In those files you can change the `charjabox_settings_path` variable and set you
 
 ## Application Settings
 
-Every application has it's own settings file, where you can enable the Application and apply App-specific configuration.
+Every application has it's own variables, where you can enable the Application and apply App-specific configuration.
 
 # Example
 

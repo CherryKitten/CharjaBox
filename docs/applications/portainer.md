@@ -7,11 +7,11 @@ After enabling Portainer, go to the webinterface (by default the port is 9000) a
 
 # Variables
 
-| Variable                   | Type    | Default                              | Comment                                          |
-|----------------------------|---------|--------------------------------------|--------------------------------------------------|
-| portainer_enabled          | Boolean | false                                | Enable/Disable the application                   |
-| portainer_tag              | String  | "latest"                             | Tag to use for the docker image                  |
-| portainer_config_directory | String  | "{{ docker_home }}/portainer/config" | Path were application config should be stored    |
-| portainer_traefik_enabled  | Boolean | false                                | Enable/Disable access to application via Traefik |
-| portainer_domain           | String  | "portainer.{{ charjabox_domain }}"   | Domain used to access the application            |
-| portainer_port             | Int     | 9000                                 | Port used to access the application              |
+| Variable                     | Type    | Default                              | Comment                                          |
+|------------------------------|---------|--------------------------------------|--------------------------------------------------|
+| portainer_enabled            | Boolean | false                                | Enable/Disable the application                   |
+| portainer_tag                | String  | "latest"                             | Tag to use for the docker image                  |
+| portainer_directories.config | String  | "{{ docker_home }}/portainer/config" | Path were application config should be stored    |
+| portainer_traefik_enabled    | Boolean | false                                | Enable/Disable access to application via Traefik |
+| portainer_domain             | String  | "portainer.{{ charjabox_domain }}"   | Domain used to access the application            |
+| portainer_port               | Int     | 9000                                 | Port used to access the application              |

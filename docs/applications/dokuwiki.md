@@ -11,12 +11,12 @@ _This explanation was copied from the [Linuxserver.io page for Dokuwiki](https:/
 
 # Variables
 
-| Variable                  | Type    | Default                             | Comment                                          |
-|---------------------------|---------|-------------------------------------|--------------------------------------------------|
-| dokuwiki_enabled          | Boolean | false                               | Enable/Disable the application                   |
-| dokuwiki_tag              | String  | "latest"                            | Tag to use for the docker image                  |
-| dokuwiki_config_directory | String  | "{{ docker_home }}/dokuwiki/config" | Path were application config should be stored    |
-| dokuwiki_traefik_enabled  | Boolean | false                               | Enable/Disable access to application via Traefik |
-| dokuwiki_domain           | String  | "dokuwiki.{{ charjabox_domain }}"   | Domain used to access the application            |
-| dokuwiki_http_port        | Int     | 6009                                | Port used to access the application via HTTP     |
-| dokuwiki_https_port       | Int     | 6010                                | Port used to access the application via HTTPS    |
+| Variable                    | Type    | Default                             | Comment                                          |
+|-----------------------------|---------|-------------------------------------|--------------------------------------------------|
+| dokuwiki_enabled            | Boolean | false                               | Enable/Disable the application                   |
+| dokuwiki_tag                | String  | "latest"                            | Tag to use for the docker image                  |
+| dokuwiki_directories.config | String  | "{{ docker_home }}/dokuwiki/config" | Path were application config should be stored    |
+| dokuwiki_traefik_enabled    | Boolean | false                               | Enable/Disable access to application via Traefik |
+| dokuwiki_domain             | String  | "dokuwiki.{{ charjabox_domain }}"   | Domain used to access the application            |
+| dokuwiki_http_port          | Int     | 6009                                | Port used to access the application via HTTP     |
+| dokuwiki_https_port         | Int     | 6010                                | Port used to access the application via HTTPS    |

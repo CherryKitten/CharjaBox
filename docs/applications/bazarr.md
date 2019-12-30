@@ -7,11 +7,11 @@ The subtitles get downloaded to the same directory as your media files.
 
 # Variables
 
-| Variable                | Type    | Default                         | Comment                                          |
-|-------------------------|---------|---------------------------------|--------------------------------------------------|
-| bazarr_enabled          | Boolean | false                           | Enable/Disable the application                   |
-| bazarr_tag              | String  | "latest"                        | Tag to use for the docker image                  |
-| bazarr_config_directory | String  | "{{ docker_home }}/bazarr/data" | Path were application config should be stored    |
-| bazarr_traefik_enabled  | Boolean | false                           | Enable/Disable access to application via Traefik |
-| bazarr_domain           | String  | "bazarr.{{ charjabox_domain }}" | Domain used to access the application            |
-| bazarr_port             | Int     | 6767                            | Port used to access the application              |
+| Variable                  | Type    | Default                         | Comment                                          |
+|---------------------------|---------|---------------------------------|--------------------------------------------------|
+| bazarr_enabled            | Boolean | false                           | Enable/Disable the application                   |
+| bazarr_tag                | String  | "latest"                        | Tag to use for the docker image                  |
+| bazarr_directories.config | String  | "{{ docker_home }}/bazarr/config" | Path were application config should be stored    |
+| bazarr_traefik_enabled    | Boolean | false                           | Enable/Disable access to application via Traefik |
+| bazarr_domain             | String  | "bazarr.{{ charjabox_domain }}" | Domain used to access the application            |
+| bazarr_port               | Int     | 6767                            | Port used to access the application              |

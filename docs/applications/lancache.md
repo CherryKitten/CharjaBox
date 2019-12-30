@@ -91,14 +91,14 @@ server {
 
 # Variables
 
-| Variable                  | Type    | Default                             | Comment                                                                     |
-|---------------------------|---------|-------------------------------------|-----------------------------------------------------------------------------|
-| lancache_enabled          | Boolean | false                               | Enable/Disable the application                                              |
-| lancache_tag              | String  | "latest"                            | Tag to use for the docker image                                             |
-| lancache_dns_enabled      | Boolean | false                               | Enable/Disable integrated DNS server                                        |
-| lancache_config_directory | String  | "{{ docker_home }}/lancache/config" | Path were application config should be stored                               |
-| lancache_data_directory   | String  | "{{ docker_home }}/lancache/data"   | Path were application data should be stored, This includes all cached files |
-| lancache_limits_memory    | String  | "500m"                              | Limit for memory usage for the caching process                              |
-| lancache_limits_size      | String  | "1000000m"                          | Limit for total size of cached files                                        |
-| lancache_limits_age       | String  | "3560d"                             | Time after which to delete old files                                        |
-| lancache_port             | Int     | 6666                                | Port used to access the application                                         |
+| Variable                    | Type    | Default                             | Comment                                                                     |
+|-----------------------------|---------|-------------------------------------|-----------------------------------------------------------------------------|
+| lancache_enabled            | Boolean | false                               | Enable/Disable the application                                              |
+| lancache_tag                | String  | "latest"                            | Tag to use for the docker image                                             |
+| lancache_dns_enabled        | Boolean | false                               | Enable/Disable integrated DNS server                                        |
+| lancache_directories.config | String  | "{{ docker_home }}/lancache/config" | Path were application config should be stored                               |
+| lancache_directories.data   | String  | "{{ docker_home }}/lancache/data"   | Path were application data should be stored, This includes all cached files |
+| lancache_limits_memory      | String  | "500m"                              | Limit for memory usage for the caching process                              |
+| lancache_limits_size        | String  | "1000000m"                          | Limit for total size of cached files                                        |
+| lancache_limits_age         | String  | "3560d"                             | Time after which to delete old files                                        |
+| lancache_port               | Int     | 6666                                | Port used to access the application                                         |

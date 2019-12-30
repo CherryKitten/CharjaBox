@@ -11,15 +11,15 @@ Once you are on the webinterface, you can do your first time setup and let Plex 
 
 # Variables
 
-| Variable              | Type    | Default                            | Comment                                          |
-|-----------------------|---------|------------------------------------|--------------------------------------------------|
-| plex_enabled          | Boolean | false                              | Enable/Disable the application                   |
-| plex_tag              | String  | "latest"                           | Tag to use for the docker image                  |
-| plex_config_directory | String  | "{{ docker_home }}/plex/config"    | Path were application config should be stored    |
-| plex_music_directory  | String  | "{{ charjabox_music_directory }}"  | Path were music is stored                        |
-| plex_tv_directory     | String  | "{{ charjabox_tv_directory }}"     | Path were TV shows are stored                    |
-| plex_movies_directory | String  | "{{ charjabox_movies_directory }}" | Path were movies are stored                      |
-| plex_token            | String  | ""                                 | Plex claim token                                 |
-| plex_traefik_enabled  | Boolean | false                              | Enable/Disable access to application via Traefik |
-| plex_domain           | String  | "plex.{{ charjabox_domain }}"      | Domain used to access the application            |
-| plex_web_port         | Int     | 32400                              | Port used to access the application              |
+| Variable                | Type    | Default                            | Comment                                          |
+|-------------------------|---------|------------------------------------|--------------------------------------------------|
+| plex_enabled            | Boolean | false                              | Enable/Disable the application                   |
+| plex_tag                | String  | "latest"                           | Tag to use for the docker image                  |
+| plex_directories.config | String  | "{{ docker_home }}/plex/config"    | Path were application config should be stored    |
+| plex_music_directory    | String  | "{{ charjabox_music_directory }}"  | Path were music is stored                        |
+| plex_tv_directory       | String  | "{{ charjabox_tv_directory }}"     | Path were TV shows are stored                    |
+| plex_movies_directory   | String  | "{{ charjabox_movies_directory }}" | Path were movies are stored                      |
+| plex_token              | String  | ""                                 | Plex claim token                                 |
+| plex_traefik_enabled    | Boolean | false                              | Enable/Disable access to application via Traefik |
+| plex_domain             | String  | "plex.{{ charjabox_domain }}"      | Domain used to access the application            |
+| plex_web_port           | Int     | 32400                              | Port used to access the application              |

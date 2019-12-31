@@ -18,10 +18,11 @@
   loop: "{{ apps }}"
   when: 'not lookup("vars", item + "_enabled")'
 
-#- name: "Make sure {{ item }} is not running"
-#  systemd:
-#    name: "{{ item }}"
-#    enabled: false
-#    daemon-reload: true
-#    state: stopped
-#  loop: "{{ apps_disabled }}"
+- name: Make sure disabled apps are not running
+  systemd:
+    name: "{{ item }}"
+    enabled: false
+    daemon-reload: true
+    state: stopped
+  loop: "{{ apps_disabled }}"
+  ignore_errors: true # This is needed so the playbook doesn't fail because of non-existing services

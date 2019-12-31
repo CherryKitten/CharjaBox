@@ -39,10 +39,10 @@
       tags: always
     - include: tasks/prep.yml
       tags: always
+    - include: tasks/general.yml
+      tags: always
 
   roles:
-    - role: charjabox_general
-      tags: general
     - role: bertvv.samba
       when: smb_enabled
       tags: smb

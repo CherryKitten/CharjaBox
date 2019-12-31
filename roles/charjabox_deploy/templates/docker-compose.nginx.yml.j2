@@ -3,8 +3,8 @@ version: '3'
 
 services:
   nginx:
-    image: nginx
-    container_name: Nginx:{{ nginx_tag }}
+    image: nginx:{{ nginx_tag }}
+    container_name: Nginx
     restart: unless-stopped
     ports:
       - {{ nginx_http_port }}:80

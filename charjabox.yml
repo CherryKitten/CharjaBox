@@ -27,6 +27,7 @@
       - sonarr
       - timemachine
       - traefik
+      - tautulli
 
   pre_tasks:
     - include: tasks/prep.yml

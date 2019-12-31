@@ -48,6 +48,8 @@ radarr_port: 7878
 
 sonarr_port: 8989
 
+tautulli_port: 8181
+
 timemachine_port: 10445
 
 traefik_http_port: 80

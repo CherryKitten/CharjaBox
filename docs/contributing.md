@@ -14,15 +14,12 @@ You will need to create the following files:
 
 ```
 settings/defaults/$appname.yml # For the settings
-roles/$appname/tasks/main.yml # The main task for the app
-roles/$appname/templates/$appname.service.j2 # Systemd Service file
 roles/$appname/templates/docker-compose.$appname.j2 # Docker-compose file
 ```
 
 You will also need to edit the following files:
 
 ```
-charjabox.yml # To add the role to the playbook
 settings/defaults/charjabox_ports.yml # To configure the ports
 ```
 

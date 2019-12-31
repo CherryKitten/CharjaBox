@@ -1,3 +1,12 @@
+---
+- name: include defaults
+  include_vars:
+    dir: "../settings/defaults"
+
+- name: include vars
+  include_vars:
+    dir: "../settings/{{ charjabox_settings_path }}"
+
 - name: Initialize an empty list for enabled apps
   set_fact:
     apps_enabled: []

@@ -333,9 +333,9 @@
 <li><a href="https://github.com/rakshasa/rtorrent">rtorrent</a> - Text-based ncurses BitTorrent client</li>
 <li><a href="https://github.com/Novik/ruTorrent">ruTorrent</a> - Web front-end for the popular Bittorrent client rtorrent</li>
 </ul>
-<p>Settings for rtorrent can be changed in <code>rtorrent_config_directory/rtorrent/rtorrent.rc</code>. </p>
+<p>Settings for rtorrent can be changed in <code>rtorrent_directories.config/rtorrent/rtorrent.rc</code>. </p>
 <p>"Settings, changed by the user through the "Settings" panel in ruTorrent, are valid until rtorrent restart. After which all settings will be set according to the rtorrent config file (/config/rtorrent/rtorrent.rc),this is a limitation of the actual apps themselves."</p>
-<p>To set a password for rutorrent add the auth configuration to <code>rtorrent_config_directory/nginx/nginx.conf</code>, see <a href="https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/">here</a> for more information.</p>
+<p>To set a password for rutorrent add the auth configuration to <code>rtorrent_directories.config/nginx/nginx.conf</code>, see <a href="https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/">here</a> for more information.</p>
 <h1 id="variables">Variables</h1>
 <table>
 <thead>
@@ -360,13 +360,13 @@
 <td>Tag to use for the docker image</td>
 </tr>
 <tr>
-<td>rtorrent_config_directory</td>
+<td>rtorrent_directories.config</td>
 <td>String</td>
 <td>"{{ docker_home }}/rtorrent/config"</td>
 <td>Path were application config should be stored</td>
 </tr>
 <tr>
-<td>rtorrent_download_directory</td>
+<td>rtorrent_directories.downloads</td>
 <td>String</td>
 <td>"{{ charjabox_downloads_directory }}"</td>
 <td>Path were downloads should be stored</td>

@@ -330,7 +330,7 @@
 
 <h1 id="general">General</h1>
 <p><a href="https://sonarr.tv/">Sonarr</a> - Manage your TV collection</p>
-<p>Set <code>sonarr_data_directory</code> to the folder where downloaded <code>.torrent</code> files should get stored.</p>
+<p>Set <code>sonarr_directories.data</code> to the folder where downloaded <code>.torrent</code> files should get stored.</p>
 <p>Sonarr uses the path set in <code>charjabox_tv_directory</code> in <code>charjabox_general.yml</code> to access your TV collection.</p>
 <h1 id="variables">Variables</h1>
 <table>
@@ -356,13 +356,13 @@
 <td>Tag to use for the docker image</td>
 </tr>
 <tr>
-<td>sonarr_config_directory</td>
+<td>sonarr_directories.config</td>
 <td>String</td>
 <td>"{{ docker_home }}/sonarr/config"</td>
 <td>Path were application config should be stored</td>
 </tr>
 <tr>
-<td>sonarr_data_directory</td>
+<td>sonarr_directories.data</td>
 <td>String</td>
 <td>"{{ docker_home }}/sonarr/data"</td>
 <td>Path were application data should be stored</td>

@@ -330,7 +330,7 @@
 
 <h1 id="general">General</h1>
 <p><a href="https://lidarr.audio/">Lidarr</a> - Manage your music collection</p>
-<p>Set <code>lidarr_data_directory</code> to the folder where downloaded <code>.torrent</code> files should get stored.</p>
+<p>Set <code>lidarr_directories.data</code> to the folder where downloaded <code>.torrent</code> files should get stored.</p>
 <p>Lidarr uses the path set in <code>charjabox_music_directory</code> in <code>charjabox_general.yml</code> to access your music collection.</p>
 <h1 id="variables">Variables</h1>
 <table>
@@ -356,13 +356,13 @@
 <td>Tag to use for the docker image</td>
 </tr>
 <tr>
-<td>lidarr_config_directory</td>
+<td>lidarr_directories.config</td>
 <td>String</td>
 <td>"{{ docker_home }}/lidarr/config"</td>
 <td>Path were application config should be stored</td>
 </tr>
 <tr>
-<td>lidarr_data_directory</td>
+<td>lidarr_directories.data</td>
 <td>String</td>
 <td>"{{ docker_home }}/lidarr/data"</td>
 <td>Path were application data should be stored</td>

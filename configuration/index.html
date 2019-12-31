@@ -333,7 +333,7 @@
         <div class="col-md-9" role="main">
 
 <h1 id="configuration">Configuration</h1>
-<p>Configuration is done in multiple files in a group-specific subfolder of the <code>settings</code> folder. By default the directory <code>settings/charjabox/</code> is used if you don't specify a different path. You should never touch the <code>settings/defaults/</code> folder in normal use.</p>
+<p>Configuration is done in one or multiple files in a group-specific subfolder of the <code>settings</code> folder. By default the directory <code>settings/charjabox/</code> is used if you don't specify a different path. You should never touch the <code>settings/defaults/</code> folder in normal use.</p>
 <p>You only need to add the settings that you actually change to your settings folder. If you do this by copying the whole files over from <code>settings/defaults/</code> or by creating your own files with just the variables you need is up to you.
 Every file ending in <code>.yml</code> inside of <code>settings/$YOURSETTINGS</code> will be recognized by CharjaBox. </p>
 <p>If you use CharjaBox to set up multiple servers, you can use different settings folders for every server. </p>
@@ -344,7 +344,7 @@ Every file ending in <code>.yml</code> inside of <code>settings/$YOURSETTINGS</c
 <p><code>charjabox_general.yml</code> includes all general configuration about your server, like Hostnames, Timezones, etc.</p>
 <p><code>charjabox_ports.yml</code> includes all the ports for the applications in one place.</p>
 <h2 id="application-settings">Application Settings</h2>
-<p>Every application has it's own settings file, where you can enable the Application and apply App-specific configuration.</p>
+<p>Every application has it's own variables, where you can enable the Application and apply App-specific configuration.</p>
 <h1 id="example">Example</h1>
 <p>I have a local server currently running Portainer, Heimdall, Nginx and Plex. I called the group <code>production</code> to differentiate it from a testing server. </p>
 <p>The inventory file looks like this:</p>

@@ -331,7 +331,7 @@
 <ol>
 <li>Make sure all <a href="../requirements/">Requirements</a> are met</li>
 <li>Clone the repository and <code>cd</code> into the directory</li>
-<li>Copy the settings for the applications you want to use and the <code>charjabox_general.yml</code> file from <code>settings/defaults/</code> to <code>settings/charjabox</code> and <a href="https://cherrykitten.github.io/CharjaBox/#configuration/">configure</a> everything</li>
+<li>Override all relevant variables by adding <code>.yml</code> files to either <code>settings/charjabox</code> or a custom folder per group/host. See <a href="https://cherrykitten.github.io/CharjaBox/#configuration/">configuration</a> for details</li>
 <li>Create an <code>inventory</code> file and add your server's IP/Hostname/Domain</li>
 <li>Install needed roles: <code>ansible-galaxy install -r requirements.yml</code></li>
 <li>Run the playbook: <code>ansible-playbook -i inventory -u $USER charjabox.yml</code></li>

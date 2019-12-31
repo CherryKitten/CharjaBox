@@ -330,7 +330,7 @@
 
 <h1 id="general">General</h1>
 <p><a href="https://radarr.video/">Radarr</a> - Manage your Movie collection</p>
-<p>Set <code>radarr_data_directory</code> to the folder where downloaded <code>.torrent</code> files should get stored.</p>
+<p>Set <code>radarr_directories.data</code> to the folder where downloaded <code>.torrent</code> files should get stored.</p>
 <p>Radarr uses the path set in <code>charjabox_movies_directory</code> in <code>charjabox_general.yml</code> to access your movie collection.</p>
 <h1 id="variables">Variables</h1>
 <table>
@@ -356,13 +356,13 @@
 <td>Tag to use for the docker image</td>
 </tr>
 <tr>
-<td>radarr_config_directory</td>
+<td>radarr_directories.config</td>
 <td>String</td>
 <td>"{{ docker_home }}/radarr/config"</td>
 <td>Path were application config should be stored</td>
 </tr>
 <tr>
-<td>radarr_data_directory</td>
+<td>radarr_directories.data</td>
 <td>String</td>
 <td>"{{ docker_home }}/radarr/data"</td>
 <td>Path were application data should be stored</td>

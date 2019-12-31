@@ -330,8 +330,8 @@
 
 <h1 id="general">General</h1>
 <p><a href="https://www.nginx.com/">Nginx</a> - Open source web server and a reverse proxy server</p>
-<p><code>nginx_config_directory</code> binds to <code>/etc/nginx</code>, for information on how to configure nginx see the <a href="https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/">nginx documentation</a>.</p>
-<p><code>nginx_data_directory</code> binds to <code>/var/www/</code>, put everything the webserver should serve in here.</p>
+<p><code>nginx_directories.config</code> binds to <code>/etc/nginx</code>, for information on how to configure nginx see the <a href="https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/">nginx documentation</a>.</p>
+<p><code>nginx_directories.data</code> binds to <code>/var/www/</code>, put everything the webserver should serve in here.</p>
 <p>For information on how to setup nginx as a reverse proxy for your other apps, see <a href="https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/">this documentation page</a>.</p>
 <h1 id="variables">Variables</h1>
 <table>
@@ -357,13 +357,13 @@
 <td>Tag to use for the docker image</td>
 </tr>
 <tr>
-<td>nginx_config_directory</td>
+<td>nginx_directories.config</td>
 <td>String</td>
 <td>"{{docker_home}}/nginx/config"</td>
 <td>Path were application config should be stored</td>
 </tr>
 <tr>
-<td>nginx_data_directory</td>
+<td>nginx_directories.data</td>
 <td>String</td>
 <td>"{{docker_home}}/nginx/data"</td>
 <td>Path were application data should be stored</td>

@@ -1,6 +1,6 @@
 tautulli_enabled: false
 
-tautulli_tag: latest
+tautulli_tag: "latest"
 tautulli_directories:
   config: "{{ docker_home }}/tautulli/config"
 

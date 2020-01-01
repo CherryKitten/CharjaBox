@@ -35,3 +35,4 @@ charjabox_music_directory: /path/to/music
 charjabox_movies_directory: /path/to/movies
 charjabox_tv_directory: /path/to/tv
 charjabox_photos_directory: /path/to/photos
+charjabox_books_directory: /path/to/books

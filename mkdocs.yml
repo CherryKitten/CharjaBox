@@ -21,10 +21,12 @@ nav:
       - Miniflux: 'applications/miniflux.md'
       - Firefly III: 'applications/firefly.md'
       - Lancache: 'applications/lancache.md'
+      - Tautulli: 'applications/tautulli.md'
       - Media streaming:
         - Airsonic: 'applications/airsonic.md'
         - Plex: 'applications/plex.md'
         - Jellyfin: 'applications/jellyfin.md'
+        - Calibre-Web: 'applications/calibre.md'
       - Media management:
         - Jackett: 'applications/jackett.md'
         - Radarr: 'applications/radarr.md'

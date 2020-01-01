@@ -1,0 +1,21 @@
+---
+version: '3'
+
+services:
+  calibre-web:
+    image: linuxserver/calibre-web:{{ calibre_tag }}
+    container_name: Calibre-Web
+    restart: unless-stopped
+    ports:
+      - {{ calibre_port }}:8083
+    volumes:
+      - {{ calibre_directories.config }}:/config
+      - {{ calibre_directories.books }}:/books
+    labels:
+      traefik.enable: "{{ calibre_traefik_enabled }}"
+      traefik.http.routers.calibre.entrypoints: "web"
+      traefik.http.routers.calibre.rule: "Host(`{{ calibre_domain }}`)"
+      traefik.http.routers.calibre-s.entrypoints: "web-secure"
+      traefik.http.routers.calibre-s.rule: "Host(`{{ calibre_domain }}`)"
+      traefik.http.routers.calibre-s.tls: "true"
+      traefik.http.services.calibre.loadbalancer.server.port: "8003"

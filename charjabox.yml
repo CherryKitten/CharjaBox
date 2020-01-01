@@ -9,6 +9,7 @@
       - bazarr
       - bind
       - bitwarden_rs
+      - calibre
       - dokuwiki
       - firefly
       - gitea
@@ -25,9 +26,9 @@
       - radarr
       - rtorrent
       - sonarr
+      - tautulli
       - timemachine
       - traefik
-      - tautulli
 
   pre_tasks:
     - include: tasks/prep.yml

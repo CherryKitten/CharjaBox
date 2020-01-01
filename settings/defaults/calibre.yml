@@ -1,0 +1,9 @@
+calibre_enabled: false
+
+calibre_tag: "latest"
+calibre_directories:
+  config: "{{ docker_home }}/calibre/config"
+  books: "{{ charjabox_books_directory }}"
+
+calibre_traefik_enabled: false
+calibre_domain: "calibre.{{ charjabox_domain }}"

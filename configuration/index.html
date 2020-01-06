@@ -345,13 +345,10 @@
         <div class="col-md-9" role="main">
 
 <h1 id="configuration">Configuration</h1>
-<p>Configuration is done in one or multiple files in a group-specific subfolder of the <code>settings</code> folder. By default the directory <code>settings/charjabox/</code> is used if you don't specify a different path. You should never touch the <code>settings/defaults/</code> folder in normal use.</p>
-<p>You only need to add the settings that you actually change to your settings folder. If you do this by copying the whole files over from <code>settings/defaults/</code> or by creating your own files with just the variables you need is up to you.
-Every file ending in <code>.yml</code> inside of <code>settings/$YOURSETTINGS</code> will be recognized by CharjaBox. </p>
-<p>If you use CharjaBox to set up multiple servers, you can use different settings folders for every server. </p>
-<p>To do this, set different hostnames or groups for your different servers in your <a href="https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#inventory-basics-hosts-and-groups">Inventory</a> and create 
-<code>host_vars/$HOSTNAME</code> or <code>group_vars/$GROUPNAME</code> files for each server/group. </p>
-<p>In those files you can change the <code>charjabox_settings_path</code> variable and set your settings in a folder inside of <code>settings/</code> with the same name as the variable.</p>
+<p>Configuration is done by overwriting the defaults that are set in <code>group_vars/all/*</code>. Do not change files in this folder, as it is tracked by git.</p>
+<p>To do this, create variable files (or folders) in either <code>group_vars/</code>or <code>host_vars</code>. These can either be files called <code>$GROUPNAME.yml</code>/<code>$HOSTNAME.yml</code> or folders called <code>$GROUPNAME</code>/<code>$HOSTNAME</code> with any number of <code>.yml</code> files inside.
+Then, overwrite variables in the form of <code>$VARIABLE: $VALUE</code>.</p>
+<p>If you use CharjaBox to set up multiple servers, you can use different settings for every server, by having multiple groups and/or hosts with different variables in your inventory.</p>
 <h2 id="general">General</h2>
 <p><code>charjabox_general.yml</code> includes all general configuration about your server, like Hostnames, Timezones, etc.</p>
 <p><code>charjabox_ports.yml</code> includes all the ports for the applications in one place.</p>
@@ -369,17 +366,20 @@ Every file ending in <code>.yml</code> inside of <code>settings/$YOURSETTINGS</c
 
 </code></pre>
 
-<p>The group name <code>production</code> tells Ansible to look for the file <code>group_vars/production.yml</code>, which looks like this:</p>
-<pre><code>charjabox_settings_path: &quot;production&quot;
+<p>The group name <code>production</code> tells Ansible to look for the file <code>group_vars/production.yml</code> or the folder <code>group_vars/production</code>, which looks like this:</p>
+<pre><code>charjabox_hostname: &quot;charjabox_production&quot;
+charjabox_domain: &quot;charjabox.production&quot;
 
-</code></pre>
+portainer_enabled: true
 
-<p>This variable tells the playbook to look for custom variables in <code>settings/production</code>, where I have the following files containing custom settings:</p>
-<pre><code>charjabox_general.yml
-heimdall.yml
-nginx.yml
-plex.yml
-portainer.yml
+nginx_enabled: true
+nginx_http_port: 10080
+nginx_https_port: 10443
+
+firefly_enabled: true
+
+firefly_db_password: &quot;[REDACTED]&quot;
+firefly_app_key: &quot;[REDACTED]&quot;
 </code></pre></div>
         
         

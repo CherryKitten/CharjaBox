@@ -13,7 +13,7 @@ site/
 # CharjaBox
 inventory*
 settings/*
-!settings/defaults
 group_vars/*
 host_vars/*
-!group_vars/all.yml
+!group_vars/all
+

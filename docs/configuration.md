@@ -1,16 +1,11 @@
 # Configuration
 
-Configuration is done in one or multiple files in a group-specific subfolder of the `settings` folder. By default the directory `settings/charjabox/` is used if you don't specify a different path. You should never touch the `settings/defaults/` folder in normal use.
+Configuration is done by overwriting the defaults that are set in `group_vars/all/*`. Do not change files in this folder, as it is tracked by git.
 
-You only need to add the settings that you actually change to your settings folder. If you do this by copying the whole files over from `settings/defaults/` or by creating your own files with just the variables you need is up to you.
-Every file ending in `.yml` inside of `settings/$YOURSETTINGS` will be recognized by CharjaBox. 
+To do this, create variable files (or folders) in either `group_vars/`or `host_vars`. These can either be files called `$GROUPNAME.yml`/`$HOSTNAME.yml` or folders called `$GROUPNAME`/`$HOSTNAME` with any number of `.yml` files inside.
+Then, overwrite variables in the form of `$VARIABLE: $VALUE`.
 
-If you use CharjaBox to set up multiple servers, you can use different settings folders for every server. 
-
-To do this, set different hostnames or groups for your different servers in your [Inventory](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#inventory-basics-hosts-and-groups) and create 
-`host_vars/$HOSTNAME` or `group_vars/$GROUPNAME` files for each server/group. 
-
-In those files you can change the `charjabox_settings_path` variable and set your settings in a folder inside of `settings/` with the same name as the variable.
+If you use CharjaBox to set up multiple servers, you can use different settings for every server, by having multiple groups and/or hosts with different variables in your inventory.
 
 ## General
 
@@ -38,19 +33,20 @@ The inventory file looks like this:
 
 ```
 
-The group name `production` tells Ansible to look for the file `group_vars/production.yml`, which looks like this:
+The group name `production` tells Ansible to look for the file `group_vars/production.yml` or the folder `group_vars/production`, which looks like this:
 
 ```
-charjabox_settings_path: "production"
+charjabox_hostname: "charjabox_production"
+charjabox_domain: "charjabox.production"
 
-```
+portainer_enabled: true
 
-This variable tells the playbook to look for custom variables in `settings/production`, where I have the following files containing custom settings:
+nginx_enabled: true
+nginx_http_port: 10080
+nginx_https_port: 10443
 
-```
-charjabox_general.yml
-heimdall.yml
-nginx.yml
-plex.yml
-portainer.yml
+firefly_enabled: true
+
+firefly_db_password: "[REDACTED]"
+firefly_app_key: "[REDACTED]"
 ```

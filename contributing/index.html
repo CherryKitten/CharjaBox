@@ -350,15 +350,16 @@
 <h2 id="adding-new-applications">Adding new Applications</h2>
 <p>To add a new application, you can use an existing app as a template.</p>
 <p>You will need to create the following files:</p>
-<pre><code>settings/defaults/$appname.yml # For the settings
-roles/$appname/templates/docker-compose.$appname.j2 # Docker-compose file
+<pre><code>group_vars/all/$appname.yml # For the default settings
+roles/charjabox_deploy/templates/docker-compose.$appname.j2 # Docker-compose file
 </code></pre>
 
 <p>You will also need to edit the following files:</p>
-<pre><code>settings/defaults/charjabox_ports.yml # To configure the ports
+<pre><code>group_vars/all/charjabox_ports.yml # To configure the default ports
+charjabox.yml # Add the application to the list of apps at the top
 </code></pre>
 
-<p>Please also add documentation for the new app in <code>docs/applications/$appname</code> and <code>README.md</code>, as well as <code>docs/index.md</code></p></div>
+<p>Please also add documentation for the new app in <code>docs/applications/$appname</code> and <code>README.md</code>, as well as <code>docs/index.md</code> and don't forget to add the new file to <code>mkdocs.yml</code>.</p></div>
         
         
     </div>

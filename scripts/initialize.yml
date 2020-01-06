@@ -35,7 +35,6 @@
           [{{ groupname }}]
           {{ serverip }}
     - name: create group_vars file
-      copy:
-        dest: "{{ playbook_dir }}/../group_vars/{{ groupname }}.yml"
-        content: |
-          charjabox_settings_path: "{{ settingsname }}"
+      file:
+        path: "{{ playbook_dir }}/../group_vars/{{ groupname }}.yml"
+        state: touch

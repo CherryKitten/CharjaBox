@@ -14,6 +14,7 @@
       - firefly
       - gitea
       - heimdall
+      - homeassistant
       - jackett
       - jellyfin
       - lancache

@@ -1,0 +1,8 @@
+homeassistant_enabled: false
+homeassistant_tag: "stable"
+
+homeassistant_directories:
+  config: "{{ docker_home }}/homeassistant/config/"
+
+homeassistant_traefik_enabled: false
+homeassistant_domain: "homeassistant.{{ charjabox_domain }}"

@@ -20,6 +20,8 @@ gitea_ssh_port: 222
 heimdall_http_port: 4000
 heimdall_https_port: 4001
 
+homeassistant_port: 8123
+
 jackett_port: 9117
 
 jellyfin_http_port: 6005

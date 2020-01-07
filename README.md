@@ -44,6 +44,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 * [Firefly III](https://firefly-iii.org/) - Free and open source personal finance manager
 * [Gitea](https://gitea.io/) - Git with a cup of tea
 * [Heimdall](https://heimdall.site/) - Application Dashboard for easy access to all your services
+* [Home-Assistant](https://www.home-assistant.io/hassio/) - Open source home automation that puts local control and privacy first. 
 * [Jackett](https://github.com/Jackett/Jackett) - API Support for your favorite torrent trackers.
 * [Jellyfin](http://jellyfin.org/) - The Free Software Media System
 * [Lancache](https://github.com/lancachenet/monolithic) - Cache your video game downloads and operating system updates so you only have to download them once

@@ -15,13 +15,17 @@ nav:
       - Heimdall: 'applications/heimdall.md'
       - SMB: 'applications/smb.md'
       - Nextcloud: 'applications/nextcloud.md'
-      - r(u)torrent: 'applications/rtorrent.md'
-      - Dokuwiki: 'applications/dokuwiki.md'
-      - Gitea: 'applications/gitea.md'
       - Miniflux: 'applications/miniflux.md'
       - Firefly III: 'applications/firefly.md'
       - Lancache: 'applications/lancache.md'
       - Tautulli: 'applications/tautulli.md'
+      - Development:
+        - Dokuwiki: 'applications/dokuwiki.md'
+        - Gitea: 'applications/gitea.md'
+      - Downloading:
+        - r(u)torrent: 'applications/rtorrent.md'
+      - Home Automation:
+        - Home-Assistant: 'applications/homeassistant.md'
       - Media streaming:
         - Airsonic: 'applications/airsonic.md'
         - Plex: 'applications/plex.md'

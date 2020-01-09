@@ -1,0 +1,21 @@
+---
+version: '3'
+
+services:
+  pyload:
+    image: writl/pyload:{{ pyload_tag }}
+    container_name: pyLoad
+    restart: unless-stopped
+    ports:
+      - {{ pyload_port }}:8000
+    volumes:
+      - {{ pyload_directories.config }}:/opt/pyload/pyload-config
+      - {{ pyload_directories.downloads }}:/opt/pyload/Downloads
+    labels:
+      traefik.enable: "{{ pyload_traefik_enabled }}"
+      traefik.http.routers.pyload.entrypoints: "web"
+      traefik.http.routers.pyload.rule: "Host(`{{ pyload_domain }}`)"
+      traefik.http.routers.pyload-s.entrypoints: "web-secure"
+      traefik.http.routers.pyload-s.rule: "Host(`{{ pyload_domain }}`)"
+      traefik.http.routers.pyload-s.tls: "true"
+      traefik.http.services.pyload.loadbalancer.server.port: "8000"

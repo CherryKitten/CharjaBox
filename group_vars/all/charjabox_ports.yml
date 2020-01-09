@@ -42,6 +42,8 @@ plex_web_port: 32400
 
 portainer_port: 9000
 
+pyload_port: 8001
+
 rtorrent_http_port: 7991
 rtorrent_https_port: 7992
 rtorrent_scgi_port: 5000

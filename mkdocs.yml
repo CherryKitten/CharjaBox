@@ -23,6 +23,7 @@ nav:
         - Dokuwiki: 'applications/dokuwiki.md'
         - Gitea: 'applications/gitea.md'
       - Downloading:
+        - pyLoad: 'applications/pyload.md'
         - r(u)torrent: 'applications/rtorrent.md'
       - Home Automation:
         - Home-Assistant: 'applications/homeassistant.md'

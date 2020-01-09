@@ -55,6 +55,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 * [Nginx](https://www.nginx.com/) - Open source web server and a reverse proxy server
 * [Plex](https://www.plex.tv/) - Your very own personal streaming service
 * [Portainer](https://portainer.io/) - Web Interface for managing Docker containers
+* [pyLoad](https://pyload.net/) - Free and open-source Download Manager written in Python
 * [Radarr](https://radarr.video/#home) - Manage your movie collection
 * [rtorrent](https://github.com/rakshasa/rtorrent) - Text-based ncurses BitTorrent client
 * [ruTorrent](https://github.com/Novik/ruTorrent) - Web front-end for the popular Bittorrent client rtorrent

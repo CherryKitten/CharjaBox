@@ -1,0 +1,9 @@
+pyload_enabled: false
+pyload_tag: "latest"
+
+pyload_directories:
+  config: "{{ docker_home }}/pyload/config"
+  downloads: "{{ charjabox_downloads_directory }}"
+
+pyload_traefik_enabled: false
+pyload_domain: "pyload.{{ charjabox_domain }}"

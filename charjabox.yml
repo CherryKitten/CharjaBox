@@ -25,6 +25,7 @@
       - nginx
       - plex
       - portainer
+      - pyload
       - radarr
       - rtorrent
       - sonarr

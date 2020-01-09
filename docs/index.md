@@ -41,6 +41,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 * [Calibre-Web](https://github.com/janeczku/calibre-web) - Web app for browsing, reading and downloading eBooks stored in a Calibre database 
 * [Bitwarden_rs](https://github.com/dani-garcia/bitwarden_rs) - Password manager compatible with [Bitwarden apps](https://bitwarden.com/)
 * [Dokuwiki](https://www.dokuwiki.org/dokuwiki) - Simple to use and highly versatile Open Source wiki software that doesn't require a database
+* [Duplicati](https://www.duplicati.com/) - Free backup software to store encrypted backups online
 * [Firefly III](https://firefly-iii.org/) - Free and open source personal finance manager
 * [Gitea](https://gitea.io/) - Git with a cup of tea
 * [Heimdall](https://heimdall.site/) - Application Dashboard for easy access to all your services

@@ -1,0 +1,10 @@
+duplicati_enabled: false
+duplicati_tag: "latest"
+
+duplicati_directories:
+  config: "{{ docker_home }}/duplicati/config"
+  data: "{{ docker_home }}/duplicati/data"
+  source: "{{ docker_home }}/duplicati/source"
+
+duplicati_traefik_enabled: false
+duplicati_domain: "duplicati.{{ charjabox_domain }}"

@@ -11,6 +11,7 @@
       - bitwarden_rs
       - calibre
       - dokuwiki
+      - duplicati
       - firefly
       - gitea
       - heimdall

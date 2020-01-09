@@ -12,6 +12,8 @@ calibre_port: 8083
 dokuwiki_http_port: 6009
 dokuwiki_https_port: 6010
 
+duplicati_port: 8200
+
 firefly_port: 4005
 
 gitea_http_port: 3000

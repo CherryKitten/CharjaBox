@@ -42,6 +42,7 @@ nav:
         - BIND: 'applications/bind.md'
       - Security & Backup:
         - Bitwarden_rs: 'applications/bitwarden_rs.md'
+        - Duplicati: 'applications/duplicati.md'
         - Timemachine: 'applications/timemachine.md'
       - Webservers & reverse proxies:
         - Nginx: 'applications/nginx.md'

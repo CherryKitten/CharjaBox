@@ -11,7 +11,7 @@
     <link rel="../../img/favicon.ico">
 
     
-    <title>Tautulli - CharjaBox</title>
+    <title>pyLoad - CharjaBox</title>
     
 
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -141,8 +141,8 @@
 
                         
                             
-<li class="active">
-    <a href="./">Tautulli</a>
+<li >
+    <a href="../tautulli/">Tautulli</a>
 </li>
 
                         
@@ -173,8 +173,8 @@
     <ul class="dropdown-menu">
         
             
-<li >
-    <a href="../pyload/">pyLoad</a>
+<li class="active">
+    <a href="./">pyLoad</a>
 </li>
 
         
@@ -357,17 +357,17 @@
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../lancache/">
+                        <a rel="prev" href="../gitea/">
                             <i class="fas fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="next" href="../dokuwiki/">
+                        <a rel="next" href="../rtorrent/">
                             Next <i class="fas fa-arrow-right"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/applications/tautulli.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/applications/pyload.md"><i class="fab fa-github"></i> Edit on GitHub</a>
                     </li>
             </ul>
         </div>
@@ -386,7 +386,9 @@
         <div class="col-md-9" role="main">
 
 <h1 id="general">General</h1>
-<p><a href="https://tautulli.com/">Tautulli</a> - Monitor your Plex Media Server</p>
+<p><a href="https://pyload.net/">pyLoad</a> - Free and open-source Download Manager written in Python</p>
+<p>After setting up pyLoad, visit the webinterface and login with user <code>pyload</code> and password <code>pyload</code>.
+Don't forget to change the password afterwards.</p>
 <h1 id="variables">Variables</h1>
 <table>
 <thead>
@@ -399,40 +401,46 @@
 </thead>
 <tbody>
 <tr>
-<td>tautulli_enabled</td>
+<td>pyload_enabled</td>
 <td>Boolean</td>
 <td>false</td>
 <td>Enable/Disable the application</td>
 </tr>
 <tr>
-<td>tautulli_tag</td>
+<td>pyload_tag</td>
 <td>String</td>
 <td>"latest"</td>
 <td>Tag to use for the docker image</td>
 </tr>
 <tr>
-<td>tautulli_directories.config</td>
+<td>pyload_directories.config</td>
 <td>String</td>
-<td>"{{ docker_home }}/tautulli/config"</td>
+<td>"{{ docker_home }}/pyload/config"</td>
 <td>Path were application config should be stored</td>
 </tr>
 <tr>
-<td>tautulli_traefik_enabled</td>
+<td>pyload_directories.downloads</td>
+<td>String</td>
+<td>"{{ charjabox_downloads_directory }}"</td>
+<td>Path were downloads should be stored</td>
+</tr>
+<tr>
+<td>pyload_traefik_enabled</td>
 <td>Boolean</td>
 <td>false</td>
 <td>Enable/Disable access to application via Traefik</td>
 </tr>
 <tr>
-<td>tautulli_domain</td>
+<td>pyload_domain</td>
 <td>String</td>
-<td>"tautulli.{{ charjabox_domain }}"</td>
-<td>Domain used to access the application</td>
+<td>8001</td>
+<td>Port used to access the application</td>
 </tr>
 <tr>
-<td>tautulli_port</td>
+<td>pyload_port</td>
 <td>Int</td>
-<td>8181</td>
-<td>Port used to access the application</td>
+<td>"pyload.{{ charjabox_domain }}"</td>
+<td>Domain used to access the application</td>
 </tr>
 </tbody>
 </table></div>

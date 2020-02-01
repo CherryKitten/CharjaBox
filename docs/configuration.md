@@ -17,7 +17,37 @@ If you use CharjaBox to set up multiple servers, you can use different settings 
 
 Every application has it's own variables, where you can enable the Application and apply App-specific configuration.
 
-# Example
+## Customizing the Docker containers
+
+For everything that is not covered by existing variables, there is the option to add additional port bindings, volumes, environment variables and labels to Docker containers. 
+
+Only use this function if you understand how Docker and docker-compose work.
+
+Those additional values are set in list variables with the following names:
+
+```
+$appName_additional_env: []
+$appName_additional_labels: []
+$appName_additional_ports: []
+$appName_additional_volumes: []
+```
+
+Just exchange `$appName` with the internal name of the app (see the prefix of other variables for that name) and add the lines, just as you would add them to the docker-compose file, as a list of strings.
+
+For example:
+
+```
+$appName_additional_env:
+  - "foo: bar"
+  - "bar: foo"
+$appName_additional_ports:
+  - "8080:80"
+  - "4443:443"
+$appName_additional_volumes:
+  - "/etc/somepath/:/somepath/
+```
+
+## Example configuration
 
 I have a local server currently running Portainer, Heimdall, Nginx and Plex. I called the group `production` to differentiate it from a testing server. 
 

@@ -9,17 +9,32 @@ services:
     ports:
       - "{{ gitea_http_port }}:3000"
       - "{{ gitea_ssh_port }}:22"
+{% if gitea_additional_ports %}
+{% for port in gitea_additional_ports %}
+      - {{ port }}
+{% endfor %}
+{% endif %}
     volumes:
       - {{ gitea_directories.data }}:/data
+{% if gitea_additional_volumes %}
+{% for volume in gitea_additional_volumes %}
+      - {{ volume }}
+{% endfor %}
+{% endif %}
     environment:
-      -  APP_NAME="{{ gitea_appname }}"
-      -  RUN_MODE="{{ gitea_runmode }}"
-      -  SSH_DOMAIN="{{ gitea_domain }}"
-      -  SSH_PORT={{ gitea_ssh_port }}
-      -  DISABLE_SSH={{ gitea_disable_ssh }}
-      -  ROOT_URL="http://{{ gitea_domain }}:{{ gitea_http_port }}"
-      -  DISABLE_REGISTRATION={{ gitea_disable_registrations }}
-      -  REQUIRE_SIGNIN_VIEW={{ gitea_require_signin }}
+      APP_NAME: "{{ gitea_appname }}"
+      RUN_MODE: "{{ gitea_runmode }}"
+      SSH_DOMAIN: "{{ gitea_domain }}"
+      SSH_PORT: "{{ gitea_ssh_port }}"
+      DISABLE_SSH: "{{ gitea_disable_ssh }}"
+      ROOT_URL: "http://{{ gitea_domain }}:{{ gitea_http_port }}"
+      DISABLE_REGISTRATION: "{{ gitea_disable_registrations }}"
+      REQUIRE_SIGNIN_VIEW: "{{ gitea_require_signin }}"
+{% if gitea_additional_env %}
+{% for env in gitea_additional_env %}
+      {{ env }}
+{% endfor %}
+{% endif %}
     labels:
       traefik.enable: "{{ gitea_traefik_enabled }}"
       traefik.http.routers.gitea.entrypoints: "web"
@@ -28,3 +43,8 @@ services:
       traefik.http.routers.gitea-s.rule: "Host(`{{ gitea_domain }}`)"
       traefik.http.routers.gitea-s.tls: "true"
       traefik.http.services.gitea.loadbalancer.server.port: "3000"
+{% if gitea_additional_labels %}
+{% for label in gitea_additional_labels %}
+      {{ label }}
+{% endfor %}
+{% endif %}

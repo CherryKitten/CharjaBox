@@ -11,6 +11,28 @@ services:
       - {{ traefik_http_port }}:80
       - {{ traefik_https_port }}:443
       - {{ traefik_webinterface_port }}:8080
+{% if traefik_additional_ports %}
+{% for port in traefik_additional_ports %}
+      - {{ port }}
+{% endfor %}
+{% endif %}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - {{ traefik_directories.config }}/traefik.yml:/etc/traefik/traefik.yml
+{% if traefik_additional_volumes %}
+{% for volume in traefik_additional_volumes %}
+      - {{ volume }}
+{% endfor %}
+{% endif %}
+{% if traefik_additional_env %}
+    environment:
+{% for env in traefik_additional_env %}
+      {{ env }}
+{% endfor %}
+{% endif %}
+{% if traefik_additional_labels %}
+    labels:
+{% for label in traefik_additional_labels %}
+      {{ label }}
+{% endfor %}
+{% endif %}

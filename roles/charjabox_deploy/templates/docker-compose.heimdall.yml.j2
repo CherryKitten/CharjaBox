@@ -9,9 +9,30 @@ services:
     ports:
       - {{ heimdall_http_port }}:80
       - {{ heimdall_https_port }}:443
+{% if heimdall_additional_ports %}
+{% for port in heimdall_additional_ports %}
+      - {{ port }}
+{% endfor %}
+{% endif %}
     volumes:
       - {{ heimdall_directories.config }}:/config
+{% if heimdall_additional_volumes %}
+{% for volume in heimdall_additional_volumes %}
+      - {{ volume }}
+{% endfor %}
+{% endif %}
+{% if heimdall_additional_env %}
+    environment:
+{% for env in heimdall_additional_env %}
+      {{ env }}
+{% endfor %}
+{% endif %}
     labels:
       traefik.enable: "{{ heimdall_traefik_enabled }}"
       traefik.http.routers.heimdall.rule: "Host(`{{ heimdall_domain }}`)"
       traefik.http.services.heimdall.loadbalancer.server.port: "80"
+{% if heimdall_additional_labels %}
+{% for label in heimdall_additional_labels %}
+      {{ label }}
+{% endfor %}
+{% endif %}

@@ -8,10 +8,26 @@ services:
     restart: unless-stopped
     ports:
       - {{ duplicati_port }}:8200
+{% if duplicati_additional_ports %}
+{% for port in duplicati_additional_ports %}
+      - {{ port }}
+{% endfor %}
+{% endif %}
     volumes:
       - {{ duplicati_directories.config }}:/config
       - {{ duplicati_directories.data }}:/backup
       - {{ duplicati_directories.source }}:/source
+{% if duplicati_additional_volumes %}
+{% for volume in duplicati_additional_volumes %}
+      - {{ volume }}
+{% endfor %}
+{% endif %}
+{% if duplicati_additional_env %}
+    environment:
+{% for env in duplicati_additional_env %}
+      {{ env }}
+{% endfor %}
+{% endif %}
     labels:
       traefik.enable: "{{ duplicati_traefik_enabled }}"
       traefik.http.routers.duplicati.entrypoints: "web"
@@ -20,4 +36,8 @@ services:
       traefik.http.routers.duplicati-s.rule: "Host(`{{ duplicati_domain }}`)"
       traefik.http.routers.duplicati-s.tls: "true"
       traefik.http.services.duplicati.loadbalancer.server.port: "8200"
-      
+{% if duplicati_additional_labels %}
+{% for label in duplicati_additional_labels %}
+      {{ label }}
+{% endfor %}
+{% endif %}

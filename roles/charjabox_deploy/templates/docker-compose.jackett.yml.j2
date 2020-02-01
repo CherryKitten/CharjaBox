@@ -8,9 +8,25 @@ services:
     restart: unless-stopped
     ports:
       - {{ jackett_port }}:9117
+{% if jackett_additional_ports %}
+{% for port in jackett_additional_ports %}
+      - {{ port }}
+{% endfor %}
+{% endif %}
     volumes:
       - {{ jackett_directories.config }}:/config
       - {{ jackett_directories.data }}:/downloads
+{% if jackett_additional_volumes %}
+{% for volume in jackett_additional_volumes %}
+       - {{ volume }}
+{% endfor %}
+{% endif %}
+{% if jackett_additional_env %}
+     environment:
+{% for env in jackett_additional_env %}
+       {{ env }}
+{% endfor %}
+{% endif %}
     labels:
       traefik.enable: "{{ jackett_traefik_enabled }}"
       traefik.http.routers.jackett.entrypoints: "web"
@@ -19,3 +35,8 @@ services:
       traefik.http.routers.jackett-s.rule: "Host(`{{ jackett_domain }}`)"
       traefik.http.routers.jackett-s.tls: "true"
       traefik.http.services.jackett.loadbalancer.server.port: "9117"
+{% if jackett_additional_labels %}
+{% for label in jackett_additional_labels %}
+      {{ label }}
+{% endfor %}
+{% endif %}

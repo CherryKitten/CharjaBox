@@ -8,10 +8,26 @@ services:
     restart: unless-stopped
     ports:
       - {{ lidarr_port }}:8686
+{% if lidarr_additional_ports %}
+{% for port in lidarr_additional_ports %}
+      - {{ port }}
+{% endfor %}
+{% endif %}
     volumes:
       - {{ lidarr_directories.config }}:/config
       - {{ lidarr_directories.data }}:/downloads
       - {{ charjabox_music_directory }}:/music
+{% if lidarr_additional_volumes %}
+{% for volume in lidarr_additional_volumes %}
+      - {{ volume }}
+{% endfor %}
+{% endif %}
+{% if lidarr_additional_env %}
+    environment:
+{% for env in lidarr_additional_env %}
+      {{ env }}
+{% endfor %}
+{% endif %}
     labels:
       traefik.enable: "{{ lidarr_traefik_enabled }}"
       traefik.http.routers.lidarr.entrypoints: "web"
@@ -20,3 +36,8 @@ services:
       traefik.http.routers.lidarr-s.rule: "Host(`{{ lidarr_domain }}`)"
       traefik.http.routers.lidarr-s.tls: "true"
       traefik.http.services.lidarr.loadbalancer.server.port: "8686"
+{% if lidarr_additional_labels %}
+{% for label in lidarr_additional_labels %}
+      {{ label }}
+{% endfor %}
+{% endif %}

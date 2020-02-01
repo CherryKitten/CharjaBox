@@ -8,10 +8,26 @@ services:
     restart: unless-stopped
     ports:
       - {{ radarr_port }}:7878
+{% if radarr_additional_ports %}
+{% for port in radarr_additional_ports %}
+      - {{ port }}
+{% endfor %}
+{% endif %}
     volumes:
       - {{ radarr_directories.config }}:/config
       - {{ radarr_directories.data }}:/downloads
       - {{ charjabox_movies_directory }}:/movies
+{% if radarr_additional_volumes %}
+{% for volume in radarr_additional_volumes %}
+      - {{ volume }}
+{% endfor %}
+{% endif %}
+{% if radarr_additional_env %}
+    environment:
+{% for env in radarr_additional_env %}
+      {{ env }}
+{% endfor %}
+{% endif %}
     labels:
       traefik.enable: "{{ radarr_traefik_enabled }}"
       traefik.http.routers.radarr.entrypoints: "web"
@@ -20,3 +36,8 @@ services:
       traefik.http.routers.radarr-s.rule: "Host(`{{ radarr_domain }}`)"
       traefik.http.routers.radarr-s.tls: "true"
       traefik.http.services.radarr.loadbalancer.server.port: "{{ radarr_port }}"
+{% if radarr_additional_labels %}
+{% for label in radarr_additional_labels %}
+      {{ label }}
+{% endfor %}
+{% endif %}

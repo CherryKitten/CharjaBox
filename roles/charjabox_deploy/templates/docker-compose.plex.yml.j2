@@ -16,14 +16,29 @@ services:
       - "32412:32412/udp"
       - "32413:32413/udp"
       - "32414:32414/udp"
+{% if plex_additional_ports %}
+{% for port in plex_additional_ports %}
+      - {{ port }}
+{% endfor %}
+{% endif %}
     volumes:
       - {{ plex_directories.config }}:/config
       - {{ plex_music_directory }}:/data/music
       - {{ plex_tv_directory }}:/data/tv
       - {{ plex_movies_directory }}:/data/movies
+{% if plex_additional_volumes %}
+{% for volume in plex_additional_volumes %}
+      - {{ volume }}
+{% endfor %}
+{% endif %}
     environment:
       - TZ={{ charjabox_timezone }}
       - PLEX_CLAIM={{ plex_token }}
+{% if plex_additional_env %}
+{% for env in plex_additional_env %}
+      {{ env }}
+{% endfor %}
+{% endif %}
     labels:
       traefik.enable: "{{ plex_traefik_enabled }}"
       traefik.http.routers.plex.entrypoints: "web"
@@ -32,3 +47,8 @@ services:
       traefik.http.routers.plex-s.rule: "Host(`{{ plex_domain }}`)"
       traefik.http.routers.plex-s.tls: "true"
       traefik.http.services.plex.loadbalancer.server.port: "32400"
+{% if plex_additional_labels %}
+{% for label in plex_additional_labels %}
+      {{ label }}
+{% endfor %}
+{% endif %}

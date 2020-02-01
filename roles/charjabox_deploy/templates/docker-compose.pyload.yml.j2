@@ -8,9 +8,25 @@ services:
     restart: unless-stopped
     ports:
       - {{ pyload_port }}:8000
+{% if pyload_additional_ports %}
+{% for port in pyload_additional_ports %}
+      - {{ port }}
+{% endfor %}
+{% endif %}
     volumes:
       - {{ pyload_directories.config }}:/opt/pyload/pyload-config
       - {{ pyload_directories.downloads }}:/opt/pyload/Downloads
+{% if pyload_additional_volumes %}
+{% for volume in pyload_additional_volumes %}
+      - {{ volume }}
+{% endfor %}
+{% endif %}
+{% if pyload_additional_env %}
+    environment:
+{% for env in pyload_additional_env %}
+      {{ env }}
+{% endfor %}
+{% endif %}
     labels:
       traefik.enable: "{{ pyload_traefik_enabled }}"
       traefik.http.routers.pyload.entrypoints: "web"
@@ -19,3 +35,8 @@ services:
       traefik.http.routers.pyload-s.rule: "Host(`{{ pyload_domain }}`)"
       traefik.http.routers.pyload-s.tls: "true"
       traefik.http.services.pyload.loadbalancer.server.port: "8000"
+{% if pyload_additional_labels %}
+{% for label in pyload_additional_labels %}
+      {{ label }}
+{% endfor %}
+{% endif %}

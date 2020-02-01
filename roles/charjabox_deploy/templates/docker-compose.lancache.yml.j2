@@ -8,13 +8,35 @@ services:
     restart: unless-stopped
     ports:
       - {{ lancache_port }}:80
+{% if lancache_additional_ports %}
+{% for port in lancache_additional_ports %}
+      - {{ port }}
+{% endfor %}
+{% endif %}
     volumes:
       - {{ lancache_directories.config }}:/data/logs
       - {{ lancache_directories.data }}:/data/cache
+{% if lancache_additional_volumes %}
+{% for volume in lancache_additional_volumes %}
+      - {{ volume }}
+{% endfor %}
+{% endif %}
     environment:
       - CACHE_MEM_SIZE={{ lancache_limits_memory }}
       - CACHE_DISK_SIZE={{ lancache_limits_size }}
       - CACHE_MAX_AGE={{ lancache_limits_age }}
+{% if lancache_additional_env %}
+{% for env in lancache_additional_env %}
+      {{ env }}
+{% endfor %}
+{% endif %}
+{% if lancache_additional_labels %}
+    labels:
+{% for label in lancache_additional_labels %}
+      {{ label }}
+{% endfor %}
+{% endif %}
+
 {% if lancache_dns_enabled %}
   dns:
     image: lancachenet-dns

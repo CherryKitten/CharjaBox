@@ -8,10 +8,26 @@ services:
     restart: unless-stopped
     ports:
       - {{ sonarr_port }}:8989
+{% if sonarr_additional_ports %}
+{% for port in sonarr_additional_ports %}
+      - {{ port }}
+{% endfor %}
+{% endif %}
     volumes:
       - {{ sonarr_directories.config }}:/config
       - {{ sonarr_directories.data }}:/downloads
       - {{ charjabox_tv_directory }}:/tv
+{% if sonarr_additional_volumes %}
+{% for volume in sonarr_additional_volumes %}
+      - {{ volume }}
+{% endfor %}
+{% endif %}
+{% if sonarr_additional_env %}
+    environment:
+{% for env in sonarr_additional_env %}
+      {{ env }}
+{% endfor %}
+{% endif %}
     labels:
       traefik.enable: "{{ sonarr_traefik_enabled }}"
       traefik.http.routers.sonarr.entrypoints: "web"
@@ -20,3 +36,8 @@ services:
       traefik.http.routers.sonarr-s.rule: "Host(`{{ sonarr_domain }}`)"
       traefik.http.routers.sonarr-s.tls: "true"
       traefik.http.services.sonarr.loadbalancer.server.port: "8989"
+{% if sonarr_additional_labels %}
+{% for label in sonarr_additional_labels %}
+      {{ label }}
+{% endfor %}
+{% endif %}

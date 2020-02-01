@@ -9,9 +9,25 @@ services:
     ports:
       - {{ nginx_http_port }}:80
       - {{ nginx_https_port }}:443
+{% if nginx_additional_ports %}
+{% for port in nginx_additional_ports %}
+      - {{ port }}
+{% endfor %}
+{% endif %}
     volumes:
       - {{ nginx_directories.config }}:/etc/nginx/
       - {{ nginx_directories.data }}:/var/www
+{% if nginx_additional_volumes %}
+{% for volume in nginx_additional_volumes %}
+      - {{ volume }}
+{% endfor %}
+{% endif %}
+{% if nginx_additional_env %}
+    environment:
+{% for env in nginx_additional_env %}
+      {{ env }}
+{% endfor %}
+{% endif %}
     labels:
       traefik.enable: "{{ nginx_traefik_enabled }}"
       traefik.http.routers.nginx.entrypoints: "web"
@@ -20,3 +36,8 @@ services:
       traefik.http.routers.nginx-s.rule: "Host(`{{ nginx_domain }}`)"
       traefik.http.routers.nginx-s.tls: "true"
       traefik.http.services.nginx.loadbalancer.server.port: "80"
+{% if nginx_additional_labels %}
+{% for label in nginx_additional_labels %}
+      {{ label }}
+{% endfor %}
+{% endif %}

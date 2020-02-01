@@ -8,9 +8,30 @@ services:
     restart: unless-stopped
     ports:
       - {{ timemachine_port }}:445
+{% if timemachine_additional_ports %}
+{% for port in timemachine_additional_ports %}
+      - {{ port }}
+{% endfor %}
+{% endif %}
     volumes:
       - {{ timemachine_directories.data }}:/backups
+{% if timemachine_additional_volumes %}
+{% for volume in timemachine_additional_volumes %}
+      - {{ volume }}
+{% endfor %}
+{% endif %}
     environment:
       - SHARENAME={{ timemachine_sharename }}
       - PASS={{ timemachine_password }}
       - TMSIZE={{ timemachine_sizelimit }}
+{% if timemachine_additional_env %}
+{% for env in timemachine_additional_env %}
+      {{ env }}
+{% endfor %}
+{% endif %}
+{% if timemachine_additional_labels %}
+    labels:
+{% for label in timemachine_additional_labels %}
+      {{ label }}
+{% endfor %}
+{% endif %}

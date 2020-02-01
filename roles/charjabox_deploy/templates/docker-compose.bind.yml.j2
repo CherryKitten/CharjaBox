@@ -3,18 +3,33 @@ version: '3'
 
 services:
   bind:
-    image: sameersbn/bind:9.11.3-20190706:{{ bind_tag }}
+    image: sameersbn/bind:{{ bind_tag }}
     container_name: BIND
     restart: unless-stopped
     ports:
       - "53:53/udp"
       - "53:53/tcp"
       - "{{ bind_webmin_port }}:10000/tcp"
+{% if bind_additional_ports %}
+{% for port in bind_additional_ports %}
+      - {{ port }}
+{% endfor %}
+{% endif %}
     volumes:
       - {{ bind_directories.data }}:/data
+{% if bind_additional_volumes %}
+{% for volume in bind_additional_volumes %}
+      - {{ volume }}
+{% endfor %}
+{% endif %}
     environment:
       - WEBMIN_ENABLED={{ bind_webmin_enabled }}
       - ROOT_PASSWORD={{ bind_webmin_password }}
+{% if bind_additional_env %}
+{% for env in bind_additional_env %}
+      {{ env }}
+{% endfor %}
+{% endif %}
     labels:
       traefik.enable: "{{ bind_webmin_traefik_enabled }}"
       traefik.http.routers.bind.entrypoints: "web"
@@ -23,3 +38,8 @@ services:
       traefik.http.routers.bind-s.rule: "Host(`{{ bind_webmin_domain }}`)"
       traefik.http.routers.bind-s.tls: "true"
       traefik.http.services.bind.loadbalancer.server.port: "10000"
+{% if bind_additional_labels %}
+{% for label in bind_additional_labels %}
+      {{ label }}
+{% endfor %}
+{% endif %}

@@ -8,9 +8,25 @@ services:
     restart: unless-stopped
     ports:
       - {{ tautulli_port }}:8181
+{% if tautulli_additional_ports %}
+{% for port in tautulli_additional_ports %}
+      - {{ port }}
+{% endfor %}
+{% endif %}
     volumes:
       - {{ tautulli_directories.config }}:/config
       - {{ plex_directories.config }}/Library/Application Support/Plex Media Server/Logs/:/plex_logs:ro
+{% if tautulli_additional_volumes %}
+{% for volume in tautulli_additional_volumes %}
+      - {{ volume }}
+{% endfor %}
+{% endif %}
+{% if tautulli_additional_env %}
+    environment:
+{% for env in tautulli_additional_env %}
+      {{ env }}
+{% endfor %}
+{% endif %}
     labels:
       traefik.enable: "{{ tautulli_traefik_enabled }}"
       traefik.http.routers.tautulli.entrypoints: "web"
@@ -19,3 +35,8 @@ services:
       traefik.http.routers.tautulli-s.rule: "Host(`{{ tautulli_domain }}`)"
       traefik.http.routers.tautulli-s.tls: "true"
       traefik.http.services.tautulli.loadbalancer.server.port: "8989"
+{% if tautulli_additional_labels %}
+{% for label in tautulli_additional_labels %}
+      {{ label }}
+{% endfor %}
+{% endif %}

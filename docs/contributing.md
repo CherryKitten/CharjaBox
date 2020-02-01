@@ -21,6 +21,7 @@ You will also need to edit the following files:
 
 ```
 group_vars/all/charjabox_ports.yml # To configure the default ports
+roles/charjabox_deploy/defaults/main.yml # To add the empty additional value variables
 charjabox.yml # Add the application to the list of apps at the top
 ```
 

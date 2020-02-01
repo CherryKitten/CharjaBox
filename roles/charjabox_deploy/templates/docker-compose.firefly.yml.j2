@@ -12,6 +12,11 @@ services:
     restart: unless-stopped
     ports:
       - {{ firefly_port }}:80
+{% if firefly_additional_ports %}
+{% for port in firefly_additional_ports %}
+      - {{ port }}
+{% endfor %}
+{% endif %}
     depends_on:
       - firefly_iii_db
     networks:
@@ -19,6 +24,11 @@ services:
     volumes:
       - {{ firefly_directories.config }}/export:/var/www/firefly-iii/storage/export
       - {{ firefly_directories.config }}/upload:/var/www/firefly-iii/storage/upload
+{% if firefly_additional_volumes %}
+{% for volume in firefly_additional_volumes %}
+      - {{ volume }}
+{% endfor %}
+{% endif %}
     environment:
       - DB_CONNECTION=pgsql
       - DB_HOST=firefly_iii_db
@@ -30,6 +40,11 @@ services:
       - APP_KEY={{ firefly_app_key }}
       - APP_URL=https://firefly.{{ charjabox_domain }}
       - ServerName=firefly.{{ charjabox_domain }}
+{% if firefly_additional_env %}
+{% for env in firefly_additional_env %}
+      {{ env }}
+{% endfor %}
+{% endif %}
     labels:
       traefik.enable: "{{ firefly_traefik_enabled }}"
       traefik.http.routers.firefly.entrypoints: "web"
@@ -49,3 +64,8 @@ services:
       - firefly_iii_net
     volumes:
       - {{ firefly_directories.config }}/db:/var/lib/postgresql/data
+{% if firefly_additional_labels %}
+{% for label in firefly_additional_labels %}
+      {{ label }}
+{% endfor %}
+{% endif %}

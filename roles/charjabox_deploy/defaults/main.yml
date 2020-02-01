@@ -1,0 +1,134 @@
+airsonic_additional_env: []
+airsonic_additional_labels: []
+airsonic_additional_ports: []
+airsonic_additional_volumes: []
+
+bazarr_additional_env: []
+bazarr_additional_labels: []
+bazarr_additional_ports: []
+bazarr_additional_volumes: []
+
+bind_additional_env: []
+bind_additional_labels: []
+bind_additional_ports: []
+bind_additional_volumes: []
+
+bitwarden_rs_additional_env: []
+bitwarden_rs_additional_labels: []
+bitwarden_rs_additional_ports: []
+bitwarden_rs_additional_volumes: []
+
+calibre_additional_env: []
+calibre_additional_labels: []
+calibre_additional_ports: []
+calibre_additional_volumes: []
+
+dokuwiki_additional_env: []
+dokuwiki_additional_labels: []
+dokuwiki_additional_ports: []
+dokuwiki_additional_volumes: []
+
+duplicati_additional_env: []
+duplicati_additional_labels: []
+duplicati_additional_ports: []
+duplicati_additional_volumes: []
+
+firefly_additional_env: []
+firefly_additional_labels: []
+firefly_additional_ports: []
+firefly_additional_volumes: []
+
+gitea_additional_env: []
+gitea_additional_labels: []
+gitea_additional_ports: []
+gitea_additional_volumes: []
+
+heimdall_additional_env: []
+heimdall_additional_labels: []
+heimdall_additional_ports: []
+heimdall_additional_volumes: []
+
+homeassistant_additional_env: []
+homeassistant_additional_labels: []
+homeassistant_additional_ports: []
+homeassistant_additional_volumes: []
+
+jackett_additional_env: []
+jackett_additional_labels: []
+jackett_additional_ports: []
+jackett_additional_volumes: []
+
+jellyfin_additional_env: []
+jellyfin_additional_labels: []
+jellyfin_additional_ports: []
+jellyfin_additional_volumes: []
+
+lancache_additional_env: []
+lancache_additional_labels: []
+lancache_additional_ports: []
+lancache_additional_volumes: []
+
+lidarr_additional_env: []
+lidarr_additional_labels: []
+lidarr_additional_ports: []
+lidarr_additional_volumes: []
+
+miniflux_additional_env: []
+miniflux_additional_labels: []
+miniflux_additional_ports: []
+miniflux_additional_volumes: []
+
+nextcloud_additional_env: []
+nextcloud_additional_labels: []
+nextcloud_additional_ports: []
+nextcloud_additional_volumes: []
+
+nginx_additional_env: []
+nginx_additional_labels: []
+nginx_additional_ports: []
+nginx_additional_volumes: []
+
+plex_additional_env: []
+plex_additional_labels: []
+plex_additional_ports: []
+plex_additional_volumes: []
+
+portainer_additional_env: []
+portainer_additional_labels: []
+portainer_additional_ports: []
+portainer_additional_volumes: []
+
+pyload_additional_env: []
+pyload_additional_labels: []
+pyload_additional_ports: []
+pyload_additional_volumes: []
+
+radarr_additional_env: []
+radarr_additional_labels: []
+radarr_additional_ports: []
+radarr_additional_volumes: []
+
+rtorrent_additional_env: []
+rtorrent_additional_labels: []
+rtorrent_additional_ports: []
+rtorrent_additional_volumes: []
+
+sonarr_additional_env: []
+sonarr_additional_labels: []
+sonarr_additional_ports: []
+sonarr_additional_volumes: []
+
+tautulli_additional_env: []
+tautulli_additional_labels: []
+tautulli_additional_ports: []
+tautulli_additional_volumes: []
+
+timemachine_additional_env: []
+timemachine_additional_labels: []
+timemachine_additional_ports: []
+timemachine_additional_volumes: []
+
+traefik_additional_env: []
+traefik_additional_labels: []
+traefik_additional_ports: []
+traefik_additional_volumes: []

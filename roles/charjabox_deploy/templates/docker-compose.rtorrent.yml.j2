@@ -38,6 +38,9 @@ services:
       traefik.http.routers.rtorrent-s.entrypoints: "web-secure"
       traefik.http.routers.rtorrent-s.rule: "Host(`{{ rtorrent_domain }}`)"
       traefik.http.routers.rtorrent-s.tls: "true"
+{% if traefik_letsencrypt_enabled %}
+      traefik.http.routers.rtorrent-s.tls.certresolver: "le"
+{% endif %}
       traefik.http.services.rtorrent.loadbalancer.server.port: "80"
 {% if rtorrent_additional_labels %}
 {% for label in rtorrent_additional_labels %}

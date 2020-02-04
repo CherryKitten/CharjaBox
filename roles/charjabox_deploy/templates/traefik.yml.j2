@@ -13,3 +13,12 @@ api:
 providers:
   docker:
     exposedByDefault: false
+{% if traefik_letsencrypt_enabled %}
+certificatesResolvers:
+  le:
+    acme:
+      email: "{{ charjabox_email }}"
+      storage: acme.json
+      httpChallenge:
+        entryPoint: web
+{% endif %}

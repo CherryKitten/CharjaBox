@@ -29,8 +29,15 @@ services:
 {% endif %}
     labels:
       traefik.enable: "{{ heimdall_traefik_enabled }}"
+      traefik.http.routers.heimdall.entrypoints: "web"
       traefik.http.routers.heimdall.rule: "Host(`{{ heimdall_domain }}`)"
+      traefik.http.routers.heimdall-s.entrypoints: "web-secure"
+      traefik.http.routers.heimdall-s.rule: "Host(`{{ heimdall_domain }}`)"
+      traefik.http.routers.heimdall-s.tls: "true"
+{% if traefik_letsencrypt_enabled %}
+      traefik.http.routers.heimdall-s.tls.certresolver: "le"
       traefik.http.services.heimdall.loadbalancer.server.port: "80"
+{% endif %}
 {% if heimdall_additional_labels %}
 {% for label in heimdall_additional_labels %}
       {{ label }}

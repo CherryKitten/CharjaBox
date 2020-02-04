@@ -33,6 +33,9 @@ services:
       traefik.http.routers.thelounge-s.entrypoints: "web-secure"
       traefik.http.routers.thelounge-s.rule: "Host(`{{ thelounge_domain }}`)"
       traefik.http.routers.thelounge-s.tls: "true"
+{% if traefik_letsencrypt_enabled %}
+      traefik.http.routers.thelounge-s.tls.certresolver: "le"
+{% endif %}
       traefik.http.services.thelounge.loadbalancer.server.port: "9000"
 {% if thelounge_additional_labels %}
 {% for label in thelounge_additional_labels %}

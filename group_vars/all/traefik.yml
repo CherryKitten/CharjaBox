@@ -5,3 +5,5 @@ traefik_tag: "latest"
 traefik_directories:
   config: "{{docker_home}}/traefik/config"
 traefik_insecure_api: false
+
+traefik_letsencrypt_enabled: false

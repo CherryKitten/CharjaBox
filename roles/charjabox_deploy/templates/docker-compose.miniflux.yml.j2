@@ -48,6 +48,9 @@ services:
       traefik.http.routers.miniflux-s.entrypoints: "web-secure"
       traefik.http.routers.miniflux-s.rule: "Host(`{{ miniflux_domain }}`)"
       traefik.http.routers.miniflux-s.tls: "true"
+{% if traefik_letsencrypt_enabled %}
+      traefik.http.routers.miniflux-s.tls.certresolver: "le"
+{% endif %}
       traefik.http.services.miniflux.loadbalancer.server.port: "8080"
 {% if miniflux_additional_labels %}
 {% for label in miniflux_additional_labels %}

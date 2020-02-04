@@ -36,6 +36,9 @@ services:
       traefik.http.routers.jellyfin-s.entrypoints: "web-secure"
       traefik.http.routers.jellyfin-s.rule: "Host(`{{ jellyfin_domain }}`)"
       traefik.http.routers.jellyfin-s.tls: "true"
+{% if traefik_letsencrypt_enabled %}
+      traefik.http.routers.jellyfin-s.tls.certresolver: "le"
+{% endif %}
       traefik.http.services.jellyfin.loadbalancer.server.port: "8096"
 {% if jellyfin_additional_labels %}
 {% for label in jellyfin_additional_labels %}

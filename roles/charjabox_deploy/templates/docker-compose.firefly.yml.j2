@@ -52,7 +52,15 @@ services:
       traefik.http.routers.firefly-s.entrypoints: "web-secure"
       traefik.http.routers.firefly-s.rule: "Host(`{{ firefly_domain }}`)"
       traefik.http.routers.firefly-s.tls: "true"
+{% if traefik_letsencrypt_enabled %}
+      traefik.http.routers.firefly-s.tls.certresolver: "le"
+{% endif %}
       traefik.http.services.firefly.loadbalancer.server.port: "80"
+{% if firefly_additional_labels %}
+{% for label in firefly_additional_labels %}
+      {{ label }}
+{% endfor %}
+{% endif %}
 
   firefly_iii_db:
     image: postgres:{{ firefly_db_tag }}
@@ -64,8 +72,3 @@ services:
       - firefly_iii_net
     volumes:
       - {{ firefly_directories.config }}/db:/var/lib/postgresql/data
-{% if firefly_additional_labels %}
-{% for label in firefly_additional_labels %}
-      {{ label }}
-{% endfor %}
-{% endif %}

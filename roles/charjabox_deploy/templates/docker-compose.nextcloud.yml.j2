@@ -62,6 +62,9 @@ services:
       traefik.http.routers.nextcloud-s.entrypoints: "web-secure"
       traefik.http.routers.nextcloud-s.rule: "Host(`{{ nextcloud_domain }}`)"
       traefik.http.routers.nextcloud-s.tls: "true"
+{% if traefik_letsencrypt_enabled %}
+      traefik.http.routers.nextcloud-s.tls.certresolver: "le"
+{% endif %}
       traefik.http.services.nextcloud.loadbalancer.server.port: "80"
 {% if nextcloud_additional_labels %}
 {% for label in nextcloud_additional_labels %}

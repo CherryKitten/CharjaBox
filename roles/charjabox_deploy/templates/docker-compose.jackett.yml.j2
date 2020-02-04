@@ -34,6 +34,9 @@ services:
       traefik.http.routers.jackett-s.entrypoints: "web-secure"
       traefik.http.routers.jackett-s.rule: "Host(`{{ jackett_domain }}`)"
       traefik.http.routers.jackett-s.tls: "true"
+{% if traefik_letsencrypt_enabled %}
+      traefik.http.routers.jackett-s.tls.certresolver: "le"
+{% endif %}
       traefik.http.services.jackett.loadbalancer.server.port: "9117"
 {% if jackett_additional_labels %}
 {% for label in jackett_additional_labels %}

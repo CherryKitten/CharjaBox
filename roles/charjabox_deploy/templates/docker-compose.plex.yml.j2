@@ -46,6 +46,9 @@ services:
       traefik.http.routers.plex-s.entrypoints: "web-secure"
       traefik.http.routers.plex-s.rule: "Host(`{{ plex_domain }}`)"
       traefik.http.routers.plex-s.tls: "true"
+{% if traefik_letsencrypt_enabled %}
+      traefik.http.routers.plex-s.tls.certresolver: "le"
+{% endif %}
       traefik.http.services.plex.loadbalancer.server.port: "32400"
 {% if plex_additional_labels %}
 {% for label in plex_additional_labels %}

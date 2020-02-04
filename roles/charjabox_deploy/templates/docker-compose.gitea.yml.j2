@@ -42,6 +42,9 @@ services:
       traefik.http.routers.gitea-s.entrypoints: "web-secure"
       traefik.http.routers.gitea-s.rule: "Host(`{{ gitea_domain }}`)"
       traefik.http.routers.gitea-s.tls: "true"
+{% if traefik_letsencrypt_enabled %}
+      traefik.http.routers.gitea-s.tls.certresolver: "le"
+{% endif %}
       traefik.http.services.gitea.loadbalancer.server.port: "3000"
 {% if gitea_additional_labels %}
 {% for label in gitea_additional_labels %}

@@ -33,6 +33,9 @@ services:
       traefik.http.routers.homeassistant-s.entrypoints: "web-secure"
       traefik.http.routers.homeassistant-s.rule: "Host(`{{ homeassistant_domain }}`)"
       traefik.http.routers.homeassistant-s.tls: "true"
+{% if traefik_letsencrypt_enabled %}
+      traefik.http.routers.homeassistant-s.tls.certresolver: "le"
+{% endif %}
       traefik.http.services.homeassistant.loadbalancer.server.port: "8123"
 {% if homeassistant_additional_labels %}
 {% for label in homeassistant_additional_labels %}

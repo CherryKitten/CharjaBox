@@ -35,6 +35,9 @@ services:
       traefik.http.routers.lidarr-s.entrypoints: "web-secure"
       traefik.http.routers.lidarr-s.rule: "Host(`{{ lidarr_domain }}`)"
       traefik.http.routers.lidarr-s.tls: "true"
+{% if traefik_letsencrypt_enabled %}
+      traefik.http.routers.lidarr-s.tls.certresolver: "le"
+{% endif %}
       traefik.http.services.lidarr.loadbalancer.server.port: "8686"
 {% if lidarr_additional_labels %}
 {% for label in lidarr_additional_labels %}

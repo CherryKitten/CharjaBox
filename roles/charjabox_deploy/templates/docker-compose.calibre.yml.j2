@@ -34,6 +34,9 @@ services:
       traefik.http.routers.calibre-s.entrypoints: "web-secure"
       traefik.http.routers.calibre-s.rule: "Host(`{{ calibre_domain }}`)"
       traefik.http.routers.calibre-s.tls: "true"
+{% if traefik_letsencrypt_enabled %}
+      traefik.http.routers.calibre-s.tls.certresolver: "le"
+{% endif %}
       traefik.http.services.calibre.loadbalancer.server.port: "8003"
 {% if calibre_additional_labels %}
 {% for label in calibre_additional_labels %}

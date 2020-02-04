@@ -35,6 +35,9 @@ services:
       traefik.http.routers.duplicati-s.entrypoints: "web-secure"
       traefik.http.routers.duplicati-s.rule: "Host(`{{ duplicati_domain }}`)"
       traefik.http.routers.duplicati-s.tls: "true"
+{% if traefik_letsencrypt_enabled %}
+      traefik.http.routers.duplicati-s.tls.certresolver: "le"
+{% endif %}
       traefik.http.services.duplicati.loadbalancer.server.port: "8200"
 {% if duplicati_additional_labels %}
 {% for label in duplicati_additional_labels %}

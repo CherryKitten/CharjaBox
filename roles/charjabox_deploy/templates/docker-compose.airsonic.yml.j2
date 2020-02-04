@@ -36,6 +36,9 @@ services:
       traefik.http.routers.airsonic-s.entrypoints: "web-secure"
       traefik.http.routers.airsonic-s.rule: "Host(`{{ airsonic_domain }}`)"
       traefik.http.routers.airsonic-s.tls: "true"
+{% if traefik_letsencrypt_enabled %}
+      traefik.http.routers.airsonic-s.tls.certresolver: "le"
+{% endif %}
       traefik.http.services.airsonic.loadbalancer.server.port: "4040"
 {% if airsonic_additional_labels %}
 {% for label in airsonic_additional_labels %}

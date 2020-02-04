@@ -34,6 +34,9 @@ services:
       traefik.http.routers.dokuwiki-s.entrypoints: "web-secure"
       traefik.http.routers.dokuwiki-s.rule: "Host(`{{ dokuwiki_domain }}`)"
       traefik.http.routers.dokuwiki-s.tls: "true"
+{% if traefik_letsencrypt_enabled %}
+      traefik.http.routers.dokuwiki-s.tls.certresolver: "le"
+{% endif %}
       traefik.http.services.dokuwiki.loadbalancer.server.port: "80"
 {% if dokuwiki_additional_labels %}
 {% for label in dokuwiki_additional_labels %}

@@ -11,7 +11,7 @@
     <link rel="../../img/favicon.ico">
 
     
-    <title>Airsonic - CharjaBox</title>
+    <title>TheLounge - CharjaBox</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -202,8 +202,8 @@
     <ul class="dropdown-menu">
         
             
-<li class="active">
-    <a href="./">Airsonic</a>
+<li >
+    <a href="../airsonic/">Airsonic</a>
 </li>
 
         
@@ -274,8 +274,8 @@
     <ul class="dropdown-menu">
         
             
-<li >
-    <a href="../thelounge/">TheLounge</a>
+<li class="active">
+    <a href="./">TheLounge</a>
 </li>
 
         
@@ -365,17 +365,17 @@
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../homeassistant/">
+                        <a rel="prev" href="../bazarr/">
                             <i class="fas fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="next" href="../plex/">
+                        <a rel="next" href="../portainer/">
                             Next <i class="fas fa-arrow-right"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/applications/airsonic.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/applications/thelounge.md"><i class="fab fa-github"></i> Edit on GitHub</a>
                     </li>
             </ul>
         </div>
@@ -388,17 +388,15 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="first-level active"><a href="#general">General</a></li>
-        <li class="first-level "><a href="#setup">Setup</a></li>
         <li class="first-level "><a href="#variables">Variables</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
 <h1 id="general">General</h1>
-<p><a href="https://airsonic.github.io/">Airsonic</a> - Free, web-based media streamer, providing ubiquitous access to your music</p>
-<h1 id="setup">Setup</h1>
-<p>After enabling Airsonic, immediately visit the Webinterface (default port 4040), login with <code>admin:admin</code> and change the password.
-All settings are changed via the Webinterface.</p>
+<p><a href="https://thelounge.chat/">TheLounge</a> - Self-hosted web IRC client</p>
+<p>When in private mode, you have to run some commands to create accounts. Use the console function of Portainer or the <a href="https://docs.docker.com/engine/reference/commandline/exec/">docker exec</a> command for this. You can find all the commands you need <a href="https://thelounge.chat/docs/users">here</a>.</p>
+<p>Most configuration is done in <code>thelounge_directories.config/config.js</code>.</p>
 <h1 id="variables">Variables</h1>
 <table>
 <thead>
@@ -411,46 +409,40 @@ All settings are changed via the Webinterface.</p>
 </thead>
 <tbody>
 <tr>
-<td>airsonic_enabled</td>
+<td>thelounge_enabled</td>
 <td>Boolean</td>
 <td>false</td>
 <td>Enable/Disable the application</td>
 </tr>
 <tr>
-<td>airsonic_tag</td>
+<td>thelounge_tag</td>
 <td>String</td>
 <td>"latest"</td>
 <td>Tag to use for the docker image</td>
 </tr>
 <tr>
-<td>airsonic_directories.data</td>
+<td>thelounge_directories.config</td>
 <td>String</td>
-<td>"{{ docker_home }}/airsonic/data"</td>
-<td>Path were application data should be stored</td>
+<td>"{{ docker_home }}/thelounge/config"</td>
+<td>Path were application config should be stored</td>
 </tr>
 <tr>
-<td>airsonic_music_directory</td>
-<td>String</td>
-<td>"{{ charjabox_music_directory }}"</td>
-<td>Path were music files are stored</td>
-</tr>
-<tr>
-<td>airsonic_traefik_enabled</td>
+<td>thelounge_traefik_enabled</td>
 <td>Boolean</td>
 <td>false</td>
 <td>Enable/Disable access to application via Traefik</td>
 </tr>
 <tr>
-<td>airsonic_domain</td>
+<td>thelounge_domain</td>
 <td>String</td>
-<td>"airsonic.{{ charjabox_domain }}"</td>
+<td>"thelounge.{{ charjabox_domain }}"</td>
 <td>Domain used to access the application</td>
 </tr>
 <tr>
-<td>airsonic_port</td>
+<td>thelounge_port</td>
 <td>Int</td>
-<td>4040</td>
-<td>Port used to access the webinterface</td>
+<td>7743</td>
+<td>Port used to access the application</td>
 </tr>
 </tbody>
 </table></div>

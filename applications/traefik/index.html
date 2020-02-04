@@ -396,7 +396,7 @@
 <p><a href="https://containo.us/traefik/">Traefik</a> - Automate reverse proxy access to your server</p>
 <p>To enable Traefik set <code>traefik_enabled</code> to <code>true</code>, then set <code>$appname_traefik_enabled</code> to <code>true</code> for every app you want to be proxied.</p>
 <p>To enable acess to Traefik's webinterface at <code>traefik_webinterface_port</code> set <code>traefik_dashboard_enabled</code> and <code>traefik_insecure_api</code> to <code>true</code>. Secure acess will be implemented soon.</p>
-<p>SSL configuration and automated Let's Encrypt certificates will also be added soon.</p></div>
+<p>To get automated SSL certificates via LetsEncrypt, all you need to do is set <code>traefik_letsencrypt_enabled</code> to <code>true</code>. Traefik will then automatically request certificates for all apps that are set up for access via Traefik.</p></div>
         
         
     </div>

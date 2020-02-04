@@ -123,6 +123,11 @@ tautulli_additional_labels: []
 tautulli_additional_ports: []
 tautulli_additional_volumes: []
 
+thelounge_additional_env: []
+thelounge_additional_labels: []
+thelounge_additional_ports: []
+thelounge_additional_volumes: []
+
 timemachine_additional_env: []
 timemachine_additional_labels: []
 timemachine_additional_ports: []

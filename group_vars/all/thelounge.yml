@@ -1,0 +1,9 @@
+thelounge_enabled: false
+
+thelounge_tag: "latest"
+
+thelounge_directories:
+  config: "{{ docker_home }}/thelounge/config"
+
+thelounge_traefik_enabled: false
+thelounge_domain: "thelounge.{{ charjabox_domain }}"

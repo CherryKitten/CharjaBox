@@ -1,0 +1,41 @@
+---
+version: '3'
+
+services:
+  thelounge:
+    image: thelounge/thelounge:{{ thelounge_tag }}
+    container_name: theLounge
+    restart: unless-stopped
+    ports:
+      - {{ thelounge_port }}:9000
+{% if thelounge_additional_ports %}
+{% for port in thelounge_additional_ports %}
+      - {{ port }}
+{% endfor %}
+{% endif %}
+    volumes:
+      - {{ thelounge_directories.config }}:/var/opt/thelounge
+{% if thelounge_additional_volumes %}
+{% for volume in thelounge_additional_volumes %}
+      - {{ volume }}
+{% endfor %}
+{% endif %}
+{% if thelounge_additional_env %}
+    environment:
+{% for env in thelounge_additional_env %}
+      {{ env }}
+{% endfor %}
+{% endif %}
+    labels:
+      traefik.enable: "{{ thelounge_traefik_enabled }}"
+      traefik.http.routers.thelounge.entrypoints: "web"
+      traefik.http.routers.thelounge.rule: "Host(`{{ thelounge_domain }}`)"
+      traefik.http.routers.thelounge-s.entrypoints: "web-secure"
+      traefik.http.routers.thelounge-s.rule: "Host(`{{ thelounge_domain }}`)"
+      traefik.http.routers.thelounge-s.tls: "true"
+      traefik.http.services.thelounge.loadbalancer.server.port: "9000"
+{% if thelounge_additional_labels %}
+{% for label in thelounge_additional_labels %}
+      {{ label }}
+{% endfor %}
+{% endif %}

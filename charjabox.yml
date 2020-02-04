@@ -30,6 +30,7 @@
       - rtorrent
       - sonarr
       - tautulli
+      - thelounge
       - timemachine
       - traefik
 

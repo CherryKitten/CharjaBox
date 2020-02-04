@@ -58,6 +58,8 @@ sonarr_port: 8989
 
 tautulli_port: 8181
 
+thelounge_port: 7743
+
 timemachine_port: 10445
 
 traefik_http_port: 80

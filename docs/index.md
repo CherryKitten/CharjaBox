@@ -60,6 +60,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 * [rtorrent](https://github.com/rakshasa/rtorrent) - Text-based ncurses BitTorrent client
 * [ruTorrent](https://github.com/Novik/ruTorrent) - Web front-end for the popular Bittorrent client rtorrent
 * [Sonarr](https://sonarr.tv/) - Manage your TV collection
+* [TheLounge](https://thelounge.chat/) - Self-hosted web IRC client
 * [Tautulli](https://tautulli.com/) - Monitor your Plex Media Server
 * [Time machine](https://github.com/awlx/samba-timemachine) - Backup your macOS devices over the network
 * [Traefik](https://containo.us/traefik/) - Automate reverse proxy access to your server

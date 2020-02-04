@@ -38,6 +38,8 @@ nav:
         - Sonarr: 'applications/sonarr.md'
         - Lidarr: 'applications/lidarr.md'
         - Bazarr: 'applications/bazarr.md'
+      - Social Networking & Messaging:
+        - TheLounge: 'applications/thelounge.md'
       - Server & Network management:
         - Portainer: 'applications/portainer.md'
         - BIND: 'applications/bind.md'

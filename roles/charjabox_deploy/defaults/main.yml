@@ -98,6 +98,11 @@ portainer_additional_labels: []
 portainer_additional_ports: []
 portainer_additional_volumes: []
 
+posteio_additional_env: []
+posteio_additional_labels: []
+posteio_additional_ports: []
+posteio_additional_volumes: []
+
 pyload_additional_env: []
 pyload_additional_labels: []
 pyload_additional_ports: []

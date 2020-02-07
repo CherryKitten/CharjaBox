@@ -1,0 +1,62 @@
+---
+version: '3'
+
+services:
+  posteio:
+    image: analogic/poste.io:{{ posteio_tag }}
+    container_name: Poste.io
+    restart: unless-stopped
+    hostname: "{{ posteio_domain }}"
+    network_mode: host
+    ports:
+      - {{ posteio_smtp_port }}:25
+      - {{ posteio_http_port }}:{{ posteio_http_port }}
+      - {{ posteio_pop3_port }}:110
+      - {{ posteio_imap_port }}:143
+      - {{ posteio_https_port }}:{{ posteio_https_port }}
+      - {{ posteio_smtps_port }}:465
+      - {{ posteio_msa_port }}:587
+      - {{ posteio_imaps_port }}:993
+      - {{ posteio_pop3s_port }}:995
+      - {{ posteio_sieve_port }}:4190
+{% if posteio_additional_ports %}
+{% for port in posteio_additional_ports %}
+      - {{ port }}
+{% endfor %}
+{% endif %}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - {{ posteio_directories.data }}:/data
+{% if posteio_additional_volumes %}
+{% for volume in posteio_additional_volumes %}
+      - {{ volume }}
+{% endfor %}
+{% endif %}
+    environment:
+      DISABLE_ROUNDCUBE: "{{ posteio_disableweb }}"
+      DISABLE_CLAMAV: "{{ posteio_disableclamav }}"
+      HTTPS: "{{ posteio_https }}"
+      HTTP_PORT: "{{ posteio_http_port }}"
+      HTTPS_PORT: "{{ posteio_https_port }}"
+      VIRTUAL_HOST: "{{ posteio_domain }}"
+{% if posteio_additional_env %}
+{% for env in posteio_additional_env %}
+      {{ env }}
+{% endfor %}
+{% endif %}
+    labels:
+      traefik.enable: "{{ posteio_traefik_enabled }}"
+      traefik.http.routers.posteio.entrypoints: "web"
+      traefik.http.routers.posteio.rule: "Host(`{{ posteio_domain }}`)"
+      traefik.http.routers.posteio-s.entrypoints: "web-secure"
+      traefik.http.routers.posteio-s.rule: "Host(`{{ posteio_domain }}`)"
+      traefik.http.routers.posteio-s.tls: "true"
+{% if traefik_letsencrypt_enabled %}
+      traefik.http.routers.posteio-s.tls.certresolver: "le"
+{% endif %}
+      traefik.http.services.posteio.loadbalancer.server.port: "{{ posteio_http_port }}"
+{% if posteio_additional_labels %}
+{% for label in posteio_additional_labels %}
+      {{ label }}
+{% endfor %}
+{% endif %}

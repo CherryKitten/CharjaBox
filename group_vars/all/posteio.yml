@@ -1,0 +1,12 @@
+posteio_enabled: false
+
+posteio_tag: "latest"
+posteio_directories:
+  data: "{{ docker_home }}/posteio/data"
+
+posteio_https: "ON"
+posteio_disableweb: "false"
+posteio_disableclamav: "false"
+
+posteio_traefik_enabled: false
+posteio_domain: "posteio.{{ charjabox_domain }}"

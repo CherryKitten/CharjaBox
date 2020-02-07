@@ -42,6 +42,17 @@ plex_web_port: 32400
 
 portainer_port: 9000
 
+posteio_smtp_port: 25
+posteio_http_port: 8183
+posteio_pop3_port: 110
+posteio_imap_port: 143
+posteio_https_port: 8184
+posteio_smtps_port: 465
+posteio_msa_port: 587
+posteio_imaps_port: 993
+posteio_pop3s_port: 995
+posteio_sieve_port: 4190
+
 pyload_port: 8001
 
 rtorrent_http_port: 7991

@@ -11,7 +11,7 @@
     <link rel="../../img/favicon.ico">
 
     
-    <title>Gitea - CharjaBox</title>
+    <title>Poste.io - CharjaBox</title>
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -151,8 +151,8 @@
 
         
             
-<li class="active">
-    <a href="./">Gitea</a>
+<li >
+    <a href="../gitea/">Gitea</a>
 </li>
 
         
@@ -280,8 +280,8 @@
 
         
             
-<li >
-    <a href="../posteio/">Poste.io</a>
+<li class="active">
+    <a href="./">Poste.io</a>
 </li>
 
         
@@ -371,17 +371,17 @@
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../dokuwiki/">
+                        <a rel="prev" href="../thelounge/">
                             <i class="fas fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="next" href="../pyload/">
+                        <a rel="next" href="../portainer/">
                             Next <i class="fas fa-arrow-right"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/applications/gitea.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                        <a href="https://github.com/CherryKitten/CharjaBox/edit/master/docs/applications/posteio.md"><i class="fab fa-github"></i> Edit on GitHub</a>
                     </li>
             </ul>
         </div>
@@ -400,8 +400,10 @@
         <div class="col-md-9" role="main">
 
 <h1 id="general">General</h1>
-<p><a href="https://gitea.io/">Gitea</a> - Git with a cup of tea</p>
-<p>Visit <code>http://$YourIP:$YourPort/install</code> after activating Gitea to complete the installation process.</p>
+<p><a href="https://poste.io/">Poste.io</a> - All-in-one selfhosted E-Mail solution</p>
+<p>After enabling Poste.io, go to the webinterface and set up your admin account.</p>
+<p>Correct DNS records are very important for email to work, please see <a href="https://poste.io/doc/configuring-dns">this part</a> of the Poste.io documentation for help with that.</p>
+<p>If you want to run Poste.io behind a reverse proxy (like Traefik), you'll need to set <code>posteio_https: "OFF"</code>, this is case sensitive.</p>
 <h1 id="variables">Variables</h1>
 <table>
 <thead>
@@ -414,76 +416,112 @@
 </thead>
 <tbody>
 <tr>
-<td>gitea_enabled</td>
+<td>posteio_enabled</td>
 <td>Boolean</td>
 <td>false</td>
 <td>Enable/Disable the application</td>
 </tr>
 <tr>
-<td>gitea_tag</td>
+<td>posteio_tag</td>
 <td>String</td>
 <td>"latest"</td>
 <td>Tag to use for the docker image</td>
 </tr>
 <tr>
-<td>gitea_directories.data</td>
+<td>posteio_directories.data</td>
 <td>String</td>
-<td>"{{ docker_home }}/gitea/data"</td>
+<td>"{{ docker_home }}/posteio/data"</td>
 <td>Path were application data should be stored</td>
 </tr>
 <tr>
-<td>gitea_appname</td>
+<td>posteio_https</td>
 <td>String</td>
-<td>"Gitea: Git with a cup of tea"</td>
-<td>Title of application webpage</td>
+<td>"ON"</td>
+<td>Enable/Disable HTTP2HTTPS redirect. Can be "ON" or "OFF", case sensitive</td>
 </tr>
 <tr>
-<td>gitea_runmode</td>
+<td>posteio_disableweb</td>
 <td>String</td>
-<td>"prod"</td>
-<td>Either "prod" or "dev", for debugging purposes</td>
+<td>"false"</td>
+<td>Enable/Disable Roundcube Webmail</td>
 </tr>
 <tr>
-<td>gitea_domain</td>
+<td>posteio_disableclamav</td>
 <td>String</td>
-<td>"gitea.{{ charjabox_domain }}"</td>
-<td>Domain used to access the application</td>
+<td>"false"</td>
+<td>Enable/Disable ClamAV</td>
 </tr>
 <tr>
-<td>gitea_disable_ssh</td>
-<td>Boolean</td>
-<td>false</td>
-<td>Enable/Disable SSH access to the application</td>
-</tr>
-<tr>
-<td>gitea_disable_registrations</td>
-<td>Boolean</td>
-<td>false</td>
-<td>Enable/Disable registrations</td>
-</tr>
-<tr>
-<td>gitea_require_signin</td>
-<td>Boolean</td>
-<td>false</td>
-<td>Require signin to access public resources</td>
-</tr>
-<tr>
-<td>gitea_traefik_enabled</td>
+<td>posteio_traefik_enabled</td>
 <td>Boolean</td>
 <td>false</td>
 <td>Enable/Disable access to application via Traefik</td>
 </tr>
 <tr>
-<td>gitea_http_port</td>
-<td>Int</td>
-<td>3000</td>
-<td>Port used to access the application</td>
+<td>posteio_domain</td>
+<td>String</td>
+<td>"posteio.{{ charjabox_domain }}"</td>
+<td>Domain used to access the application</td>
 </tr>
 <tr>
-<td>gitea_ssh_port</td>
+<td>posteio_smtp_port</td>
 <td>Int</td>
-<td>222</td>
-<td>Port used to access SSH</td>
+<td>25</td>
+<td>SMTP Port</td>
+</tr>
+<tr>
+<td>posteio_http_port</td>
+<td>Int</td>
+<td>8183</td>
+<td>HTTP Port</td>
+</tr>
+<tr>
+<td>posteio_pop3_port</td>
+<td>Int</td>
+<td>110</td>
+<td>POP3 Port</td>
+</tr>
+<tr>
+<td>posteio_imap_port</td>
+<td>Int</td>
+<td>143</td>
+<td>IMAP Port</td>
+</tr>
+<tr>
+<td>posteio_https_port</td>
+<td>Int</td>
+<td>8184</td>
+<td>HTTPS Port</td>
+</tr>
+<tr>
+<td>posteio_smtps_port</td>
+<td>Int</td>
+<td>465</td>
+<td>SMTPS Port</td>
+</tr>
+<tr>
+<td>posteio_msa_port</td>
+<td>Int</td>
+<td>587</td>
+<td>MSA Port</td>
+</tr>
+<tr>
+<td>posteio_imaps_port</td>
+<td>Int</td>
+<td>993</td>
+<td>IMAPS Port</td>
+</tr>
+<tr>
+<td>posteio_pop3s_port</td>
+<td>Int</td>
+<td>995</td>
+<td>POP3S Port</td>
+</tr>
+<tr>
+<td>posteio_sieve_port</td>
+<td>Int</td>
+<td>4190</td>
+<td>Sieve Port</td>
 </tr>
 </tbody>
 </table></div>

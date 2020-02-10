@@ -19,6 +19,7 @@ Read the documentation [here](https://cherrykitten.github.io/CharjaBox).
 ## Features
 
 * Samba Sharing
+* openVPN server
 * Manual container management using Portainer
 * Home Media Streaming with Plex, Jellyfin and/or Airsonic
 * Media management with Sonarr, Radarr and Lidarr

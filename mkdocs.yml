@@ -44,6 +44,7 @@ nav:
       - Server & Network management:
         - Portainer: 'applications/portainer.md'
         - BIND: 'applications/bind.md'
+        - openVPN: 'applications/openvpn.md'
       - Security & Backup:
         - Bitwarden_rs: 'applications/bitwarden_rs.md'
         - Duplicati: 'applications/duplicati.md'

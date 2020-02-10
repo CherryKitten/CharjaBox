@@ -38,6 +38,8 @@ nextcloud_port: 8380
 nginx_http_port: 80
 nginx_https_port: 443
 
+openvpn_port: "1194"
+
 plex_web_port: 32400
 
 portainer_port: 9000

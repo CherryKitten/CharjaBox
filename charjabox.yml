@@ -49,6 +49,10 @@
       tags: always
     - role: charjabox_deploy
       tags: deploy
+    - role: kyl191.openvpn
+      clients: "{{ openvpn_clients }}"
+      when: openvpn_enabled
+      tags: openvpn
 
   tasks:
     - include: tasks/smb.yml

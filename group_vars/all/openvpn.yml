@@ -1,0 +1,5 @@
+openvpn_enabled: false
+
+openvpn_server_hostname: "openvpn.{{ charjabox_domain }}"
+
+openvpn_clients: []

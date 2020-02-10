@@ -26,4 +26,4 @@ After starting up Nextcloud, visit the Webinterface to finish setup.
 | nextcloud_smtp_password    | String  | ""                                 | SMTP Password                                    |
 | nextcloud_smtp_from        | String  | "{{ charjabox_email }}"            | From: Header                                     |
 | nextcloud_smtp_domain      | String  | "{{ nextcloud_domain }}"           | Domain to send Mails from                        |
-| nextcloud_port             | Int     | 830                                | Port used to access the application              |
+| nextcloud_port             | Int     | 8380                                | Port used to access the application              |
